@@ -1,6 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://deepachudal.com.np/</loc><priority>1.0</priority></url>
-  <url><loc>https://deepachudal.com.np/appointment.html</loc><priority>0.8</priority></url>
-  <!-- add all other pages -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Homepage - Highest Priority -->
+    <url>
+        <loc>https://deepachudal.com.np/</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Main Pages -->
+    <url>
+        <loc>https://deepachudal.com.np/index.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://deepachudal.com.np/about.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Appointment / Book Consultation Page -->
+    <url>
+        <loc>https://deepachudal.com.np/appointment.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Blog Main Page -->
+    <url>
+        <loc>https://deepachudal.com.np/blog.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Articles - Infertility & Gynecology -->
+    <url>
+        <loc>https://deepachudal.com.np/blog/male-infertility-causes-treatment.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/blog/ivf-success-rate-guide.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/blog/pcos-management-pregnancy.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/blog/high-risk-pregnancy-warning-signs.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/blog/laparoscopic-surgery-fibroids.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/blog/iui-vs-ivf-comparison.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/blog/third-month-pregnancy.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/blog/endometriosis-infertility-treatment.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Services Section Pages -->
+    <url>
+        <loc>https://deepachudal.com.np/services/ivf-treatment.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/services/pcos-treatment.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/services/laparoscopic-surgery.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/services/high-risk-pregnancy.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Contact Page -->
+    <url>
+        <loc>https://deepachudal.com.np/contact.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Privacy & Legal Pages -->
+    <url>
+        <loc>https://deepachudal.com.np/privacy-policy.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/terms-of-service.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://deepachudal.com.np/medical-disclaimer.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
 </urlset>
