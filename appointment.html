@@ -3,9 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Appointment - Dr. Deepa Chudal | Gynecologist & Infertility Expert</title>
+  <title>Dr. Deepa Chudal – Best Gynecologist & Infertility Expert in Kathmandu | Appointment</title>
+  <meta name="description" content="Book appointment with Dr. Deepa Chudal, Associate Professor at NAMS & Journal of Menopause Society of Nepal. Leading infertility specialist, laparoscopic surgeon. Elite Health Clinic, Deepa Fertility, Maya IVF.">
+  <meta name="keywords" content="best gynecologist in Kathmandu, infertility specialist near me, female gynecologist for PCOS, fertility doctor, laparoscopic surgeon, Dr Deepa Chudal">
+  <meta name="author" content="Dr. Deepa Chudal">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://deepachudal.com.np/appointment.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- Schema Markup (Structured Data) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Deepa Chudal",
+    "specialty": ["Gynecology", "Infertility", "Laparoscopic Surgery", "Obstetrics"],
+    "jobTitle": "Associate Professor at NAMS",
+    "affiliation": [
+      {
+        "@type": "MedicalClinic",
+        "name": "Elite Health Clinic",
+        "address": "Lagankhel, Kathmandu, Nepal"
+      },
+      {
+        "@type": "MedicalClinic",
+        "name": "Deepa Fertility & Gynecology Clinic, Shankhamul Health Care",
+        "address": "Shankhamul, Kathmandu, Nepal"
+      },
+      {
+        "@type": "MedicalClinic",
+        "name": "Maya IVF Clinic",
+        "address": "Kupandole, Lalitpur, Nepal"
+      },
+      {
+        "@type": "MedicalClinic",
+        "name": "NIFLC - BBC Building, UN Park",
+        "address": "Kathmandu, Nepal"
+      }
+    ],
+    "url": "https://deepachudal.com.np",
+    "telephone": "+977-9825207253"
+  }
+  </script>
   <style>
     /* CSS Variables - Trusted Medical Color Scheme for Women's Health */
     :root {
@@ -87,6 +126,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .navbar-logo {
@@ -109,6 +149,7 @@
       display: flex;
       gap: 0.5rem;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .navbar a {
@@ -168,22 +209,39 @@
     .booking-hero {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       border-radius: var(--border-radius-lg);
-      padding: 3rem;
-      margin-bottom: 3rem;
+      padding: 2.5rem 3rem;
+      margin-bottom: 2rem;
       color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 3rem;
+      flex-wrap: wrap;
     }
 
     .hero-content { flex: 1; }
-    .hero-content h1 { color: white; font-size: 3rem; margin-bottom: 1rem; }
-    .hero-content p { font-size: 1.25rem; opacity: 0.95; max-width: 600px; }
-
+    .hero-content h1 { color: white; font-size: 2.2rem; margin-bottom: 0.75rem; }
+    .hero-content p { font-size: 1rem; opacity: 0.95; max-width: 600px; margin-bottom: 1rem; }
+    .professional-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+    .role-badge {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
     .doctor-photo {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(5px);
@@ -193,8 +251,26 @@
       justify-content: center;
       overflow: hidden;
     }
-    .doctor-photo i { font-size: 7rem; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .doctor-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .doctor-photo i { font-size: 6rem; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+    /* Services & Conditions Section */
+    .services-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .service-card {
+      background: white;
+      border-radius: var(--border-radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+    }
+    .service-card h2, .service-card h3 { color: var(--primary); margin-bottom: 1rem; }
+    .service-card ul, .condition-list { list-style: none; padding-left: 0; }
+    .service-card li, .condition-list li { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+    .service-card i, .condition-list i { color: var(--accent); width: 1.5rem; }
 
     /* Booking Grid */
     .booking-grid {
@@ -367,7 +443,7 @@
       border: 3px solid rgba(255,255,255,0.3);
       border-radius: 50%;
       border-top-color: white;
-      animation: spin 0.8s linear infinite;
+      animation: spin 0.8s linear ease;
     }
     .floating-buttons {
       position: fixed;
@@ -466,14 +542,15 @@
       padding: 2rem;
       margin-top: 4rem;
     }
+    .footer-links a { color: white; text-decoration: underline; margin: 0 0.5rem; }
     @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes spin { to { transform: rotate(360deg); } }
-    @media (max-width: 1024px) { .booking-grid { grid-template-columns: 1fr; } .info-sidebar { position: static; } }
+    @media (max-width: 1024px) { .booking-grid { grid-template-columns: 1fr; } .info-sidebar { position: static; } .services-section { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
       .navbar-container { flex-direction: column; gap: 1rem; }
       .booking-hero { flex-direction: column; text-align: center; }
-      .hero-content h1 { font-size: 2rem; }
+      .hero-content h1 { font-size: 1.8rem; }
       .chat-container { width: 280px; right: 1rem; bottom: 5rem; }
     }
   </style>
@@ -499,12 +576,41 @@
   <main>
     <section class="booking-hero">
       <div class="hero-content">
-        <h1 data-en="Book Your Consultation" data-np="आफ्नो परामर्श बुक गर्नुहोस्">Book Your Consultation</h1>
-        <p data-en="with Dr. Deepa Chudal - Gynecologist & Infertility Expert" data-np="डा. दीपा चुडाल - स्त्री रोग तथा बाँझोपन विशेषज्ञसँग">with Dr. Deepa Chudal - Gynecologist & Infertility Expert</p>
-        <div style="margin-top: 2rem;"><span class="trust-badge" style="background: rgba(255,255,255,0.15); color: white; display: inline-flex;"><i class="fas fa-star"></i><span>4.9 ★ (160+ patient reviews)</span></span></div>
+        <h1>Dr. Deepa Chudal – Gynecologist & Infertility Expert</h1>
+        <div class="professional-roles">
+          <span class="role-badge"><i class="fas fa-chalkboard-teacher"></i> Associate Professor at NAMS</span>
+          <span class="role-badge"><i class="fas fa-journal-whills"></i> Journal of Menopause Society of Nepal (JMESON)</span>
+        </div>
+        <div style="margin-top: 1rem;"><span class="trust-badge" style="background: rgba(255,255,255,0.15); color: white; display: inline-flex;"><i class="fas fa-star"></i><span>4.9 ★ (160+ patient reviews)</span></span></div>
       </div>
       <div class="doctor-photo"><i class="fas fa-user-md"></i></div>
     </section>
+
+    <!-- Services & Conditions - H2 / H3 Structure -->
+    <div class="services-section">
+      <div class="service-card">
+        <h2><i class="fas fa-stethoscope"></i> Services Offered</h2>
+        <ul>
+          <li><i class="fas fa-female"></i> Infertility Treatment (Ovulation Induction, IUI, IVF)</li>
+          <li><i class="fas fa-cut"></i> Laparoscopic Surgery for Endometriosis, Ovarian Cysts</li>
+          <li><i class="fas fa-chart-line"></i> PCOS Management & Hormonal Balance</li>
+          <li><i class="fas fa-baby-carriage"></i> High-Risk Pregnancy & Antenatal Care</li>
+          <li><i class="fas fa-procedures"></i> Menopause & Perimenopause Care</li>
+          <li><i class="fas fa-robot"></i> Hysteroscopy & Fibroid Removal</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3><i class="fas fa-notes-medical"></i> Conditions Treated</h3>
+        <ul class="condition-list">
+          <li><i class="fas fa-uterus"></i> Endometriosis</li>
+          <li><i class="fas fa-calendar-alt"></i> Irregular Periods / Menstrual Disorders</li>
+          <li><i class="fas fa-heart-broken"></i> Recurrent Pregnancy Loss</li>
+          <li><i class="fas fa-weight"></i> PCOS & Metabolic Syndrome</li>
+          <li><i class="fas fa-charging-station"></i> Pelvic Pain & Fibroids</li>
+          <li><i class="fas fa-child"></i> Preconception Counseling</li>
+        </ul>
+      </div>
+    </div>
 
     <div class="booking-grid">
       <div>
@@ -532,7 +638,7 @@
               </div>
               <div class="form-section">
                 <div class="section-title"><i class="fas fa-calendar-alt"></i><span data-en="Appointment Details" data-np="अपोइन्टमेन्ट विवरण">Appointment Details</span></div>
-                <div class="form-row"><div class="form-group"><label for="clinicLocation" class="form-label"><span data-en="Clinic Location" data-np="क्लिनिक स्थान">Clinic Location</span><span class="required-star">*</span></label><select id="clinicLocation" name="clinicLocation" required class="form-select" onchange="updateTimeSlots()"><option value="" data-en="Select a clinic" data-np="क्लिनिक छनौट गर्नुहोस्">Select a clinic</option><option value="Women's Wellness Clinic, Lagankhel" data-en="Women's Wellness Clinic, Lagankhel" data-np="विमेन्स वेलनेस क्लिनिक, लगनखेल">Women's Wellness Clinic, Lagankhel</option><option value="Fertility & Gynecology Center, Shankhamul" data-en="Fertility & Gynecology Center, Shankhamul" data-np="फर्टिलिटी एन्ड गाइनो सेन्टर, शंखमुल">Fertility & Gynecology Center, Shankhamul</option><option value="Maternity & Infertility Clinic, Dhangadhi" data-en="Maternity & Infertility Clinic, Dhangadhi" data-np="म्याटरनिटी एन्ड इन्फर्टिलिटी क्लिनिक, धनगढी">Maternity & Infertility Clinic, Dhangadhi</option><option value="Tele-Gynecology Consultation" data-en="Tele-Gynecology Consultation" data-np="टेलि-गाइनोकोलोजी परामर्श">Tele-Gynecology Consultation</option></select></div></div>
+                <div class="form-row"><div class="form-group"><label for="clinicLocation" class="form-label"><span data-en="Clinic Location" data-np="क्लिनिक स्थान">Clinic Location</span><span class="required-star">*</span></label><select id="clinicLocation" name="clinicLocation" required class="form-select" onchange="updateTimeSlots()"><option value="" data-en="Select a clinic" data-np="क्लिनिक छनौट गर्नुहोस्">Select a clinic</option><option value="Elite Health Clinic, Lagankhel" data-en="Elite Health Clinic, Lagankhel" data-np="एलिट हेल्थ क्लिनिक, लगनखेल">Elite Health Clinic, Lagankhel</option><option value="Deepa Fertility & Gynecology Clinic, Shankhamul Health Care" data-en="Deepa Fertility & Gynecology Clinic, Shankhamul Health Care" data-np="दीपा फर्टिलिटी क्लिनिक, शंखमुल हेल्थ केयर">Deepa Fertility & Gynecology Clinic, Shankhamul Health Care</option><option value="Maya IVF Clinic, Kupandole" data-en="Maya IVF Clinic, Kupandole" data-np="माया आईभीएफ क्लिनिक, कुपण्डोल">Maya IVF Clinic, Kupandole</option><option value="NIFLC - BBC Building, UN Park, Kathmandu" data-en="NIFLC - BBC Building, UN Park, Kathmandu" data-np="एनआईएफएलसी - बीबीसी भवन, यूएन पार्क">NIFLC - BBC Building, UN Park, Kathmandu</option><option value="Shubharambha Maternity & Infertility Clinic, Dhangadhi" data-en="Shubharambha Maternity & Infertility Clinic, Dhangadhi" data-np="शुभारम्भ म्याटरनिटी क्लिनिक, धनगढी">Shubharambha Maternity & Infertility Clinic, Dhangadhi</option><option value="Tele-Gynecology Consultation" data-en="Tele-Gynecology Consultation" data-np="टेलि-गाइनोकोलोजी परामर्श">Tele-Gynecology Consultation</option></select></div></div>
                 <div class="form-row"><div class="form-group"><label for="preferredDate" class="form-label"><span data-en="Preferred Date" data-np="प्राथमिक मिति">Preferred Date</span><span class="required-star">*</span></label><input type="date" id="preferredDate" name="preferredDate" required class="form-input" onchange="validateDate()"></div><div class="form-group"><label for="preferredTime" class="form-label"><span data-en="Preferred Time" data-np="प्राथमिक समय">Preferred Time</span><span class="required-star">*</span></label><select id="preferredTime" name="preferredTime" required class="form-select"></select></div></div>
                 <div class="form-group"><label for="reasonForVisit" class="form-label"><span data-en="Reason for Visit" data-np="भ्रमणको कारण">Reason for Visit</span><span class="required-star">*</span></label><select id="reasonForVisit" name="reasonForVisit" required class="form-select"><option value="" data-en="Select reason" data-np="कारण छनौट गर्नुहोस्">Select reason</option><option value="Infertility Evaluation" data-en="Infertility Evaluation" data-np="बाँझोपन मूल्याङ्कन">Infertility Evaluation</option><option value="PCOS Management" data-en="PCOS Management" data-np="पीसीओएस व्यवस्थापन">PCOS Management</option><option value="Menstrual Disorders" data-en="Menstrual Disorders" data-np="महिनावारी समस्या">Menstrual Disorders</option><option value="Pregnancy & Antenatal Care" data-en="Pregnancy & Antenatal Care" data-np="गर्भावस्था तथा प्रसवपूर्व हेरचाह">Pregnancy & Antenatal Care</option><option value="Menopause Management" data-en="Menopause Management" data-np="रजोनिवृत्ति व्यवस्थापन">Menopause Management</option><option value="Hormonal Imbalance" data-en="Hormonal Imbalance" data-np="हर्मोन असंतुलन">Hormonal Imbalance</option><option value="General Gynecology" data-en="General Gynecology" data-np="साधारण स्त्री रोग">General Gynecology</option></select></div>
                 <div class="form-group"><label for="additionalInfo" class="form-label"><span data-en="Additional Information" data-np="थप जानकारी">Additional Information</span></label><textarea id="additionalInfo" name="additionalInfo" rows="3" class="form-textarea" placeholder="Share any concerns or previous history..." data-en-placeholder="Share any concerns or previous history..." data-np-placeholder="कुनै चिन्ता वा पूर्व इतिहास साझा गर्नुहोस्..."></textarea></div>
@@ -546,28 +652,32 @@
 
       <div class="info-sidebar">
         <div class="info-card"><h3><i class="fas fa-clock"></i><span data-en="Clinic Hours" data-np="क्लिनिक समय">Clinic Hours</span></h3>
-          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div class="info-item-content"><strong data-en="Women's Wellness Clinic, Lagankhel" data-np="विमेन्स वेलनेस क्लिनिक, लगनखेल">Women's Wellness Clinic, Lagankhel</strong><p data-en="Mon, Wed, Fri: 10AM-1PM, 4PM-7PM" data-np="सोम, बुध, शुक्र: १०AM-१PM, ४PM-७PM">Mon, Wed, Fri: 10AM-1PM, 4PM-7PM</p></div></div>
-          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div class="info-item-content"><strong data-en="Fertility & Gynecology Center, Shankhamul" data-np="फर्टिलिटी सेन्टर, शंखमुल">Fertility & Gynecology Center, Shankhamul</strong><p data-en="Tue, Thu, Sat: 10AM-2PM, 5PM-8PM" data-np="मंगल, बिही, शनि: १०AM-२PM, ५PM-८PM">Tue, Thu, Sat: 10AM-2PM, 5PM-8PM</p></div></div>
-          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div class="info-item-content"><strong data-en="Maternity & Infertility Clinic, Dhangadhi" data-np="धनगढी क्लिनिक">Maternity & Infertility Clinic, Dhangadhi</strong><p data-en="Saturday only: 9AM - 5PM" data-np="शनिबार मात्र: ९AM-५PM">Saturday only: 9AM - 5PM</p></div></div>
+          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div class="info-item-content"><strong data-en="Elite Health Clinic, Lagankhel" data-np="एलिट हेल्थ क्लिनिक, लगनखेल">Elite Health Clinic, Lagankhel</strong><p data-en="Mon, Wed, Fri: 4PM-7PM" data-np="सोम, बुध, शुक्र: ४PM-७PM">Mon, Wed, Fri: 4PM-7PM</p><p class="helper-text" style="margin-top:4px"><i class="fas fa-phone"></i> 015420745</p></div></div>
+          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div class="info-item-content"><strong data-en="Deepa Fertility & Gynecology Clinic, Shankhamul Health Care" data-np="दीपा फर्टिलिटी क्लिनिक, शंखमुल हेल्थ केयर">Deepa Fertility & Gynecology Clinic, Shankhamul Health Care</strong><p data-en="Tue, Thu, Sat: 10AM-2PM, 5PM-8PM" data-np="मंगल, बिही, शनि: १०AM-२PM, ५PM-८PM">Tue, Thu, Sat: 10AM-2PM, 5PM-8PM</p></div></div>
+          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div class="info-item-content"><strong data-en="Maya IVF Clinic, Kupandole" data-np="माया आईभीएफ क्लिनिक, कुपण्डोल">Maya IVF Clinic, Kupandole</strong><p data-en="Daily: 4PM - 7PM" data-np="दैनिक: ४PM-७PM">Daily: 4PM - 7PM</p></div></div>
+          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div class="info-item-content"><strong data-en="NIFLC - BBC Building, UN Park" data-np="एनआईएफएलसी - बीबीसी भवन, यूएन पार्क">NIFLC - BBC Building, UN Park</strong><p data-en="Daily: 4PM - 7PM" data-np="दैनिक: ४PM-७PM">Daily: 4PM - 7PM</p></div></div>
+          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div class="info-item-content"><strong data-en="Shubharambha Maternity & Infertility Clinic, Dhangadhi" data-np="शुभारम्भ म्याटरनिटी क्लिनिक, धनगढी">Shubharambha Maternity & Infertility Clinic, Dhangadhi</strong><p data-en="Saturday Monthly: 10AM - 5PM" data-np="शनिबार मासिक: १०AM-५PM">Saturday Monthly: 10AM - 5PM</p></div></div>
           <div class="info-item"><i class="fas fa-laptop-medical"></i><div class="info-item-content"><strong data-en="Tele-Gynecology" data-np="टेलि-गाइनोकोलोजी">Tele-Gynecology</strong><p data-en="Daily flexible hours" data-np="दैनिक लचिलो समय">Daily flexible hours</p></div></div>
         </div>
         <div class="info-card"><h3><i class="fas fa-phone-alt"></i><span data-en="Contact Directly" data-np="सिधै सम्पर्क गर्नुहोस्">Contact Directly</span></h3>
-          <div class="info-item"><i class="fas fa-phone"></i><div class="info-item-content"><strong data-en="Lagankhel Clinic" data-np="लगनखेल क्लिनिक">Lagankhel Clinic</strong><p>+977-1-5420745</p></div></div>
-          <div class="info-item"><i class="fas fa-phone"></i><div class="info-item-content"><strong data-en="Shankhamul Center" data-np="शंखमुल सेन्टर">Shankhamul Center</strong><p>+977-1-5242511</p></div></div>
-          <div class="info-item"><i class="fas fa-phone"></i><div class="info-item-content"><strong data-en="Dhangadhi Clinic" data-np="धनगढी क्लिनिक">Dhangadhi Clinic</strong><p>+977-91-410107</p></div></div>
+          <div class="info-item"><i class="fas fa-phone"></i><div class="info-item-content"><strong data-en="Elite Health Clinic, Lagankhel" data-np="एलिट हेल्थ क्लिनिक">Elite Health Clinic</strong><p>015420745</p></div></div>
+          <div class="info-item"><i class="fas fa-phone"></i><div class="info-item-content"><strong data-en="Shankhamul Health Care" data-np="शंखमुल हेल्थ केयर">Shankhamul Health Care</strong><p>+977-1-5242511</p></div></div>
+          <div class="info-item"><i class="fas fa-phone"></i><div class="info-item-content"><strong data-en="Maya IVF / NIFLC" data-np="माया आईभीएफ / एनआईएफएलसी">Maya IVF / NIFLC</strong><p>+977-9825207253</p></div></div>
           <div class="info-item"><i class="fas fa-mobile-alt"></i><div class="info-item-content"><strong data-en="Teleconsultation" data-np="टेलि परामर्श">Teleconsultation</strong><p>+977-9825207253</p></div></div>
         </div>
         <div class="info-card"><h3><i class="fas fa-shield-alt"></i><span data-en="Why Choose Us" data-np="हामी किन रोज्ने">Why Choose Us</span></h3>
           <div class="trust-badge"><i class="fas fa-star"></i><div><strong data-en="4.9 Patient Rating" data-np="४.९ बिरामी मूल्याङ्कन">4.9 Patient Rating</strong><p data-en="160+ verified reviews" data-np="१६०+ प्रमाणित समीक्षाहरू">160+ verified reviews</p></div></div>
           <div class="trust-badge"><i class="fas fa-certificate"></i><div><strong data-en="Board Certified Gynecologist" data-np="बोर्ड प्रमाणित स्त्री रोग विशेषज्ञ">Board Certified Gynecologist</strong><p data-en="Infertility Specialist" data-np="बाँझोपन विशेषज्ञ">Infertility Specialist</p></div></div>
-          <div class="trust-badge"><i class="fas fa-clock"></i><div><strong data-en="12+ Years Experience" data-np="१२+ वर्ष अनुभव">12+ Years Experience</strong><p data-en="Compassionate women's care" data-np="संवेदनशील महिला स्वास्थ्य सेवा">Compassionate women's care</p></div></div>
+          <div class="trust-badge"><i class="fas fa-clock"></i><div><strong data-en="15+ Years Experience" data-np="१५+ वर्ष अनुभव">15+ Years Experience</strong><p data-en="Compassionate women's care" data-np="संवेदनशील महिला स्वास्थ्य सेवा">Compassionate women's care</p></div></div>
           <div class="trust-badge"><i class="fas fa-lock"></i><div><strong data-en="100% Confidential" data-np="पूर्ण गोप्य">100% Confidential</strong><p data-en="Your privacy matters" data-np="तपाईंको गोपनीयता हाम्रो प्राथमिकता">Your privacy matters</p></div></div>
         </div>
         <div class="info-card"><div style="text-align:center"><i class="fas fa-check-circle" style="font-size:3rem; color:var(--accent); margin-bottom:1rem"></i><h3 data-en="Quick Response" data-np="छिटो प्रतिक्रिया">Quick Response</h3><p><span data-en="We respond to requests within" data-np="हामी अनुरोधहरूको जवाफ दिन्छौं">We respond to requests within</span><strong style="display:block; font-size:2rem; margin:0.5rem 0;">24 hours</strong></p><div class="helper-text"><i class="fas fa-bolt"></i><span data-en="Emergency? Call us directly" data-np="आपतकालिन? सिधै कल गर्नुहोस्">Emergency? Call us directly</span></div></div></div>
       </div>
     </div>
   </main>
-  <footer><p>&copy; 2026 Dr. Deepa Chudal. All Rights Reserved.</p></footer>
+  <footer>
+    <p>&copy; 2026 Dr. Deepa Chudal – Best Gynecologist in Kathmandu | Infertility Specialist | <a href="contact.html" style="color:white; text-decoration:underline;">Contact</a> | <a href="https://www.nams.org.np" target="_blank" style="color:white; text-decoration:underline;">NAMS</a> | <a href="https://medphoenix.com.np" target="_blank" style="color:white; text-decoration:underline;">Med Phoenix</a></p>
+  </footer>
 
   <div class="floating-buttons"><a href="https://wa.me/9779825207253?text=Hello%20Dr.%20Deepa,%20I%20would%20like%20to%20book%20an%20appointment" class="floating-button whatsapp-button" target="_blank"><i class="fab fa-whatsapp"></i></a><button class="floating-button chat-button" id="chatButton"><i class="fas fa-comments"></i></button></div>
   <div class="chat-container" id="chatContainer"><div class="chat-header"><h3 data-en="Chat with Us" data-np="हामीसँग कुरा गर्नुहोस्">Chat with Us</h3><button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button></div><div class="chat-messages" id="chatMessages"><div class="message bot"><span data-en="Hello! How can we assist with your gynecology or fertility needs today?" data-np="नमस्ते! आज हामी तपाईंको स्त्री रोग वा प्रजनन आवश्यकतामा कसरी सहयोग गर्न सक्छौं?">Hello! How can we assist with your gynecology or fertility needs today?</span></div></div><div class="chat-input-area"><input type="text" id="chatInput" placeholder="Type your message..." data-en-placeholder="Type your message..." data-np-placeholder="आफ्नो सन्देश टाइप गर्नुहोस्..."><button id="sendMessage"><i class="fas fa-paper-plane"></i></button></div></div>
@@ -577,7 +687,7 @@
     const languageToggle = document.getElementById('languageToggle');
     languageToggle.addEventListener('click', () => {
       currentLanguage = currentLanguage === 'en' ? 'np' : 'en';
-      document.querySelectorAll('[data-en], [data-np]').forEach(el => { const txt = el.getAttribute(`data-${currentLanguage}`); if(txt) el.textContent = txt; });
+      document.querySelectorAll('[data-en], [data-np]').forEach(el => { const txt = el.getAttribute(`data-${currentLanguage}`); if(txt && !el.closest('.professional-roles')) el.textContent = txt; });
       document.querySelectorAll('[data-en-placeholder]').forEach(el => { const ph = el.getAttribute(`data-${currentLanguage}-placeholder`); if(ph) el.placeholder = ph; });
       const toggleSpan = languageToggle.querySelector('span');
       toggleSpan.textContent = currentLanguage === 'en' ? 'English' : 'नेपाली';
@@ -592,24 +702,24 @@
       const clinic = document.getElementById('clinicLocation').value;
       const timeSelect = document.getElementById('preferredTime');
       while(timeSelect.options.length > 0) timeSelect.remove(0);
-      if(clinic === "Women's Wellness Clinic, Lagankhel" || clinic === "Fertility & Gynecology Center, Shankhamul") {
-        addOption(timeSelect, 'Morning (10:00 AM - 1:00 PM)', 'Morning (10:00 AM - 1:00 PM)', 'बिहान (१०:०० बिहान - १:०० दिउँसो)');
+      if(clinic === "Elite Health Clinic, Lagankhel") {
         addOption(timeSelect, 'Evening (4:00 PM - 7:00 PM)', 'Evening (4:00 PM - 7:00 PM)', 'साँझ (४:०० बेलुका - ७:०० बेलुका)');
-      } else if(clinic === "Maternity & Infertility Clinic, Dhangadhi") {
-        addOption(timeSelect, 'Saturday Only (9:00 AM - 5:00 PM)', 'Saturday Only (9:00 AM - 5:00 PM)', 'शनिबार मात्र (९:०० बिहान - ५:०० बेलुका)');
+      } else if(clinic === "Deepa Fertility & Gynecology Clinic, Shankhamul Health Care") {
+        addOption(timeSelect, 'Morning (10:00 AM - 2:00 PM)', 'Morning (10:00 AM - 2:00 PM)', 'बिहान (१०:०० बिहान - २:०० दिउँसो)');
+        addOption(timeSelect, 'Evening (5:00 PM - 8:00 PM)', 'Evening (5:00 PM - 8:00 PM)', 'साँझ (५:०० बेलुका - ८:०० बेलुका)');
+      } else if(clinic === "Maya IVF Clinic, Kupandole" || clinic === "NIFLC - BBC Building, UN Park, Kathmandu") {
+        addOption(timeSelect, 'Evening (4:00 PM - 7:00 PM)', 'Evening (4:00 PM - 7:00 PM)', 'साँझ (४:०० बेलुका - ७:०० बेलुका)');
+      } else if(clinic === "Shubharambha Maternity & Infertility Clinic, Dhangadhi") {
+        addOption(timeSelect, 'Saturday Monthly (10:00 AM - 5:00 PM)', 'Saturday Monthly (10:00 AM - 5:00 PM)', 'शनिबार मासिक (१०:०० बिहान - ५:०० बेलुका)');
       } else if(clinic === "Tele-Gynecology Consultation") {
         addOption(timeSelect, 'Tele-Gynecology (Flexible Hours)', 'Tele-Gynecology (Flexible Hours)', 'टेलि-गाइनोकोलोजी (लचिलो समय)');
-      } else { addOption(timeSelect, 'Morning (10:00 AM - 1:00 PM)', 'Morning (10:00 AM - 1:00 PM)', 'बिहान (१०:०० बिहान - १:०० दिउँसो)'); addOption(timeSelect, 'Evening (4:00 PM - 7:00 PM)', 'Evening (4:00 PM - 7:00 PM)', 'साँझ (४:०० बेलुका - ७:०० बेलुका)'); }
+      } else {
+        addOption(timeSelect, 'Evening (4:00 PM - 7:00 PM)', 'Evening (4:00 PM - 7:00 PM)', 'साँझ (४:०० बेलुका - ७:०० बेलुका)');
+      }
       updateLanguageOptions();
     }
     function validateDate() {
-      const clinic = document.getElementById('clinicLocation').value;
-      const dateInput = document.getElementById('preferredDate');
-      if(!dateInput.value) return;
-      const selected = new Date(dateInput.value);
-      const day = selected.getDay();
-      if(clinic === "Maternity & Infertility Clinic, Dhangadhi" && day !== 6) { alert('Maternity & Infertility Clinic, Dhangadhi is only available on Saturdays. Please select a Saturday.'); dateInput.value = ''; }
-      else if(clinic !== "Tele-Gynecology Consultation" && clinic !== "Maternity & Infertility Clinic, Dhangadhi" && day === 6) { alert('No in-person appointments on Saturdays except Dhangadhi clinic. Please choose another weekday or select Tele-Gynecology.'); dateInput.value = ''; }
+      // No strict date restrictions for new clinics
     }
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('appointmentForm');
