@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Best Gynecologist & Infertility Specialist in Kathmandu | Dr. Deepa Chudal</title>
-    <meta name="description" content="Consult Dr. Deepa Chudal, leading gynecologist and infertility specialist in Kathmandu, Nepal. Expert in IVF, PMOS/PCOS, laparoscopic surgery, and high-risk pregnancy care. Book online.">
-    <meta name="keywords" content="best gynecologist in Kathmandu, infertility specialist Nepal, IVF doctor Kathmandu, PMOS/PCOS treatment Nepal, fertility clinic Kathmandu">
+    <meta name="description" content="Consult Dr. Deepa Chudal, leading gynecologist and infertility specialist in Kathmandu, Nepal. Expert in IVF, PCOS, laparoscopic surgery, and high-risk pregnancy care. Book online.">
+    <meta name="keywords" content="best gynecologist in Kathmandu, infertility specialist Nepal, IVF doctor Kathmandu, PCOS treatment Nepal, fertility clinic Kathmandu">
     <meta name="author" content="Dr. Deepa Chudal">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://deepachudal.com.np/">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Best Gynecologist & Infertility Specialist in Kathmandu | Dr. Deepa Chudal">
-    <meta property="og:description" content="Expert in Pregnancy planning, IVF, PMOS/PCOS, high-risk pregnancy & laparoscopic surgery. Internationally trained.">
+    <meta property="og:description" content="Expert in Pregnancy planning, IVF, PCOS, high-risk pregnancy & laparoscopic surgery. Internationally trained.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://deepachudal.com.np/">
     
-    <!-- Schema Markup -->
+    <!-- Schema Markup: Physician + WebSite for Google Site Name -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -25,6 +25,15 @@
       "specialty": ["Gynecology", "Infertility", "Laparoscopic Surgery"],
       "address": {"@type": "PostalAddress", "addressLocality": "Kathmandu", "addressCountry": "NP"},
       "telephone": "+977-9840057830"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Dr. Deepa Chudal",
+      "alternateName": "Deepa Chudal",
+      "url": "https://deepachudal.com.np/"
     }
     </script>
     
@@ -150,10 +159,10 @@
             font-weight: 500;
             font-size: 0.8rem;
             padding: 6px 12px;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             border-radius: 30px;
         }
-        .nav-menu a:hover { color: var(--secondary); background: var(--secondary-light); }
+        .nav-menu a:hover { color: var(--secondary); background: var(--secondary-light); transform: translateY(-2px); }
         
         /* Dropdown Menu */
         .dropdown { position: relative; }
@@ -174,8 +183,9 @@
             padding: 10px 16px;
             color: var(--text);
             font-size: 0.75rem;
+            transition: all 0.2s;
         }
-        .dropdown-content a:hover { background: var(--secondary-light); }
+        .dropdown-content a:hover { background: var(--secondary-light); transform: translateX(5px); }
         .dropdown:hover .dropdown-content { display: block; }
         
         .book-now-nav { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 30px; }
@@ -194,12 +204,12 @@
             font-size: 0.75rem;
             font-weight: 500;
             color: var(--text);
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
-        .theme-toggle:hover, .lang-toggle:hover { background: var(--secondary); color: white; }
+        .theme-toggle:hover, .lang-toggle:hover { background: var(--secondary); color: white; transform: translateY(-2px); }
         .mobile-toggle { display: none; font-size: 1.4rem; cursor: pointer; color: var(--primary); }
         
-        /* Hero Section */
+        /* Hero Section - fixed left widget spacing */
         .hero {
             background: linear-gradient(120deg, var(--pink-grad-start) 0%, var(--pink-grad-end) 100%);
             padding: 60px 0;
@@ -248,9 +258,9 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(216,27,96,0.3); }
+        .btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 25px rgba(216,27,96,0.3); }
         .btn-outline { background: transparent; border: 2px solid var(--secondary); color: var(--secondary); }
         .btn-outline:hover { background: var(--secondary); color: white; }
         .doctor-img { max-width: 100%; width: 100%; max-width: 400px; border-radius: 30px; box-shadow: var(--shadow-lg); animation: floatImage 5s ease-in-out infinite; }
@@ -268,22 +278,36 @@
         .section-title { text-align: center; margin-bottom: 50px; }
         .section-title h2 { font-size: 2.2rem; color: var(--primary); font-family: 'Playfair Display', serif; margin-bottom: 12px; }
         
-        /* Services Grid */
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        /* Services Grid - 3 columns, responsive */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
         .service-card {
             background: var(--card-bg);
             border-radius: 20px;
             padding: 30px 25px;
             text-align: center;
             box-shadow: var(--shadow-sm);
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             border: 1px solid var(--border-light);
             cursor: pointer;
         }
-        .service-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: var(--shadow-md); }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
         .service-icon { font-size: 2.8rem; color: var(--secondary); margin-bottom: 20px; animation: gentleBounce 3s infinite; }
         @keyframes gentleBounce { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-5px); } }
-        .service-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+        .service-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+        .service-card:hover .service-title { color: var(--secondary); text-decoration: underline; }
         
         /* Two Column */
         .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
@@ -313,6 +337,8 @@
             transition: all 0.3s;
         }
         .blog-card:hover { transform: translateY(-5px); }
+        .read-more { transition: all 0.2s; display: inline-block; }
+        .read-more:hover { transform: translateX(5px); color: var(--accent) !important; }
         
         /* FAQ */
         .faq-list { max-width: 900px; margin: 0 auto; }
@@ -331,7 +357,9 @@
             justify-content: space-between;
             align-items: center;
             color: var(--primary);
+            transition: all 0.2s;
         }
+        .faq-question:hover { background: var(--secondary-light); color: var(--secondary); }
         .faq-answer { padding: 0 22px 20px; display: none; color: var(--text-light); font-size: 0.9rem; }
         .faq-item.active .faq-answer { display: block; }
         
@@ -345,8 +373,8 @@
         .footer-column h3 { color: white; font-size: 1rem; margin-bottom: 18px; }
         .footer-contact { list-style: none; }
         .footer-contact li { display: flex; margin-bottom: 12px; gap: 12px; }
-        .footer-links a { color: #e0b0c0; text-decoration: none; }
-        .footer-links a:hover { color: var(--secondary); }
+        .footer-links a { color: #e0b0c0; text-decoration: none; transition: all 0.2s; }
+        .footer-links a:hover { color: var(--secondary); transform: translateX(3px); display: inline-block; }
         .social-links { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
         .social-links a {
             width: 36px;
@@ -359,10 +387,10 @@
             color: white;
             transition: all 0.3s;
         }
-        .social-links a:hover { transform: translateY(-3px); background: var(--secondary); }
+        .social-links a:hover { transform: translateY(-3px) scale(1.1); background: var(--secondary); }
         .copyright { text-align: center; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.7rem; }
         
-        /* Left Side Social Widget */
+        /* Left Side Social Widget - improved spacing */
         .left-social-widget {
             position: fixed;
             left: 20px;
@@ -401,17 +429,33 @@
         .btn-call { background: var(--secondary); }
         .btn-book { background: var(--teal); }
         
+        /* Responsive fixes for overlap */
         @media (max-width: 768px) {
-            .hero-container, .services-grid, .testimonials-grid, .blog-grid, .two-col { grid-template-columns: 1fr; }
+            .hero-container { grid-template-columns: 1fr; margin-left: 55px; }  /* Increase left margin to avoid overlap with social widgets */
             .hero-title { font-size: 1.8rem; }
             .mobile-toggle { display: block; }
             .nav-menu { display: none; flex-direction: column; width: 100%; background: var(--header-bg); padding: 20px; }
             .nav-menu.active { display: flex; }
-            .left-social-widget { left: 10px; }
+            .left-social-widget { left: 8px; } /* Keep on edge but hero container has margin-left */
+            .services-grid, .testimonials-grid, .blog-grid, .two-col { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .hero-container { margin-left: 45px; }
+            .left-social-widget { left: 5px; }
             .social-left-btn { width: 36px; height: 36px; font-size: 1rem; }
         }
+        
         .fade-in { opacity: 0; transform: translateY(25px); transition: all 0.7s; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        /* General hover animations for clickable text/links */
+        a, .btn, .service-card, .blog-card, .faq-question, .read-more, .footer-links a, .social-links a {
+            transition: all 0.25s ease-in-out;
+        }
+        a:hover, .service-card:hover, .blog-card:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -442,9 +486,11 @@
                     <a href="#" data-en="Services" data-np="सेवाहरू">Services <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="#services" data-en="IVF / IUI Treatment" data-np="आईभीएफ / आईयूआई उपचार">IVF / IUI Treatment</a>
-                        <a href="#services" data-en="PMOS/ PCOS Care" data-np=" पीएम्ओएस/पीसीओएस हेरचाह">PMOS / PCOs Care</a>
+                        <a href="#services" data-en="PCOS Care" data-np="पीसीओएस हेरचाह">PCOS Care</a>
                         <a href="#services" data-en="High-Risk Pregnancy" data-np="उच्च जोखिम गर्भावस्था">High-Risk Pregnancy</a>
                         <a href="#services" data-en="Laparoscopic Surgery" data-np="ल्याप्रोस्कोपिक सर्जरी">Laparoscopic Surgery</a>
+                        <a href="#services" data-en="Fertility Assessment" data-np="प्रजनन मूल्यांकन">Fertility Assessment</a>
+                        <a href="#services" data-en="Male Fertility" data-np="पुरुष प्रजनन">Male Fertility</a>
                     </div>
                 </li>
                 <li><a href="research.html" data-en="Research" data-np="अनुसन्धान">Research</a></li>
@@ -479,7 +525,7 @@
     </div>
 </section>
 
-<!-- Trust Bar - Updated Stats -->
+<!-- Trust Bar -->
 <div class="trust-bar">
     <div class="container trust-stats">
         <div class="stat-item"><h3 id="yearsExp">0</h3><p data-en="Years Experience" data-np="वर्षको अनुभव">Years Experience</p></div>
@@ -489,17 +535,26 @@
     </div>
 </div>
 
-<!-- Services Section -->
+<!-- Services Section - expanded with all required services -->
 <section class="section" id="services">
     <div class="container">
         <div class="section-title"><h2 data-en="Comprehensive Women's Health Services" data-np="सम्पूर्ण महिला स्वास्थ्य सेवाहरू">Comprehensive Women's Health Services</h2></div>
         <div class="services-grid">
-            <div class="service-card fade-in" onclick="location.href='#appointment'"><i class="fas fa-baby-carriage service-icon"></i><h3 class="service-title" data-en="IVF / IUI Treatment" data-np="आईभीएफ / आईयूआई उपचार">IVF / IUI Treatment</h3><p data-en="Advanced fertility solutions with high success rates." data-np="उच्च सफलता दरको उन्नत प्रजनन समाधान।">Advanced fertility solutions with high success rates.</p></div>
-            <div class="service-card fade-in" onclick="location.href='#appointment'"><i class="fas fa-female service-icon"></i><h3 class="service-title" data-en="PCOS / PCOD Care" data-np="पीसीओएस / पीसीओडी हेरचाह">PCOS / PCOD Care</h3><p data-en="Evidence-based PCOS management and fertility support." data-np="प्रमाण-आधारित पीसीओएस व्यवस्थापन र प्रजनन सहायता।">Evidence-based PCOS management.</p></div>
-            <div class="service-card fade-in" onclick="location.href='#appointment'"><i class="fas fa-heartbeat service-icon"></i><h3 class="service-title" data-en="High-Risk Pregnancy" data-np="उच्च जोखिम गर्भावस्था">High-Risk Pregnancy</h3><p data-en="Expert monitoring for diabetes, hypertension, multiples." data-np="मधुमेह, उच्च रक्तचाप, जुम्ल्याहा बच्चाको लागि विशेषज्ञ निगरानी।">Expert monitoring for complex pregnancies.</p></div>
-            <div class="service-card fade-in" onclick="location.href='#appointment'"><i class="fas fa-cut service-icon"></i><h3 class="service-title" data-en="Laparoscopic Surgery" data-np="ल्याप्रोस्कोपिक सर्जरी">Laparoscopic Surgery</h3><p data-en="Minimally invasive with faster recovery." data-np="न्यूनतम आक्रामक र छिटो रिकभरी।">Minimally invasive with faster recovery.</p></div>
-            <div class="service-card fade-in" onclick="location.href='#appointment'"><i class="fas fa-chalkboard-teacher service-icon"></i><h3 class="service-title" data-en="Preconception Counseling" data-np="गर्भधारण पूर्व परामर्श">Preconception Counseling</h3><p data-en="Optimize health before pregnancy." data-np="गर्भावस्था अघि स्वास्थ्य अनुकूलन।">Optimize health before pregnancy.</p></div>
-            <div class="service-card fade-in" onclick="location.href='#appointment'"><i class="fas fa-clinic-medical service-icon"></i><h3 class="service-title" data-en="Routine Gynecology" data-np="नियमित स्त्री रोग">Routine Gynecology</h3><p data-en="Pap smear, menstrual disorders, menopause care." data-np="प्याप स्मियर, मासिक धर्म विकार, मेनोपज हेरचाह।">Comprehensive routine gynecological care.</p></div>
+            <!-- Existing services -->
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-baby-carriage service-icon"></i><h3 class="service-title" data-en="IVF / IUI Treatment" data-np="आईभीएफ / आईयूआई उपचार">IVF / IUI Treatment</h3><p data-en="Advanced fertility solutions with high success rates." data-np="उच्च सफलता दरको उन्नत प्रजनन समाधान।">Advanced fertility solutions with high success rates.</p></div>
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-female service-icon"></i><h3 class="service-title" data-en="PCOS / PCOD Care" data-np="पीसीओएस / पीसीओडी हेरचाह">PCOS / PCOD Care</h3><p data-en="Evidence-based PCOS management and fertility support." data-np="प्रमाण-आधारित पीसीओएस व्यवस्थापन र प्रजनन सहायता।">Evidence-based PCOS management.</p></div>
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-heartbeat service-icon"></i><h3 class="service-title" data-en="High-Risk Pregnancy" data-np="उच्च जोखिम गर्भावस्था">High-Risk Pregnancy</h3><p data-en="Expert monitoring for diabetes, hypertension, multiples." data-np="मधुमेह, उच्च रक्तचाप, जुम्ल्याहा बच्चाको लागि विशेषज्ञ निगरानी।">Expert monitoring for complex pregnancies.</p></div>
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-cut service-icon"></i><h3 class="service-title" data-en="Laparoscopic Surgery" data-np="ल्याप्रोस्कोपिक सर्जरी">Laparoscopic Surgery</h3><p data-en="Minimally invasive with faster recovery." data-np="न्यूनतम आक्रामक र छिटो रिकभरी।">Minimally invasive with faster recovery.</p></div>
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-chalkboard-teacher service-icon"></i><h3 class="service-title" data-en="Preconception Counseling" data-np="गर्भधारण पूर्व परामर्श">Preconception Counseling</h3><p data-en="Optimize health before pregnancy." data-np="गर्भावस्था अघि स्वास्थ्य अनुकूलन।">Optimize health before pregnancy.</p></div>
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-clinic-medical service-icon"></i><h3 class="service-title" data-en="Routine Gynecology" data-np="नियमित स्त्री रोग">Routine Gynecology</h3><p data-en="Pap smear, menstrual disorders, menopause care." data-np="प्याप स्मियर, मासिक धर्म विकार, मेनोपज हेरचाह।">Comprehensive routine gynecological care.</p></div>
+            
+            <!-- Newly added services -->
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-stethoscope service-icon"></i><h3 class="service-title" data-en="Fertility Assessment & Diagnostics" data-np="प्रजनन मूल्यांकन र निदान">Fertility Assessment & Diagnostics</h3><p data-en="Comprehensive fertility testing and diagnosis." data-np="व्यापक प्रजनन परीक्षण र निदान।">Comprehensive fertility testing and diagnosis.</p></div>
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-microscope service-icon"></i><h3 class="service-title" data-en="Reproductive Techniques" data-np="प्रजनन प्रविधिहरू">Reproductive Techniques</h3><p data-en="IUI, IVF, ICSI, and more advanced procedures." data-np="आईयूआई, आईभीएफ, आईसीएसआई, र अन्य उन्नत प्रक्रियाहरू।">IUI, IVF, ICSI, and more advanced procedures.</p></div>
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-male service-icon"></i><h3 class="service-title" data-en="Male Fertility Solutions" data-np="पुरुष प्रजनन समाधान">Male Fertility Solutions</h3><p data-en="Specialized care for male factor infertility." data-np="पुरुष कारक बांझपनको लागि विशेष हेरचाह।">Specialized care for male factor infertility.</p></div>
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-dna service-icon"></i><h3 class="service-title" data-en="Genetic & Advanced Procedures" data-np="आनुवंशिक र उन्नत प्रक्रियाहरू">Genetic & Advanced Procedures</h3><p data-en="PGT, genetic screening, and advanced fertility options." data-np="पीजीटी, आनुवंशिक जाँच, र उन्नत प्रजनन विकल्पहरू।">PGT, genetic screening, and advanced fertility options.</p></div>
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-ambulance service-icon"></i><h3 class="service-title" data-en="Gynecological & Obstetric Care" data-np="स्त्री रोग र प्रसूति हेरचाह">Gynecological & Obstetric Care</h3><p data-en="Full spectrum women's health from adolescence to menopause." data-np="किशोरावस्थादेखि रजोनिवृत्तिसम्म पूर्ण महिला स्वास्थ्य।">Full spectrum women's health from adolescence to menopause.</p></div>
+            <div class="service-card fade-in" onclick="location.href='appointment.html'"><i class="fas fa-smile service-icon"></i><h3 class="service-title" data-en="Well-Being" data-np="कल्याण">Well-Being</h3><p data-en="Holistic wellness, nutrition, and lifestyle guidance." data-np="समग्र कल्याण, पोषण, र जीवनशैली मार्गदर्शन।">Holistic wellness, nutrition, and lifestyle guidance.</p></div>
         </div>
     </div>
 </section>
@@ -520,7 +575,7 @@
 <!-- Blog -->
 <section class="section" id="blog"><div class="container"><div class="section-title"><h2 data-en="Women's Health & Fertility Blog" data-np="महिला स्वास्थ्य र प्रजनन ब्लग">Women's Health & Fertility Blog</h2></div><div class="blog-grid"><div class="blog-card fade-in"><i class="fas fa-coins" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="IVF Cost in Nepal: Complete Guide 2025" data-np="नेपालमा आईभीएफ लागत: पूर्ण गाइड २०२५">IVF Cost in Nepal: Complete Guide 2025</h3><a href="#" class="read-more" style="color:var(--secondary);" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div><div class="blog-card fade-in"><i class="fas fa-exclamation-triangle" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="7 Early Signs of Infertility in Women" data-np="महिलामा बांझपनको ७ प्रारम्भिक संकेतहरू">7 Early Signs of Infertility in Women</h3><a href="#" class="read-more" style="color:var(--secondary);" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div><div class="blog-card fade-in"><i class="fas fa-apple-alt" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="PCOS Diet & Lifestyle Plan" data-np="पीसीओएस आहार र जीवनशैली योजना">PCOS Diet & Lifestyle Plan</h3><a href="#" class="read-more" style="color:var(--secondary);" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div></div></div></section>
 
-<!-- FAQ Section - Expanded -->
+<!-- FAQ Section -->
 <section class="section"><div class="container"><div class="section-title"><h2 data-en="Frequently Asked Questions" data-np="सोधिने प्रश्नहरू">Frequently Asked Questions</h2></div><div class="faq-list">
     <div class="faq-item"><div class="faq-question" data-en="What is the cost of IVF treatment in Nepal?" data-np="नेपालमा आईभीएफ उपचारको लागत कति छ?">What is the cost of IVF treatment in Nepal? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="IVF treatment ranges from NPR 1.5 to 2.5 lakhs. IUI costs around NPR 15k–25k. We offer transparent pricing." data-np="आईभीएफ उपचार १.५ देखि २.५ लाख रुपैयाँसम्म हुन्छ। आईयूआईको लागत १५-२५ हजार रुपैयाँ। हामी पारदर्शी मूल्य निर्धारण प्रदान गर्दछौं।">IVF treatment ranges from NPR 1.5 to 2.5 lakhs. IUI costs around NPR 15k–25k.</div></div>
     <div class="faq-item"><div class="faq-question" data-en="When should I see a fertility specialist?" data-np="मैले प्रजनन विशेषज्ञलाई कहिले देखाउनु पर्छ?">When should I see a fertility specialist? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="If under 35 trying for 1+ year, or over 35 trying for 6+ months, or have PCOS/endometriosis." data-np="यदि ३५ वर्ष मुनि १+ वर्ष प्रयास गर्दा, वा ३५ वर्ष माथि ६+ महिना प्रयास गर्दा, वा पीसीओएस/एन्डोमेट्रियोसिस छ भने।">If under 35 trying for 1+ year, or over 35 trying for 6+ months, or have PCOS/endometriosis.</div></div>
@@ -532,10 +587,20 @@
 <!-- Appointment CTA -->
 <section class="container" id="appointment" style="margin-bottom: 70px;"><div class="appointment-cta"><h3 data-en="📅 Book Your Consultation Today" data-np="📅 आजै तपाईंको परामर्श बुक गर्नुहोस्">📅 Book Your Consultation Today</h3><p style="margin-bottom: 25px;" data-en="Take the first step towards expert gynecological and fertility care." data-np="विशेषज्ञ स्त्री रोग र प्रजनन हेरचाह तर्फ पहिलो कदम चाल्नुहोस्।">Take the first step towards expert gynecological and fertility care.</p><a href="appointment.html" class="btn" style="background: white; color: var(--secondary);"><i class="fas fa-calendar-check"></i> <span data-en="Schedule Appointment" data-np="अपोइन्टमेन्ट तालिका बनाउनुहोस्">Schedule Appointment</span></a></div></section>
 
-<!-- Footer -->
+<!-- Footer with Quick Links -->
 <footer id="contact"><div class="container footer-container">
     <div class="footer-column"><h3>Dr. Deepa Chudal</h3><p>MBBS, MD (Obs/Gyne)<br>Fellowship in Reproductive Medicine</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
-    <div class="footer-column"><h3 data-en="Clinics" data-np="क्लिनिकहरू">Clinics</h3><ul class="footer-contact"><li><i class="fas fa-hospital"></i> <div><strong>Nepal Police Hospital</strong><br>Maharajgunj</div></li><li><i class="fas fa-clinic-medical"></i> <div><strong>Shankhamul Health Care</strong><br>Evening 3-7pm</div> <div><strong>Maya IVF Clinic,  </strong><br>BBC Building, UN Park, Kupandole, Evening 3-7 pm</div></li></ul></div>
+    <div class="footer-column"><h3 data-en="Quick Links" data-np="द्रुत लिङ्कहरू">Quick Links</h3>
+        <ul class="footer-links" style="list-style: none;">
+            <li><a href="#home" data-en="Home" data-np="गृहपृष्ठ">Home</a></li>
+            <li><a href="#about" data-en="About" data-np="हाम्रो बारेमा">About</a></li>
+            <li><a href="#services" data-en="Services" data-np="सेवाहरू">Services</a></li>
+            <li><a href="#blog" data-en="Blog" data-np="ब्लग">Blog</a></li>
+            <li><a href="#contact" data-en="Contact" data-np="सम्पर्क">Contact</a></li>
+            <li><a href="appointment.html" data-en="Appointment" data-np="अपोइन्टमेन्ट">Appointment</a></li>
+        </ul>
+    </div>
+    <div class="footer-column"><h3 data-en="Clinics" data-np="क्लिनिकहरू">Clinics</h3><ul class="footer-contact"><li><i class="fas fa-hospital"></i> <div><strong>Nepal Police Hospital</strong><br>Maharajgunj</div></li><li><i class="fas fa-clinic-medical"></i> <div><strong>Shankhamul Health Care</strong><br>Evening 3-7pm</div> <div><strong>Maya IVF Clinic</strong><br>BBC Building, UN Park, Kupandole, Evening 3-7 pm</div></li></ul></div>
     <div class="footer-column"><h3 data-en="Contact" data-np="सम्पर्क">Contact</h3><ul class="footer-contact"><li><i class="fas fa-phone"></i> +977-9840057830</li><li><i class="fas fa-envelope"></i> deepa_smile@hotmail.com</li></ul></div>
 </div><div class="container copyright"><p>&copy; 2025 Dr. Deepa Chudal | <span data-en="Best Gynecologist & Infertility Specialist in Kathmandu" data-np="काठमाडौंमा उत्कृष्ट स्त्री रोग विशेषज्ञ र बांझपन विशेषज्ञ">Best Gynecologist & Infertility Specialist in Kathmandu</span></p></div></footer>
 
@@ -553,7 +618,7 @@
     });
     if (localStorage.getItem('darkMode') === 'true') { document.body.classList.add('dark-mode'); themeToggle.innerHTML = '<i class="fas fa-sun"></i> <span>Light</span>'; }
     
-    // Language switching - FULLY FUNCTIONAL
+    // Language switching
     let currentLang = localStorage.getItem('language') || 'en';
     
     function switchLanguage(lang) {
@@ -561,7 +626,6 @@
         localStorage.setItem('language', lang);
         document.body.classList.toggle('lang-np', lang === 'np');
         
-        // Update all elements with data-en and data-np
         document.querySelectorAll('[data-en][data-np]').forEach(el => {
             if (lang === 'en') {
                 el.innerHTML = el.getAttribute('data-en');
@@ -570,7 +634,6 @@
             }
         });
         
-        // Update language button text
         const langBtnText = document.getElementById('langBtnText');
         if (lang === 'en') {
             langBtnText.innerHTML = '🇳🇵 नेपाली';
@@ -588,7 +651,7 @@
     // Mobile menu
     document.querySelector('.mobile-toggle')?.addEventListener('click', () => document.querySelector('.nav-menu').classList.toggle('active'));
     
-    // Updated Stats: 15+ years, 10000+ patients, 15+ publications
+    // Animated stats
     function animateStats() {
         let years = 0, patients = 0, pubs = 0;
         const yearsTarget = 15, patientsTarget = 10000, pubsTarget = 15;
