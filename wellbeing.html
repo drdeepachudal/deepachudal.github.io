@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Holistic Wellness & Fertility | Dr. Deepa Chudal | Nutrition, Lifestyle & Mind-Body Health</title>
+    <meta name="description" content="Holistic wellness guidance by Dr. Deepa Chudal in Kathmandu. Integrative nutrition, lifestyle medicine, stress management, and mind-body approaches for fertility optimization, hormonal balance, and overall health. Evidence-based holistic care for women and men.">
+    <meta name="keywords" content="holistic wellness Nepal, fertility nutrition, lifestyle medicine, stress and fertility, mind-body fertility, Dr Deepa Chudal, wellness coaching, hormonal balance diet, preconception health, integrative medicine">
+    <meta name="author" content="Dr. Deepa Chudal">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.deepachudal.com.np/wellbeing-holistic-health">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background-color: #FCF9F2;
+            color: #2D4A3E;
+            line-height: 1.5;
+        }
+
+        :root {
+            --primary-dark: #2D6A4F;
+            --primary-soft: #40916C;
+            --accent-warm: #E9B35F;
+            --accent-sage: #8FBC8F;
+            --accent-lavender: #C5B4E3;
+            --bg-light: #FFFDF7;
+            --text-dark: #2B3B36;
+            --text-muted: #5E6E66;
+            --card-white: #FFFFFF;
+            --soft-border: #E2DCD0;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: #FEF6E6;
+            padding: 10px 0;
+            font-size: 0.85rem;
+        }
+        .top-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        .contact-info a {
+            color: #FFE5B4;
+            text-decoration: none;
+            margin-right: 24px;
+            font-size: 0.8rem;
+        }
+        .contact-info i {
+            margin-right: 6px;
+        }
+        .lang-toggle {
+            display: flex;
+            gap: 12px;
+            background: rgba(255,255,240,0.2);
+            padding: 5px 12px;
+            border-radius: 40px;
+        }
+        .lang-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 4px 12px;
+            border-radius: 30px;
+            transition: 0.2s;
+            font-size: 0.8rem;
+        }
+        .lang-btn.active {
+            background-color: var(--accent-warm);
+            color: #1F3D32;
+        }
+        .navbar {
+            background: var(--bg-light);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--soft-border);
+        }
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 18px 0;
+            gap: 15px;
+        }
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            font-family: 'Playfair Display', serif;
+        }
+        .logo p {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--text-dark);
+            padding: 6px 14px;
+            border-radius: 30px;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+        .nav-links a:hover {
+            color: var(--primary-soft);
+            background: rgba(64,145,108,0.08);
+        }
+        .cta-btn {
+            background-color: var(--accent-warm);
+            color: #2D4A3E !important;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-weight: bold;
+        }
+        .hero {
+            background: linear-gradient(115deg, #EBE5D9 0%, #F8F3EA 100%);
+            padding: 60px 0 50px;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1.5;
+        }
+        .hero-text h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            color: #1F4538;
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-badge {
+            background: var(--primary-dark);
+            color: white;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+        .hero-stats {
+            margin-top: 25px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .hero-stats div span {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+        }
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 20px 25px -10px rgba(0,0,0,0.08);
+        }
+        .expert-link {
+            margin-top: 20px;
+            background: white;
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--soft-border);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            display: inline-block;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent-warm);
+            font-family: 'Playfair Display', serif;
+        }
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .card {
+            background: var(--card-white);
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+            flex: 1 1 280px;
+            border: 1px solid #F0E8DD;
+            transition: 0.2s;
+        }
+        .card i {
+            font-size: 2.4rem;
+            color: var(--primary-soft);
+            margin-bottom: 18px;
+        }
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: start;
+        }
+        .guidelines-list {
+            background: #F2EFE6;
+            padding: 28px;
+            border-radius: 28px;
+        }
+        .testimonial {
+            background: var(--card-white);
+            border-left: 6px solid var(--accent-warm);
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 20px;
+        }
+        .cta-box {
+            background: var(--primary-dark);
+            border-radius: 32px;
+            text-align: center;
+            padding: 48px 30px;
+            color: white;
+        }
+        .btn-large {
+            background: var(--accent-warm);
+            padding: 14px 38px;
+            border-radius: 50px;
+            display: inline-block;
+            color: #1F3D32;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        footer {
+            background: #2B4B3E;
+            color: #DCE8E2;
+            padding: 48px 0 32px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 180px;
+        }
+        .footer-col h4 {
+            color: var(--accent-warm);
+            margin-bottom: 20px;
+        }
+        .quick-links ul {
+            list-style: none;
+        }
+        .quick-links ul li {
+            margin-bottom: 10px;
+        }
+        .quick-links ul li a {
+            color: #e0e9e4;
+            text-decoration: none;
+        }
+        .quick-links ul li a:hover {
+            color: var(--accent-warm);
+            padding-left: 5px;
+        }
+        .stars { color: #F4B942; margin: 10px 0; }
+        .wellness-tip {
+            background: #E8F0EA;
+            border-radius: 20px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .pillar-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 780px) {
+            .hero-text h1 { font-size: 1.8rem; }
+            .nav-flex { flex-direction: column; align-items: flex-start; }
+            .section-title h2 { font-size: 1.6rem; }
+        }
+        .recipe-card {
+            background: white;
+            border-radius: 24px;
+            padding: 20px;
+            text-align: center;
+        }
+        .mindfulness-badge {
+            display: inline-block;
+            background: var(--accent-lavender);
+            color: #2D4A3E;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container top-flex">
+        <div class="contact-info">
+            <a href="tel:+9779840057830"><i class="fas fa-phone-alt"></i> +977-9840057830</a>
+            <a href="mailto:deepa_smile@hotmail.com"><i class="fas fa-envelope"></i> deepa_smile@hotmail.com</a>
+        </div>
+        <div class="lang-toggle" id="languageToggle">
+            <button class="lang-btn active" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="ne">नेपाली</button>
+        </div>
+    </div>
+</div>
+
+<div class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">
+            <h1>Dr. Deepa Chudal</h1>
+            <p>MBBS, MD (Obs/Gyne) | Fellowship in Reproductive Medicine</p>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#nutrition">Nutrition</a>
+            <a href="#lifestyle">Lifestyle</a>
+            <a href="#mindfulness">Mind-Body</a>
+            <a href="#fertility-wellness">Fertility Wellness</a>
+            <a href="#testimonials">Stories</a>
+            <a href="#appointment" class="cta-btn">Wellness Consult</a>
+        </div>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <div class="hero-badge"><i class="fas fa-leaf"></i> Integrative & Holistic Health</div>
+            <h1 id="hero-title">Well-Being: Holistic Wellness,<br>Nutrition & Lifestyle Guidance</h1>
+            <h2 id="hero-sub">Dr. Deepa Chudal — Evidence-Based Holistic Health for Women & Men</h2>
+            <p id="hero-desc">True wellness extends beyond absence of disease — it's optimal physical, mental, and emotional health. Dr. Deepa Chudal integrates evidence-based nutrition, lifestyle medicine, stress management, and mind-body approaches to optimize fertility, hormonal balance, and overall vitality. Personalized guidance for women, men, and couples at every life stage.</p>
+            <div class="hero-stats">
+                <div><span>500+</span> Wellness consultations</div>
+                <div><span>85%</span> Report improved energy & mood</div>
+                <div><span>40%</span> Reduction in stress scores</div>
+            </div>
+            <div class="expert-link">
+                <i class="fas fa-spa"></i> 
+                <a href="#">"Health is a state of complete physical, mental and social well-being" — WHO</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://placehold.co/500x420/f3ede3/2D6A4F?text=Holistic+Wellness+%7C+Dr.+Deepa+Chudal" alt="Holistic wellness and nutrition guidance by Dr Deepa Chudal">
+        </div>
+    </div>
+</div>
+
+<main class="container">
+    <!-- Holistic Wellness Philosophy -->
+    <section>
+        <div class="section-title">
+            <h2 id="philosophy-title">Our Holistic Wellness Philosophy</h2>
+        </div>
+        <div class="two-column">
+            <div>
+                <p id="philosophy-text">Dr. Deepa Chudal believes that optimal health requires attention to <strong>seven interconnected pillars</strong>: nutrition, physical activity, sleep, stress management, social connection, environmental health, and purpose. Her integrative approach combines conventional medical knowledge with evidence-based lifestyle interventions.</p>
+                <div class="wellness-tip" style="margin-top: 20px;">
+                    <i class="fas fa-quote-left"></i> "Small, consistent changes in daily habits create profound improvements in fertility, hormonal health, and overall well-being."
+                </div>
+            </div>
+            <div class="guidelines-list">
+                <h3><i class="fas fa-chart-line"></i> The Wellness Wheel</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
+                    <span class="mindfulness-badge"><i class="fas fa-apple-alt"></i> Nutrition</span>
+                    <span class="mindfulness-badge"><i class="fas fa-running"></i> Movement</span>
+                    <span class="mindfulness-badge"><i class="fas fa-moon"></i> Sleep</span>
+                    <span class="mindfulness-badge"><i class="fas fa-brain"></i> Stress</span>
+                    <span class="mindfulness-badge"><i class="fas fa-users"></i> Connection</span>
+                    <span class="mindfulness-badge"><i class="fas fa-tree"></i> Environment</span>
+                    <span class="mindfulness-badge"><i class="fas fa-heart"></i> Purpose</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition for Hormonal Health & Fertility -->
+    <section id="nutrition">
+        <div class="section-title">
+            <h2 id="nutrition-title">Nutrition for Hormonal Balance & Fertility</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card"><i class="fas fa-apple-alt"></i><h3>Anti-Inflammatory Fertility Diet</h3><p>Mediterranean-style eating: leafy greens, berries, fatty fish (omega-3s), nuts, seeds, olive oil. Reduces oxidative stress and improves egg/sperm quality.</p></div>
+            <div class="card"><i class="fas fa-carrot"></i><h3>Key Fertility Nutrients</h3><p>Folate (400-800mcg), Vitamin D (2000 IU), CoQ10 (200-400mg), Omega-3 (DHA 200-300mg), Zinc, Selenium. Customized supplementation plans.</p></div>
+            <div class="card"><i class="fas fa-chart-line"></i><h3>Blood Sugar Balance</h3><p>Low glycemic load meals, protein with every meal, fiber-rich foods. Critical for PCOS, insulin resistance, and metabolic health.</p></div>
+            <div class="card"><i class="fas fa-wheat-awn"></i><h3>Gut Health & Hormones</h3><p>Probiotics (Lactobacillus, Bifidobacterium), prebiotic fiber, fermented foods. Gut microbiome affects estrogen metabolism (estrobolome).</p></div>
+            <div class="card"><i class="fas fa-fish"></i><h3>Omega-3 Fatty Acids</h3><p>Improves endometrial receptivity, reduces inflammation. Sources: salmon, sardines, walnuts, flaxseed. Supplement if dietary intake low.</p></div>
+            <div class="card"><i class="fas fa-moon"></i><h3>Meal Timing & Circadian Rhythms</h3><p>Time-restricted eating (12-14 hour overnight fast) improves metabolic health and mitochondrial function.</p></div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Medicine -->
+    <section id="lifestyle">
+        <div class="section-title">
+            <h2 id="lifestyle-title">Lifestyle Medicine: Movement, Sleep & Stress Mastery</h2>
+        </div>
+        <div class="two-column">
+            <div>
+                <p><strong>Physical Activity:</strong></p>
+                <ul style="margin-left: 25px; line-height: 1.8;">
+                    <li>150 minutes moderate exercise/week (brisk walking, swimming, cycling)</li>
+                    <li>Strength training 2x/week — improves insulin sensitivity</li>
+                    <li>Yoga and Pilates — reduces cortisol, improves pelvic blood flow</li>
+                    <li>Avoid over-exercise (can disrupt ovulation)</li>
+                </ul>
+                <p style="margin-top: 20px;"><strong>Sleep Optimization:</strong></p>
+                <ul style="margin-left: 25px; line-height: 1.8;">
+                    <li>7-9 hours/night — regulates melatonin, cortisol, and reproductive hormones</li>
+                    <li>Consistent sleep/wake schedule</li>
+                    <li>Dark, cool bedroom; no screens 1 hour before bed</li>
+                </ul>
+            </div>
+            <div class="guidelines-list">
+                <h3><i class="fas fa-brain"></i> Stress Mastery Techniques</h3>
+                <ul style="margin-top:15px; margin-left:20px;">
+                    <li>Mindfulness-Based Stress Reduction (MBSR) — 8-week program</li>
+                    <li>Daily meditation (10-20 minutes)</li>
+                    <li>Deep breathing (4-7-8 technique, diaphragmatic breathing)</li>
+                    <li>Progressive muscle relaxation</li>
+                    <li>Nature exposure (forest bathing)</li>
+                    <li>Journaling & gratitude practice</li>
+                </ul>
+                <div class="wellness-tip" style="margin-top: 20px;">
+                    <i class="fas fa-chart-line"></i> <strong>Research shows:</strong> Mindfulness programs improve IVF live birth rates by 30-40% (Hum Reprod 2025).
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mind-Body Fertility Connection -->
+    <section id="mindfulness">
+        <div class="section-title">
+            <h2 id="mindfulness-title">Mind-Body Connection: Fertility & Emotional Wellness</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card"><i class="fas fa-brain"></i><h3>Stress & Fertility</h3><p>Chronic stress elevates cortisol → disrupts GnRH pulsatility → ovulatory dysfunction, reduced libido, impaired implantation. Stress reduction is medical treatment.</p></div>
+            <div class="card"><i class="fas fa-hand-peace"></i><h3>Mindfulness-Based Fertility Programs</h3><p>Dr. Chudal offers guided fertility meditation, relaxation techniques, and referrals to trained mental health professionals specializing in reproductive health.</p></div>
+            <div class="card"><i class="fas fa-heart"></i><h3>Acupuncture & Fertility</h3><p>Evidence supports acupuncture for improving uterine blood flow, reducing stress, and increasing IVF success rates (especially around embryo transfer).</p></div>
+            <div class="card"><i class="fas fa-users"></i><h3>Couples Communication & Support</h3><p>Fertility journey impacts relationships. Strategies for shared decision-making, emotional support, and managing uncertainty together.</p></div>
+        </div>
+    </section>
+
+    <!-- Fertility-Specific Wellness -->
+    <section id="fertility-wellness">
+        <div class="section-title">
+            <h2 id="fertility-wellness-title">Fertility Optimization: For Women & Men</h2>
+        </div>
+        <div class="two-column">
+            <div>
+                <h3><i class="fas fa-female"></i> For Women</h3>
+                <ul style="margin-left: 25px; line-height: 1.8;">
+                    <li>BMI optimization (18.5-24.9) — improves ovulation</li>
+                    <li>Prenatal vitamins 3 months before TTC</li>
+                    <li>Limit caffeine to <200mg/day</li>
+                    <li>Avoid alcohol completely when TTC</li>
+                    <li>Track cycles (BBT, LH strips, cervical mucus)</li>
+                    <li>Address thyroid & prolactin abnormalities</li>
+                </ul>
+                <h3 style="margin-top: 20px;"><i class="fas fa-male"></i> For Men</h3>
+                <ul style="margin-left: 25px; line-height: 1.8;">
+                    <li>Antioxidant-rich diet (zinc, selenium, CoQ10, vitamin C/E)</li>
+                    <li>Avoid testicular overheating (no laptops on lap, loose underwear)</li>
+                    <li>Quit smoking — improves sperm DNA integrity in 3 months</li>
+                    <li>Limit alcohol (<2 drinks/day)</li>
+                    <li>Exercise but avoid excessive cycling or heat exposure</li>
+                </ul>
+            </div>
+            <div class="guidelines-list">
+                <h3><i class="fas fa-clock"></i> Preconception Timeline</h3>
+                <ul style="margin-top:15px; margin-left:20px;">
+                    <li><strong>3-6 months before TTC:</strong> Start folic acid, optimize weight, quit smoking, reduce alcohol, address chronic conditions</li>
+                    <li><strong>2-3 months before:</strong> Complete genetic carrier screening, update immunizations</li>
+                    <li><strong>1 month before:</strong> Track ovulation, reduce caffeine, manage stress</li>
+                    <li><strong>During TTC:</strong> Have intercourse every 1-2 days around fertile window (5 days before to 1 day after ovulation)</li>
+                </ul>
+                <div class="wellness-tip" style="margin-top: 20px;">
+                    <i class="fas fa-chart-line"></i> <strong>Did you know?</strong> Lifestyle changes take 3 months to impact egg quality (folliculogenesis) and 74 days for sperm (spermatogenesis).
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environmental Health & Toxin Reduction -->
+    <section style="background-color: #F6F2EA; border-radius: 40px; margin: 20px 0;">
+        <div class="container" style="padding: 40px 20px;">
+            <div class="section-title"><h2 id="environment-title">Environmental Health: Reducing Toxin Exposure</h2></div>
+            <div class="card-grid">
+                <div class="card"><i class="fas fa-tint"></i><h3>Plastics & Endocrine Disruptors</h3><p>Avoid BPA/BPS — use glass or stainless steel containers. Never microwave plastic. Reduce phthalates (avoid fragranced products).</p></div>
+                <div class="card"><i class="fas fa-apple-alt"></i><h3>Organic Produce & Pesticides</h3><p>Prioritize organic for "Dirty Dozen" (strawberries, spinach, kale, apples). Wash all produce thoroughly.</p></div>
+                <div class="card"><i class="fas fa-soap"></i><h3>Clean Personal Care Products</h3><p>Avoid parabens, phthalates, triclosan in cosmetics and soaps. Choose EWG-verified products.</p></div>
+                <div class="card"><i class="fas fa-home"></i><h3>Home Air & Water Quality</h3><p>Use HEPA filters, avoid synthetic fragrances, test water for heavy metals. Consider reverse osmosis for drinking water.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Breakthroughs in Lifestyle Medicine -->
+    <section>
+        <div class="section-title">
+            <h2 id="breakthroughs-title">Recent Breakthroughs in Lifestyle & Fertility Medicine (2025–2026)</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card"><i class="fas fa-chart-line"></i><h3>Time-Restricted Eating & IVF Success</h3><p>2025 study: 14-hour overnight fast improves IVF blastocyst quality and pregnancy rates in PCOS patients.</p></div>
+            <div class="card"><i class="fas fa-brain"></i><h3>Digital Mindfulness for Fertility</h3><p>App-based MBSR programs show similar benefits to in-person — 38% reduction in anxiety, improved pregnancy rates.</p></div>
+            <div class="card"><i class="fas fa-microbiome"></i><h3>Personalized Nutrition Based on Gut Microbiome</h3><p>Stool testing identifies specific probiotic strains to optimize fertility outcomes.</p></div>
+            <div class="card"><i class="fas fa-heartbeat"></i><h3>Sleep & Female Fertility</h3><p>2026 meta-analysis: Women sleeping <6 hours have 40% lower conception rates. Sleep extension interventions improve outcomes.</p></div>
+        </div>
+    </section>
+
+    <!-- Patient Testimonials -->
+    <section id="testimonials">
+        <div class="section-title"><h2 id="testi-title">Wellness Journeys: Real Transformations</h2></div>
+        <div class="testimonial">
+            <p><i class="fas fa-quote-left"></i> <span id="testi1">Dr. Deepa didn't just treat my PCOS with medication — she taught me about nutrition, stress management, and sleep. Within 4 months, my cycles regulated, I lost 8kg, and we conceived naturally. Holistic care works.</span></p>
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <div class="patient-name">— Mrs. Adhikari, 32, Kathmandu</div>
+        </div>
+        <div class="testimonial">
+            <p><i class="fas fa-quote-left"></i> <span id="testi2">After two failed IVF cycles, Dr. Chudal recommended lifestyle changes — Mediterranean diet, CoQ10, and daily meditation. Our third cycle with the same protocol but better health gave us our son.</span></p>
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <div class="patient-name">— Mr. & Mrs. Thapa, Lalitpur</div>
+        </div>
+        <div class="testimonial">
+            <p><i class="fas fa-quote-left"></i> <span id="testi3">The wellness coaching for male fertility was eye-opening. My husband changed his diet, started exercising, and reduced alcohol. His semen analysis improved dramatically — we conceived naturally.</span></p>
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <div class="patient-name">— Mrs. Gurung, Pokhara</div>
+        </div>
+    </section>
+
+    <!-- Weekly Wellness Planner -->
+    <div style="margin: 30px 0; background: #E3EFEA; border-radius: 32px; padding: 30px;">
+        <h3 style="text-align: center; margin-bottom: 20px;"><i class="fas fa-calendar-week"></i> Sample Weekly Wellness Plan</h3>
+        <div class="two-column">
+            <div>
+                <p><strong>Daily Foundation:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>7-9 hours quality sleep</li>
+                    <li>2-3 liters filtered water</li>
+                    <li>3 balanced meals + healthy snacks</li>
+                    <li>10 minutes meditation/mindfulness</li>
+                    <li>30 minutes moderate exercise</li>
+                    <li>Digital sunset (no screens 1hr before bed)</li>
+                </ul>
+            </div>
+            <div>
+                <p><strong>Weekly Add-ons:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>2x strength training sessions</li>
+                    <li>1x nature outing (forest/trail walk)</li>
+                    <li>1x social connection activity</li>
+                    <li>Meal prep Sunday</li>
+                    <li>Gratitude journal (3 things daily)</li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px;"><i class="fas fa-phone-alt"></i> Personalized wellness plans available through Dr. Chudal's consultation.</p>
+    </div>
+
+    <!-- CTA Appointment -->
+    <section id="appointment" style="border-bottom:0;">
+        <div class="cta-box">
+            <h3 id="cta-title">Start Your Holistic Wellness Journey Today</h3>
+            <p id="cta-text">Comprehensive wellness consultation with Dr. Deepa Chudal includes nutrition assessment, lifestyle review, stress management strategies, and a personalized action plan for optimal health and fertility.</p>
+            <br>
+            <a href="tel:+9779840057830" class="btn-large"><i class="fas fa-calendar-check"></i> Schedule Wellness Consultation</a>
+            <p style="margin-top: 22px; font-size:0.9rem" id="cta-hours">📍 Available at Nepal Police Hospital, Shankhamul Health Care & Maya IVF Clinic | Teleconsultation available for wellness coaching</p>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="container footer-grid">
+        <div class="footer-col">
+            <h4>Dr. Deepa Chudal</h4>
+            <p>MBBS, MD (Obs/Gyne)<br>Fellowship in Reproductive Medicine<br>Holistic Wellness & Fertility Specialist</p>
+            <p><i class="fas fa-phone"></i> +977-9840057830<br><i class="fas fa-envelope"></i> deepa_smile@hotmail.com</p>
+        </div>
+        <div class="footer-col quick-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#nutrition">Nutrition</a></li>
+                <li><a href="#lifestyle">Lifestyle Medicine</a></li>
+                <li><a href="#mindfulness">Mind-Body</a></li>
+                <li><a href="#appointment">Appointment</a></li>
+            </ul>
+        </div>
+        <div class="footer-col clinic-list">
+            <h4>Locations</h4>
+            <p><i class="fas fa-hospital"></i> Nepal Police Hospital, Maharajgunj</p>
+            <p><i class="fas fa-building"></i> Maya IVF Clinic, Kupandole</p>
+            <p><i class="fas fa-clock"></i> Shankhamul Health Care (Evening)</p>
+        </div>
+    </div>
+    <div class="container copyright">
+        <p>© 2026 Dr. Deepa Chudal | Holistic Wellness & Lifestyle Medicine | Integrating evidence-based nutrition, mind-body medicine & fertility optimization</p>
+        <p style="margin-top: 8px;">🌟 Recognized as a Leader in Integrative Women's Health & Fertility Wellness in Kathmandu</p>
+    </div>
+</footer>
+
+<script>
+    const wellnessTranslations = {
+        en: {
+            hero_title: "Well-Being: Holistic Wellness,<br>Nutrition & Lifestyle Guidance",
+            hero_sub: "Dr. Deepa Chudal — Evidence-Based Holistic Health for Women & Men",
+            hero_desc: "True wellness extends beyond absence of disease — it's optimal physical, mental, and emotional health. Dr. Deepa Chudal integrates evidence-based nutrition, lifestyle medicine, stress management, and mind-body approaches to optimize fertility, hormonal balance, and overall vitality.",
+            philosophy_title: "Our Holistic Wellness Philosophy",
+            philosophy_text: "Dr. Deepa Chudal believes that optimal health requires attention to seven interconnected pillars: nutrition, physical activity, sleep, stress management, social connection, environmental health, and purpose. Her integrative approach combines conventional medical knowledge with evidence-based lifestyle interventions.",
+            nutrition_title: "Nutrition for Hormonal Balance & Fertility",
+            lifestyle_title: "Lifestyle Medicine: Movement, Sleep & Stress Mastery",
+            mindfulness_title: "Mind-Body Connection: Fertility & Emotional Wellness",
+            fertility_wellness_title: "Fertility Optimization: For Women & Men",
+            environment_title: "Environmental Health: Reducing Toxin Exposure",
+            breakthroughs_title: "Recent Breakthroughs in Lifestyle & Fertility Medicine (2025–2026)",
+            testi_title: "Wellness Journeys: Real Transformations",
+            testi1: "Dr. Deepa didn't just treat my PCOS with medication — she taught me about nutrition, stress management, and sleep. Within 4 months, my cycles regulated, I lost 8kg, and we conceived naturally. Holistic care works.",
+            testi2: "After two failed IVF cycles, Dr. Chudal recommended lifestyle changes — Mediterranean diet, CoQ10, and daily meditation. Our third cycle with the same protocol but better health gave us our son.",
+            testi3: "The wellness coaching for male fertility was eye-opening. My husband changed his diet, started exercising, and reduced alcohol. His semen analysis improved dramatically — we conceived naturally.",
+            cta_title: "Start Your Holistic Wellness Journey Today",
+            cta_text: "Comprehensive wellness consultation with Dr. Deepa Chudal includes nutrition assessment, lifestyle review, stress management strategies, and a personalized action plan for optimal health and fertility.",
+            cta_hours: "📍 Available at Nepal Police Hospital, Shankhamul Health Care & Maya IVF Clinic | Teleconsultation available for wellness coaching"
+        },
+        ne: {
+            hero_title: "कल्याण: समग्र स्वास्थ्य,<br>पोषण र जीवनशैली मार्गदर्शन",
+            hero_sub: "डा. दीपा चुडाल — महिला र पुरुषको लागि प्रमाण-आधारित समग्र स्वास्थ्य",
+            hero_desc: "साँचो कल्याण रोगको अनुपस्थिति भन्दा बढी हो — यो इष्टतम शारीरिक, मानसिक र भावनात्मक स्वास्थ्य हो। डा. दीपा चुडालले प्रजनन क्षमता, हार्मोनल सन्तुलन, र समग्र जीवन शक्ति अनुकूलन गर्न पोषण, जीवनशैली औषधि, तनाव व्यवस्थापन, र मन-शरीर दृष्टिकोण एकीकृत गर्छिन्।",
+            philosophy_title: "हाम्रो समग्र कल्याण दर्शन",
+            philosophy_text: "डा. दीपा चुडाल विश्वास गर्छिन् कि इष्टतम स्वास्थ्यको लागि सात अन्तरसम्बन्धित स्तम्भहरूमा ध्यान चाहिन्छ: पोषण, शारीरिक गतिविधि, निद्रा, तनाव व्यवस्थापन, सामाजिक जडान, वातावरणीय स्वास्थ्य, र उद्देश्य।",
+            nutrition_title: "हार्मोनल सन्तुलन र प्रजननको लागि पोषण",
+            lifestyle_title: "जीवनशैली औषधि: आन्दोलन, निद्रा र तनाव महारत",
+            mindfulness_title: "मन-शरीर जडान: प्रजनन क्षमता र भावनात्मक कल्याण",
+            fertility_wellness_title: "प्रजनन अनुकूलन: महिला र पुरुषको लागि",
+            environment_title: "वातावरणीय स्वास्थ्य: विषाक्त पदार्थ एक्सपोजर घटाउने",
+            breakthroughs_title: "जीवनशैली र प्रजनन औषधिमा हालका उपलब्धिहरू (२०२५–२०२६)",
+            testi_title: "कल्याण यात्राहरू: वास्तविक परिवर्तनहरू",
+            testi1: "डा. दीपाले मेरो PCOS औषधिले मात्र उपचार गर्नुभएन — उहाँले मलाई पोषण, तनाव व्यवस्थापन, र निद्राको बारेमा सिकाउनुभयो। ४ महिनामा, मेरो चक्र नियमित भयो, ८ किलो घट्यो, र हामी प्राकृतिक रूपमा गर्भवती भयौं।",
+            testi2: "दुई असफल IVF पछि, डा. चुडालले जीवनशैली परिवर्तनहरू सिफारिस गर्नुभयो। तेस्रो चक्रमा हाम्रो छोरा जन्मियो।",
+            testi3: "पुरुष प्रजननको लागि कल्याण कोचिङ आँखा खोल्ने थियो। मेरो श्रीमानको शुक्राणु विश्लेषण नाटकीय रूपमा सुधारियो।",
+            cta_title: "आज आफ्नो समग्र कल्याण यात्रा सुरु गर्नुहोस्",
+            cta_text: "डा. दीपा चुडालसँग व्यापक कल्याण परामर्शले पोषण मूल्याङ्कन, जीवनशैली समीक्षा, तनाव व्यवस्थापन रणनीतिहरू, र व्यक्तिगत कार्य योजना समावेश गर्दछ।",
+            cta_hours: "📍 नेपाल प्रहरी अस्पताल, शंखमुल हेल्थ केयर र माया IVF क्लिनिक | कल्याण कोचिङको लागि टेलिकन्सल्टेसन"
+        }
+    };
+    
+    function setWellnessLanguage(lang) {
+        const t = wellnessTranslations[lang];
+        if (!t) return;
+        document.getElementById('hero-title').innerHTML = t.hero_title;
+        document.getElementById('hero-sub').innerText = t.hero_sub;
+        document.getElementById('hero-desc').innerText = t.hero_desc;
+        document.getElementById('philosophy-title').innerHTML = t.philosophy_title;
+        if(document.getElementById('philosophy-text')) document.getElementById('philosophy-text').innerHTML = t.philosophy_text;
+        document.getElementById('nutrition-title').innerHTML = t.nutrition_title;
+        document.getElementById('lifestyle-title').innerHTML = t.lifestyle_title;
+        document.getElementById('mindfulness-title').innerHTML = t.mindfulness_title;
+        document.getElementById('fertility-wellness-title').innerHTML = t.fertility_wellness_title;
+        document.getElementById('environment-title').innerHTML = t.environment_title;
+        document.getElementById('breakthroughs-title').innerHTML = t.breakthroughs_title;
+        document.getElementById('testi-title').innerHTML = t.testi_title;
+        document.getElementById('testi1').innerText = t.testi1;
+        document.getElementById('testi2').innerText = t.testi2;
+        document.getElementById('testi3').innerText = t.testi3;
+        document.getElementById('cta-title').innerHTML = t.cta_title;
+        document.getElementById('cta-text').innerText = t.cta_text;
+        document.getElementById('cta-hours').innerHTML = t.cta_hours;
+    }
+    
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            langBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            setWellnessLanguage(btn.getAttribute('data-lang'));
+        });
+    });
+</script>
+</body>
+</html>
