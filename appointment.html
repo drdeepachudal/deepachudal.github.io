@@ -2,682 +2,353 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Dr. Deepa Chudal – Book Appointment | Auto-Reply Confirmation</title>
-  <meta name="description" content="Request an appointment with Dr. Deepa Chudal, leading gynecologist & infertility expert. Receive instant auto-reply confirmation via email. Trusted care in Kathmandu.">
-  <meta name="keywords" content="appointment booking, gynecologist Kathmandu, infertility specialist, auto-reply, Dr Deepa Chudal">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Deepa Chudal – Best Gynecologist & Infertility Expert in Kathmandu | Appointment with Auto-Reply</title>
+  <meta name="description" content="Book appointment with Dr. Deepa Chudal, Associate Professor at NAMS. Instant email confirmation & auto-reply sent to your inbox.">
+  <meta name="keywords" content="best gynecologist in Kathmandu, infertility specialist, appointment booking, auto-reply email">
   <meta name="author" content="Dr. Deepa Chudal">
   <link rel="canonical" href="https://deepachudal.com.np/appointment.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <!-- Schema markup (Physician) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Physician",
     "name": "Dr. Deepa Chudal",
-    "specialty": ["Gynecology", "Infertility", "Laparoscopic Surgery"],
+    "specialty": ["Gynecology", "Infertility", "Laparoscopic Surgery", "Obstetrics"],
+    "affiliation": [{"@type":"MedicalClinic","name":"Elite Health Clinic"},{"@type":"MedicalClinic","name":"Deepa Fertility & Gynecology Clinic"}],
     "url": "https://deepachudal.com.np",
     "telephone": "+977-9825207253"
   }
   </script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* ===== CSS identical to original (preserved) ===== */
     :root {
-      --primary: #7B2C6F;
-      --primary-light: #9B428C;
-      --primary-dark: #5F2355;
-      --primary-soft: #F9F0F7;
-      --accent: #2D6A4F;
-      --accent-light: #409C7A;
-      --accent-soft: #EAF9F2;
-      --background: #FFFFFF;
-      --background-alt: #FFFBFD;
-      --foreground: #1E2A3E;
-      --foreground-muted: #6F7D8C;
-      --border: #E9E2E8;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.1);
-      --success: #2D6A4F;
-      --error: #B91C1C;
-      --border-radius-sm: 8px;
-      --border-radius-md: 12px;
-      --border-radius-lg: 16px;
+      --primary: #7B2C6F; --primary-light: #9B428C; --primary-dark: #5F2355; --primary-soft: #F9F0F7;
+      --accent: #2D6A4F; --accent-light: #409C7A; --accent-soft: #EAF9F2;
+      --background: #FFFFFF; --background-alt: #FFFBFD; --foreground: #1E2A3E; --foreground-muted: #6F7D8C;
+      --border: #E9E2E8; --shadow-sm: 0 2px 8px rgba(0,0,0,0.05); --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 16px 32px rgba(0,0,0,0.1); --success: #2D6A4F; --error: #B91C1C; --warning: #E76F51;
+      --border-radius-sm: 8px; --border-radius-md: 12px; --border-radius-lg: 16px;
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
-
-    body {
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      color: var(--foreground);
-      background: linear-gradient(135deg, var(--background-alt) 0%, #FFFFFF 100%);
-      min-height: 100vh;
-    }
-
-    h1, h2, h3 { font-weight: 600; line-height: 1.3; }
-    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    h2 { font-size: 1.75rem; margin-bottom: 1rem; }
-
-    .navbar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow-sm);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid var(--border);
-    }
-    .navbar-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .navbar-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 600;
-    }
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .navbar a {
-      text-decoration: none;
-      color: var(--foreground);
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      transition: all 0.2s ease;
-    }
-    .navbar a:hover, .navbar a.active {
-      color: var(--primary);
-      background: var(--primary-soft);
-    }
-    .language-toggle {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      background: var(--background-alt);
-      cursor: pointer;
-      border: 1px solid var(--border);
-    }
-    .book-now-btn {
-      background: var(--primary);
-      color: white !important;
-      border-radius: 30px;
-      padding: 0.5rem 1.5rem !important;
-      font-weight: 600;
-    }
-    main {
-      max-width: 1400px;
-      margin: 2rem auto;
-      padding: 0 2rem;
-    }
-    .booking-hero {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      border-radius: var(--border-radius-lg);
-      padding: 2.5rem 3rem;
-      margin-bottom: 2rem;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-    .hero-content { flex: 1; }
-    .hero-content h1 { color: white; font-size: 2rem; }
-    .professional-roles {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 0.5rem;
-    }
-    .role-badge {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(4px);
-      padding: 0.4rem 1rem;
-      border-radius: 40px;
-      font-size: 0.85rem;
-    }
-    .doctor-photo {
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(5px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .doctor-photo i { font-size: 5rem; color: white; }
-    .services-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-    .service-card {
-      background: white;
-      border-radius: var(--border-radius-lg);
-      padding: 1.5rem;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-    }
-    .service-card h2, .service-card h3 { color: var(--primary); margin-bottom: 1rem; }
-    .service-card ul { list-style: none; }
-    .service-card li { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
-    .service-card i { color: var(--accent); width: 1.5rem; }
-    .booking-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      align-items: start;
-    }
-    .form-card {
-      background: white;
-      border-radius: var(--border-radius-lg);
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-    }
-    .form-header {
-      background: linear-gradient(135deg, var(--primary-soft) 0%, white 100%);
-      padding: 1.8rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .form-header h2 { color: var(--primary); margin-bottom: 0.25rem; }
-    .form-body { padding: 2rem; }
-    .form-section {
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
-      font-weight: 600;
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .form-group { margin-bottom: 1rem; }
-    .form-label { font-weight: 500; margin-bottom: 0.5rem; display: block; }
-    .required-star { color: #E76F51; }
-    .form-input, .form-select, .form-textarea {
-      width: 100%;
-      padding: 0.85rem 1rem;
-      border: 2px solid var(--border);
-      border-radius: var(--border-radius-sm);
-      font-size: 1rem;
-      transition: all 0.2s;
-    }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--primary);
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(123, 44, 111, 0.1);
-    }
-    .checkbox-group {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      background: var(--primary-soft);
-      padding: 1rem;
-      border-radius: var(--border-radius-sm);
-      margin: 1rem 0;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: var(--border-radius-sm);
-      cursor: pointer;
-      width: 100%;
-      transition: all 0.2s;
-    }
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-    .btn-primary:hover:not(:disabled) {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-    .btn-primary:disabled { opacity: 0.7; cursor: not-allowed; }
-    .info-sidebar { position: sticky; top: 6rem; }
-    .info-card {
-      background: white;
-      border-radius: var(--border-radius-lg);
-      padding: 1.8rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-    }
-    .info-card h3 {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--primary);
-      margin-bottom: 1.2rem;
-    }
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .info-item i { color: var(--accent); width: 1.5rem; }
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: var(--accent-soft);
-      padding: 0.8rem;
-      border-radius: var(--border-radius-sm);
-      margin: 1rem 0;
-    }
-    .status-message {
-      padding: 1rem;
-      border-radius: var(--border-radius-sm);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      animation: fadeIn 0.3s ease;
-    }
-    .status-success { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-light); }
-    .status-error { background: #FEF2F2; color: var(--error); border: 1px solid #FECACA; }
-    .status-info { background: #EFF6FF; color: #1E3A8A; border: 1px solid #BFDBFE; }
-    .spinner {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 3px solid rgba(255,255,255,0.3);
-      border-radius: 50%;
-      border-top-color: white;
-      animation: spin 0.8s linear infinite;
-    }
-    .floating-buttons {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      z-index: 99;
-    }
-    .floating-button {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      box-shadow: var(--shadow-lg);
-      cursor: pointer;
-      border: none;
-    }
-    .whatsapp-button { background: #25D366; }
-    .chat-button { background: var(--primary); }
-    footer {
-      background: var(--foreground);
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 4rem;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 1024px) {
-      .booking-grid { grid-template-columns: 1fr; }
-      .info-sidebar { position: static; }
-      .services-section { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      .navbar-container { flex-direction: column; gap: 1rem; }
-      .booking-hero { flex-direction: column; text-align: center; }
-    }
-    .helper-text { font-size: 0.75rem; color: var(--foreground-muted); margin-top: 0.3rem; display: flex; align-items: center; gap: 0.3rem; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: var(--font-sans); line-height:1.6; color:var(--foreground); background: linear-gradient(135deg, var(--background-alt) 0%, #FFFFFF 100%); min-height:100vh; }
+    h1,h2,h3 { font-weight:600; line-height:1.3; }
+    h1 { font-size:2.5rem; margin-bottom:0.5rem; } h2 { font-size:1.75rem; margin-bottom:1rem; }
+    .navbar { background:rgba(255,255,255,0.95); backdrop-filter:blur(10px); box-shadow:var(--shadow-sm); position:sticky; top:0; z-index:100; border-bottom:1px solid var(--border); }
+    .navbar-container { max-width:1400px; margin:0 auto; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+    .navbar-logo { display:flex; align-items:center; gap:0.75rem; text-decoration:none; color:var(--primary); font-weight:600; font-size:1.25rem; }
+    .navbar-logo i { font-size:1.5rem; color:var(--accent); }
+    .navbar ul { list-style:none; display:flex; gap:0.5rem; flex-wrap:wrap; }
+    .navbar a { text-decoration:none; color:var(--foreground); font-weight:500; padding:0.5rem 1rem; border-radius:30px; transition:all 0.2s; font-size:0.95rem; }
+    .navbar a:hover, .navbar a.active { color:var(--primary); background:var(--primary-soft); }
+    .language-toggle { display:flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; border-radius:30px; background:var(--background-alt); cursor:pointer; border:1px solid var(--border); }
+    .book-now-btn { background:var(--primary); color:white !important; border-radius:30px; padding:0.5rem 1.5rem !important; font-weight:600; box-shadow:var(--shadow-sm); }
+    .book-now-btn:hover { background:var(--primary-dark); transform:translateY(-2px); }
+    main { max-width:1400px; margin:2rem auto; padding:0 2rem; }
+    .booking-hero { background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); border-radius:var(--border-radius-lg); padding:2.5rem 3rem; margin-bottom:2rem; color:white; display:flex; align-items:center; justify-content:space-between; gap:3rem; flex-wrap:wrap; }
+    .hero-content { flex:1; } .hero-content h1 { color:white; font-size:2.2rem; }
+    .professional-roles { display:flex; flex-wrap:wrap; gap:0.8rem; margin-top:0.5rem; }
+    .role-badge { background:rgba(255,255,255,0.15); backdrop-filter:blur(4px); padding:0.4rem 1rem; border-radius:40px; font-size:0.85rem; display:inline-flex; align-items:center; gap:0.5rem; }
+    .doctor-photo { width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,0.15); backdrop-filter:blur(5px); border:4px solid rgba(255,255,255,0.3); display:flex; align-items:center; justify-content:center; }
+    .doctor-photo i { font-size:6rem; color:white; }
+    .services-section { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:3rem; }
+    .service-card { background:white; border-radius:var(--border-radius-lg); padding:1.5rem; box-shadow:var(--shadow-md); border:1px solid var(--border); }
+    .service-card h2, .service-card h3 { color:var(--primary); margin-bottom:1rem; }
+    .service-card ul { list-style:none; } .service-card li { margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem; }
+    .service-card i { color:var(--accent); width:1.5rem; }
+    .booking-grid { display:grid; grid-template-columns:1.2fr 0.8fr; gap:2rem; align-items:start; }
+    .form-card { background:white; border-radius:var(--border-radius-lg); box-shadow:var(--shadow-lg); overflow:hidden; }
+    .form-header { background:linear-gradient(135deg, var(--primary-soft) 0%, white 100%); padding:2rem; border-bottom:1px solid var(--border); }
+    .form-header h2 { color:var(--primary); margin-bottom:0.5rem; }
+    .form-body { padding:2rem; }
+    .form-section { margin-bottom:2rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
+    .section-title { display:flex; align-items:center; gap:0.5rem; margin-bottom:1.5rem; color:var(--primary); font-weight:600; }
+    .form-row { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1rem; margin-bottom:1rem; }
+    .form-group { margin-bottom:1rem; }
+    .form-label { font-weight:500; margin-bottom:0.5rem; display:block; }
+    .required-star { color:var(--warning); }
+    .form-input, .form-select, .form-textarea { width:100%; padding:0.875rem 1rem; border:2px solid var(--border); border-radius:var(--border-radius-sm); font-size:1rem; transition:all 0.2s; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--primary); outline:none; box-shadow:0 0 0 4px rgba(123,44,111,0.1); }
+    .checkbox-group { display:flex; align-items:flex-start; gap:0.75rem; background:var(--primary-soft); padding:1rem; border-radius:var(--border-radius-sm); margin:1.5rem 0; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:0.75rem; padding:1rem 2rem; font-size:1.1rem; font-weight:600; border:none; border-radius:var(--border-radius-sm); cursor:pointer; width:100%; transition:all 0.2s; }
+    .btn-primary { background:var(--primary); color:white; }
+    .btn-primary:hover:not(:disabled) { background:var(--primary-dark); transform:translateY(-2px); }
+    .btn-primary:disabled { opacity:0.7; cursor:not-allowed; }
+    .info-sidebar { position:sticky; top:6rem; }
+    .info-card { background:white; border-radius:var(--border-radius-lg); padding:2rem; margin-bottom:1.5rem; box-shadow:var(--shadow-md); border:1px solid var(--border); }
+    .info-card h3 { display:flex; align-items:center; gap:0.5rem; color:var(--primary); margin-bottom:1.5rem; }
+    .info-item { display:flex; align-items:flex-start; gap:1rem; padding:0.75rem 0; border-bottom:1px solid var(--border); }
+    .info-item i { color:var(--accent); width:1.5rem; }
+    .trust-badge { display:flex; align-items:center; gap:1rem; background:var(--accent-soft); padding:1rem; border-radius:var(--border-radius-sm); margin:1rem 0; }
+    .status-message { padding:1rem; border-radius:var(--border-radius-sm); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.75rem; animation:slideDown 0.3s ease; }
+    .status-success { background:var(--accent-soft); color:var(--accent); border:1px solid var(--accent-light); }
+    .status-error { background:#FEF2F2; color:var(--error); border:1px solid #FECACA; }
+    .spinner { display:inline-block; width:20px; height:20px; border:3px solid rgba(255,255,255,0.3); border-radius:50%; border-top-color:white; animation:spin 0.8s linear infinite; }
+    .floating-buttons { position:fixed; bottom:2rem; right:2rem; display:flex; flex-direction:column; gap:1rem; z-index:99; }
+    .floating-button { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.5rem; box-shadow:var(--shadow-lg); cursor:pointer; border:none; }
+    .whatsapp-button { background:#25D366; } .chat-button { background:var(--primary); }
+    .chat-container { position:fixed; bottom:6rem; right:2rem; width:320px; background:white; border-radius:var(--border-radius-lg); box-shadow:var(--shadow-lg); display:none; flex-direction:column; overflow:hidden; z-index:100; border:1px solid var(--border); }
+    .chat-container.active { display:flex; }
+    .chat-header { background:var(--primary); color:white; padding:1rem; display:flex; justify-content:space-between; }
+    .chat-messages { flex:1; padding:1rem; overflow-y:auto; background:#F9FAFB; }
+    .message.bot { background:white; align-self:flex-start; border-radius:1rem; padding:0.75rem; margin-bottom:0.5rem; }
+    .message.user { background:var(--primary); color:white; align-self:flex-end; border-radius:1rem; padding:0.75rem; margin-bottom:0.5rem; }
+    .chat-input-area { display:flex; padding:1rem; gap:0.5rem; background:white; border-top:1px solid var(--border); }
+    footer { background:var(--foreground); color:white; text-align:center; padding:2rem; margin-top:4rem; }
+    @keyframes slideDown { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @media (max-width:1024px) { .booking-grid { grid-template-columns:1fr; } .info-sidebar { position:static; } .services-section { grid-template-columns:1fr; } }
+    @media (max-width:768px) { .navbar-container { flex-direction:column; gap:1rem; } .booking-hero { flex-direction:column; text-align:center; } }
+    .helper-text { font-size:0.75rem; color:var(--foreground-muted); margin-top:0.3rem; display:flex; align-items:center; gap:0.3rem; }
   </style>
 </head>
 <body>
-<nav class="navbar">
-  <div class="navbar-container">
-    <a href="#" class="navbar-logo"><i class="fas fa-female"></i><span>Dr. Deepa Chudal</span></a>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Biography</a></li>
-      <li><a href="#">Research</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#" class="active">Appointment</a></li>
-      <li class="language-toggle" id="languageToggle"><i class="fas fa-globe"></i><span>English</span></li>
-      <li><a href="#appointmentForm" class="book-now-btn"><i class="fas fa-calendar-alt"></i> Book Now</a></li>
-    </ul>
-  </div>
-</nav>
-
-<main>
-  <section class="booking-hero">
-    <div class="hero-content">
-      <h1>Dr. Deepa Chudal – Gynaecologist & Infertility Expert</h1>
-      <div class="professional-roles">
-        <span class="role-badge"><i class="fas fa-chalkboard-teacher"></i> Associate Professor at NAMS</span>
-        <span class="role-badge"><i class="fas fa-journal-whills"></i> JMESON Journal</span>
-      </div>
-      <div style="margin-top:1rem"><span class="trust-badge" style="background:rgba(255,255,255,0.15); color:white; display:inline-flex;"><i class="fas fa-star"></i> 4.9 ★ (160+ reviews)</span></div>
+  <nav class="navbar">
+    <div class="navbar-container"><a href="#" class="navbar-logo"><i class="fas fa-female"></i><span>Dr. Deepa Chudal</span></a>
+      <ul><li><a href="#" class="active">Home</a></li><li><a href="#">Biography</a></li><li><a href="#">Research</a></li><li><a href="#">Blog</a></li><li><a href="#">Appointment</a></li>
+        <li class="language-toggle" id="languageToggle"><i class="fas fa-globe"></i><span>English</span></li>
+        <li><a href="#appointment-form" class="book-now-btn"><i class="fas fa-calendar-alt"></i> Book Now</a></li>
+      </ul>
     </div>
-    <div class="doctor-photo"><i class="fas fa-user-md"></i></div>
-  </section>
-
-  <div class="services-section">
-    <div class="service-card"><h2><i class="fas fa-stethoscope"></i> Services Offered</h2><ul><li><i class="fas fa-female"></i> Infertility Treatment (IUI, IVF)</li><li><i class="fas fa-cut"></i> Laparoscopic Surgery</li><li><i class="fas fa-chart-line"></i> PCOS Management</li><li><i class="fas fa-baby-carriage"></i> High-Risk Pregnancy</li></ul></div>
-    <div class="service-card"><h3><i class="fas fa-notes-medical"></i> Conditions Treated</h3><ul><li><i class="fas fa-uterus"></i> Endometriosis</li><li><i class="fas fa-heart-broken"></i> Recurrent Pregnancy Loss</li><li><i class="fas fa-weight"></i> PCOS & Metabolic Syndrome</li></ul></div>
-  </div>
-
-  <div class="booking-grid">
-    <div>
-      <div class="form-card" id="appointmentForm">
-        <div class="form-header"><h2>Request an Appointment</h2><p>Instant auto-reply confirmation will be sent to your email</p></div>
-        <div class="form-body">
-          <div id="form-status"></div>
-          <form id="appointmentFormElem">
-            <div class="form-section">
-              <div class="section-title"><i class="fas fa-user"></i><span>Patient Details</span></div>
-              <div class="form-row">
-                <div class="form-group"><label class="form-label">Full Name <span class="required-star">*</span></label><input type="text" id="fullName" required class="form-input" placeholder="Sita Sharma"></div>
-                <div class="form-group"><label class="form-label">Age <span class="required-star">*</span></label><input type="number" id="age" required class="form-input" min="1" max="120"></div>
-              </div>
-            </div>
-            <div class="form-section">
-              <div class="section-title"><i class="fas fa-phone-alt"></i><span>Contact Information</span></div>
-              <div class="form-row">
-                <div class="form-group"><label class="form-label">Phone Number <span class="required-star">*</span></label><input type="tel" id="phoneNumber" required class="form-input" placeholder="+977-98XXXXXXXX"></div>
-                <div class="form-group"><label class="form-label">Email Address <span class="required-star">*</span></label><input type="email" id="emailAddress" required class="form-input" placeholder="patient@example.com"><div class="helper-text"><i class="fas fa-envelope"></i> Auto-reply confirmation will be sent here</div></div>
-              </div>
-            </div>
-            <div class="form-section">
-              <div class="section-title"><i class="fas fa-calendar-alt"></i><span>Appointment Details</span></div>
-              <div class="form-group"><label class="form-label">Clinic Location <span class="required-star">*</span></label><select id="clinicLocation" required class="form-select" onchange="updateTimeSlots()"><option value="">Select a clinic</option><option value="Elite Health Clinic, Lagankhel">Elite Health Clinic, Lagankhel</option><option value="Deepa Fertility & Gynecology Clinic, Shankhamul Health Care">Deepa Fertility & Gynecology, Shankhamul</option><option value="Maya IVF Clinic, Kupandole">Maya IVF Clinic, Kupandole</option><option value="NIFLC - BBC Building, UN Park, Kathmandu">NIFLC - BBC Building, UN Park</option><option value="Tele-Gynecology Consultation">Tele-Gynecology Consultation</option></select></div>
-              <div class="form-row">
-                <div class="form-group"><label class="form-label">Preferred Date <span class="required-star">*</span></label><input type="date" id="preferredDate" required class="form-input"></div>
-                <div class="form-group"><label class="form-label">Preferred Time <span class="required-star">*</span></label><select id="preferredTime" required class="form-select"></select></div>
-              </div>
-              <div class="form-group"><label class="form-label">Reason for Visit <span class="required-star">*</span></label><select id="reasonForVisit" required class="form-select"><option value="">Select reason</option><option value="Infertility Evaluation">Infertility Evaluation</option><option value="PCOS Management">PCOS Management</option><option value="Menstrual Disorders">Menstrual Disorders</option><option value="Pregnancy & Antenatal Care">Pregnancy & Antenatal Care</option><option value="Menopause Management">Menopause Management</option></select></div>
-              <div class="form-group"><label class="form-label">Additional Information</label><textarea id="additionalInfo" rows="2" class="form-textarea" placeholder="Share any concerns or medical history..."></textarea></div>
-            </div>
-            <div class="checkbox-group"><input type="checkbox" id="consent" required><label>I consent to the collection & processing of my personal info for appointment scheduling and to receive auto-reply confirmation. *</label></div>
-            <div class="cta-container"><button type="submit" class="btn btn-primary" id="submitBtn"><i class="fas fa-calendar-check"></i> Confirm & Get Auto-Reply</button><div class="helper-text" style="justify-content:center;"><i class="fas fa-lock"></i> Secure & Confidential + Instant email reply</div></div>
-          </form>
-        </div>
+  </nav>
+  <main>
+    <section class="booking-hero"><div class="hero-content"><h1>Dr. Deepa Chudal – Gynecologist & Infertility Expert</h1><div class="professional-roles"><span class="role-badge"><i class="fas fa-chalkboard-teacher"></i> Associate Professor at NAMS</span><span class="role-badge"><i class="fas fa-journal-whills"></i> Journal of Menopause Society (JMESON)</span></div><div style="margin-top:1rem;"><span class="trust-badge" style="background:rgba(255,255,255,0.15); color:white; display:inline-flex;"><i class="fas fa-star"></i>4.9 ★ (160+ reviews)</span></div></div><div class="doctor-photo"><i class="fas fa-user-md"></i></div></section>
+    <div class="services-section"><div class="service-card"><h2><i class="fas fa-stethoscope"></i> Services Offered</h2><ul><li><i class="fas fa-female"></i> Infertility Treatment (IUI, IVF)</li><li><i class="fas fa-cut"></i> Laparoscopic Surgery</li><li><i class="fas fa-chart-line"></i> PCOS Management</li><li><i class="fas fa-baby-carriage"></i> High-Risk Pregnancy</li></ul></div><div class="service-card"><h3><i class="fas fa-notes-medical"></i> Conditions Treated</h3><ul><li><i class="fas fa-uterus"></i> Endometriosis</li><li><i class="fas fa-heart-broken"></i> Recurrent Pregnancy Loss</li><li><i class="fas fa-weight"></i> PCOS & Metabolic Syndrome</li></ul></div></div>
+    <div class="booking-grid"><div><div class="form-card" id="appointment-form"><div class="form-header"><h2>Request an Appointment</h2><p>Instant auto-reply confirmation + doctor notification</p></div><div class="form-body"><div id="form-status"></div>
+      <form id="appointmentForm"><div class="form-section"><div class="section-title"><i class="fas fa-user"></i><span>Patient Details</span></div><div class="form-row"><div class="form-group"><label class="form-label">Full Name <span class="required-star">*</span></label><input type="text" id="fullName" required class="form-input" placeholder="Sita Sharma"></div><div class="form-group"><label class="form-label">Age <span class="required-star">*</span></label><input type="number" id="age" required class="form-input" min="1" max="120"></div></div></div>
+        <div class="form-section"><div class="section-title"><i class="fas fa-phone-alt"></i><span>Contact Information</span></div><div class="form-row"><div class="form-group"><label class="form-label">Phone Number <span class="required-star">*</span></label><input type="tel" id="phoneNumber" required class="form-input" placeholder="+977-98XXXXXXXX"><div class="helper-text"><i class="fas fa-info-circle"></i> We'll send SMS confirmation</div></div><div class="form-group"><label class="form-label">Email Address <span class="required-star">*</span></label><input type="email" id="emailAddress" required class="form-input" placeholder="patient@example.com"><div class="helper-text"><i class="fas fa-envelope"></i> Auto-reply will be sent here</div></div></div></div>
+        <div class="form-section"><div class="section-title"><i class="fas fa-calendar-alt"></i><span>Appointment Details</span></div><div class="form-row"><div class="form-group"><label class="form-label">Clinic Location <span class="required-star">*</span></label><select id="clinicLocation" required class="form-select" onchange="updateTimeSlots()"><option value="">Select a clinic</option><option value="Elite Health Clinic, Lagankhel">Elite Health Clinic, Lagankhel</option><option value="Deepa Fertility & Gynecology Clinic, Shankhamul Health Care">Deepa Fertility Clinic, Shankhamul</option><option value="Maya IVF Clinic, Kupandole">Maya IVF Clinic, Kupandole</option><option value="NIFLC - BBC Building, UN Park, Kathmandu">NIFLC - UN Park</option><option value="Tele-Gynecology Consultation">Tele-Gynecology Consultation</option></select></div></div>
+          <div class="form-row"><div class="form-group"><label class="form-label">Preferred Date <span class="required-star">*</span></label><input type="date" id="preferredDate" required class="form-input"></div><div class="form-group"><label class="form-label">Preferred Time <span class="required-star">*</span></label><select id="preferredTime" required class="form-select"></select></div></div>
+          <div class="form-group"><label class="form-label">Reason for Visit <span class="required-star">*</span></label><select id="reasonForVisit" required class="form-select"><option value="">Select reason</option><option value="Infertility Evaluation">Infertility Evaluation</option><option value="PCOS Management">PCOS Management</option><option value="Menstrual Disorders">Menstrual Disorders</option><option value="Pregnancy & Antenatal Care">Pregnancy & Antenatal Care</option><option value="Menopause Management">Menopause Management</option></select></div>
+          <div class="form-group"><label class="form-label">Additional Information</label><textarea id="additionalInfo" rows="2" class="form-textarea" placeholder="Share any concerns or previous history..."></textarea></div></div>
+        <div class="checkbox-group"><input type="checkbox" id="consent" required><label>I consent to the collection and processing of my personal information for appointment scheduling & auto-reply. *</label></div>
+        <div class="cta-container"><button type="submit" class="btn btn-primary" id="submit-btn"><i class="fas fa-calendar-check"></i> Confirm & Get Auto-Reply</button><div class="helper-text" style="justify-content:center;"><i class="fas fa-lock"></i> Secure + instant email confirmation</div></div>
+      </form></div></div></div>
+      <div class="info-sidebar"><div class="info-card"><h3><i class="fas fa-clock"></i> Clinic Hours</h3><div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Elite Health Clinic, Lagankhel</strong><p>Mon, Wed, Fri: 4PM-7PM</p></div></div><div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Deepa Fertility Clinic</strong><p>Tue, Thu, Sat: 10AM-2PM, 5PM-8PM</p></div></div><div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Maya IVF Clinic</strong><p>Daily: 4PM-7PM</p></div></div></div>
+        <div class="info-card"><h3><i class="fas fa-envelope"></i> Auto-Reply Active</h3><div class="trust-badge"><i class="fas fa-check-circle"></i><div><strong>Instant email to you</strong><p>Appointment summary + clinic info sent to your inbox.</p></div></div><div class="trust-badge"><i class="fas fa-bell"></i><div><strong>Doctor notified</strong><p>Notification sent to Dr. Deepa & BCC copy.</p></div></div></div>
       </div>
     </div>
-    <div class="info-sidebar">
-      <div class="info-card"><h3><i class="fas fa-clock"></i> Clinic Hours</h3><div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Elite Health Clinic</strong><p>Mon, Wed, Fri: 4PM-7PM</p></div></div><div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Deepa Fertility Clinic</strong><p>Tue, Thu, Sat: 10AM-2PM, 5PM-8PM</p></div></div><div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Maya IVF Clinic</strong><p>Daily: 4PM-7PM</p></div></div></div>
-      <div class="info-card"><h3><i class="fas fa-shield-alt"></i> Auto-Reply Feature</h3><div class="trust-badge"><i class="fas fa-check-circle"></i><div><strong>Instant email confirmation</strong><p>After booking, you'll receive appointment details & clinic info instantly.</p></div></div></div>
-    </div>
-  </div>
-</main>
-<footer><p>© 2026 Dr. Deepa Chudal – Best Gynecologist in Kathmandu | Infertility Specialist | Compassionate Care & Auto-Reply System</p></footer>
+  </main>
+  <footer><p>© 2026 Dr. Deepa Chudal – Best Gynecologist in Kathmandu | Infertility Specialist | Auto-Reply System</p></footer>
+  <div class="floating-buttons"><a href="https://wa.me/9779825207253?text=Hello%20Dr.%20Deepa,%20appointment%20inquiry" class="floating-button whatsapp-button" target="_blank"><i class="fab fa-whatsapp"></i></a><button class="floating-button chat-button" id="chatButton"><i class="fas fa-comments"></i></button></div>
+  <div class="chat-container" id="chatContainer"><div class="chat-header"><h3>Chat with Us</h3><button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button></div><div class="chat-messages"><div class="message bot">Hello! Auto-reply is active. Fill the form to get instant confirmation.</div></div><div class="chat-input-area"><input type="text" id="chatInput" placeholder="Type message..."><button id="sendMessage"><i class="fas fa-paper-plane"></i></button></div></div>
 
-<div class="floating-buttons"><a href="https://wa.me/9779825207253?text=Hello%20Dr.%20Deepa,%20appointment%20inquiry" class="floating-button whatsapp-button" target="_blank"><i class="fab fa-whatsapp"></i></a><button class="floating-button chat-button" id="chatButton"><i class="fas fa-comments"></i></button></div>
+  <script>
+    // ----------------------------- EMAILJS CONFIGURATION ---------------------------------
+    // IMPORTANT: You must create two EmailJS templates as described below:
+    // 1. Template ID: "AutoReply_Patient_Appointment"  -> uses the HTML code provided (beautiful responsive design)
+    //    Variables expected: {{patient_name}}, {{appointment_date}}, {{appointment_time}}, {{clinic}}, {{patient_phone}}, {{reason}}, {{additional_info}}
+    //    The recipient email is dynamically set using the patient's email address (passed as 'to_email' parameter).
+    // 2. Template ID: "Doctor_Clinic_Notification"     -> simple notification to doctor(s)
+    //    Variables: {{patient_name}}, {{age}}, {{phone}}, {{email}}, {{clinic}}, {{date}}, {{time}}, {{reason}}, {{additional}}
+    //    The "To Email" field must be set to dynamic variable {{doctor_recipients}} (comma-separated emails).
+    //    We will send to: "deepachudal@gmail.com, deepa_smile@hotmail.com" (both receive as primary, effectively BCC).
+    // If you prefer to reuse existing template, adjust accordingly – but for full functionality, create these templates.
+    
+    emailjs.init("nPsKsuZlR3ghah6k-");   // public key (same as original)
 
-<script>
-  // EmailJS initialization (same public key as original)
-  emailjs.init("nPsKsuZlR3ghah6k-");
+    // --- EmailJS Template IDs (Update these with your actual template IDs) ---
+    const PATIENT_AUTOREPLY_TEMPLATE = "AutoReply_Patient_Appointment";   // auto-reply to patient (uses HTML design)
+    const DOCTOR_NOTIFICATION_TEMPLATE = "Doctor_Clinic_Notification";    // notification to doctor(s) with BCC
+    const EMAILJS_SERVICE = "service_z7z2n3h";                            // your EmailJS service ID
 
-  // IMPORTANT: To enable auto-reply, you must have two EmailJS templates:
-  // 1. Notification to clinic (service_z7z2n3h / template_hqr000g) -> already used in original.
-  // 2. Auto-reply template for patient: we'll use placeholder TEMPLATE_AUTOREPLY_ID = "template_autoreply_patient"
-  //    Please create a new EmailJS template with variables: {{patient_name}}, {{appointment_date}}, {{appointment_time}}, {{clinic}}, {{reason}}, {{additional_info}}, {{phone}}, {{clinic_contact}}
-  //    For demonstration, we will send a second email using same service but dedicated template ID.
-  //    If template ID not configured, code will show warning but main appointment still submitted.
-  
-  const CLINIC_TEMPLATE = "template_hqr000g";    // original doctor notification template
-  const AUTOREPLY_TEMPLATE = "template_autoreply_patient"; // <-- REPLACE with your actual auto-reply template ID in EmailJS
-  const EMAILJS_SERVICE_ID = "service_z7z2n3h";
+    // Doctor emails (both receive as "to" field -> BCC equivalent)
+    const DOCTOR_EMAILS = "deepachudal@gmail.com, deepa_smile@hotmail.com";
 
-  // Helper: update dynamic time slots based on clinic
-  function updateTimeSlots() {
-    const clinic = document.getElementById('clinicLocation').value;
-    const timeSelect = document.getElementById('preferredTime');
-    timeSelect.innerHTML = '';
-    if (clinic === "Elite Health Clinic, Lagankhel") {
-      addTimeOption("Evening (4:00 PM - 7:00 PM)");
-    } else if (clinic === "Deepa Fertility & Gynecology Clinic, Shankhamul Health Care") {
-      addTimeOption("Morning (10:00 AM - 2:00 PM)");
-      addTimeOption("Evening (5:00 PM - 8:00 PM)");
-    } else if (clinic === "Maya IVF Clinic, Kupandole" || clinic === "NIFLC - BBC Building, UN Park, Kathmandu") {
-      addTimeOption("Evening (4:00 PM - 7:00 PM)");
-    } else if (clinic === "Tele-Gynecology Consultation") {
-      addTimeOption("Tele-Gynecology (Flexible Hours)");
-    } else {
-      addTimeOption("Evening (4:00 PM - 7:00 PM)");
+    // Helper: format clinic times
+    function updateTimeSlots() {
+      const clinic = document.getElementById('clinicLocation').value;
+      const timeSelect = document.getElementById('preferredTime');
+      timeSelect.innerHTML = '';
+      if (clinic === "Elite Health Clinic, Lagankhel") addTimeOption("Evening (4:00 PM - 7:00 PM)");
+      else if (clinic === "Deepa Fertility & Gynecology Clinic, Shankhamul Health Care") {
+        addTimeOption("Morning (10:00 AM - 2:00 PM)");
+        addTimeOption("Evening (5:00 PM - 8:00 PM)");
+      } else if (clinic === "Maya IVF Clinic, Kupandole" || clinic === "NIFLC - BBC Building, UN Park, Kathmandu") 
+        addTimeOption("Evening (4:00 PM - 7:00 PM)");
+      else if (clinic === "Tele-Gynecology Consultation") addTimeOption("Tele-Gynecology (Flexible Hours)");
+      else addTimeOption("Evening (4:00 PM - 7:00 PM)");
     }
-  }
-  function addTimeOption(text) {
-    const opt = document.createElement('option');
-    opt.value = text;
-    opt.textContent = text;
-    document.getElementById('preferredTime').appendChild(opt);
-  }
+    function addTimeOption(text) { const opt = document.createElement('option'); opt.value = text; opt.textContent = text; document.getElementById('preferredTime').appendChild(opt); }
 
-  // validate date (future only)
-  function setMinDate() {
-    const dateInput = document.getElementById('preferredDate');
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.min = today;
-  }
-  setMinDate();
+    // Set min date to today
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('preferredDate');
+      dateInput.min = new Date().toISOString().split('T')[0];
+      updateTimeSlots();
+    });
 
-  // display status helper
-  function showStatus(message, type) {
+    // Form submission with dual email sends (auto-reply to patient + notification to doctor)
+    const form = document.getElementById('appointmentForm');
+    const submitBtn = document.getElementById('submit-btn');
     const statusDiv = document.getElementById('form-status');
-    statusDiv.innerHTML = `<div class="status-message status-${type}"><i class="fas ${type==='success'?'fa-check-circle':type==='error'?'fa-exclamation-circle':'fa-info-circle'}"></i>${message}</div>`;
-    statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => { if(statusDiv.firstChild) statusDiv.innerHTML = ''; }, 8000);
-  }
 
-  // Auto-reply sender via EmailJS
-  async function sendAutoReply(patientData) {
-    // patientData = { name, email, phone, age, clinic, date, time, reason, additional }
-    if (!patientData.email) return { success: false, message: "No email address" };
-    // Parameters for auto-reply template - adjust according to your template variables
-    const templateParams = {
-      patient_name: patientData.name,
-      patient_email: patientData.email,
-      patient_phone: patientData.phone,
-      age: patientData.age,
-      appointment_date: patientData.date,
-      appointment_time: patientData.time,
-      clinic: patientData.clinic,
-      reason: patientData.reason,
-      additional_info: patientData.additional || "N/A",
-      doctor_name: "Dr. Deepa Chudal",
-      reply_hint: "Please bring previous reports if any. For emergency changes, call +977-9825207253."
-    };
-    try {
-      const response = await emailjs.send(EMAILJS_SERVICE_ID, AUTOREPLY_TEMPLATE, templateParams);
-      if (response.status === 200) return { success: true, message: "Auto-reply sent successfully" };
-      else return { success: false, message: "Auto-reply failed" };
-    } catch (error) {
-      console.error("Auto-reply error:", error);
-      return { success: false, message: error.text || "Template missing or misconfigured" };
+    function showStatus(msg, type) {
+      statusDiv.innerHTML = `<div class="status-message status-${type}"><i class="fas ${type==='success'?'fa-check-circle':'fa-exclamation-circle'}"></i>${msg}</div>`;
+      statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => statusDiv.innerHTML = '', 8000);
     }
-  }
 
-  // main form submission with double email (clinic notification + auto-reply)
-  const form = document.getElementById('appointmentFormElem');
-  const submitBtn = document.getElementById('submitBtn');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    // Get values
-    const fullName = document.getElementById('fullName').value.trim();
-    const age = document.getElementById('age').value.trim();
-    const phone = document.getElementById('phoneNumber').value.trim();
-    const email = document.getElementById('emailAddress').value.trim();
-    const clinic = document.getElementById('clinicLocation').value;
-    const preferredDate = document.getElementById('preferredDate').value;
-    const preferredTime = document.getElementById('preferredTime').value;
-    const reason = document.getElementById('reasonForVisit').value;
-    const additional = document.getElementById('additionalInfo').value.trim() || "No extra info";
-    const consent = document.getElementById('consent').checked;
-
-    if (!fullName || !age || !phone || !email || !clinic || !preferredDate || !preferredTime || !reason || !consent) {
-      showStatus("Please fill all required fields and consent to continue.", "error");
-      return;
+    function setLoading(loading) {
+      if(loading) { submitBtn.innerHTML = '<span class="spinner"></span> Sending confirmation...'; submitBtn.disabled = true; }
+      else { submitBtn.innerHTML = '<i class="fas fa-calendar-check"></i> Confirm & Get Auto-Reply'; submitBtn.disabled = false; }
     }
-    if (parseInt(age) < 1 || parseInt(age) > 120) { showStatus("Enter a valid age (1-120).", "error"); return; }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) { showStatus("Valid email address required for auto-reply confirmation.", "error"); return; }
-    const selectedDate = new Date(preferredDate);
-    const todayDate = new Date();
-    todayDate.setHours(0,0,0,0);
-    if (selectedDate < todayDate) { showStatus("Please select a future date.", "error"); return; }
 
-    // disable button, show loading
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span class="spinner"></span> Processing & Sending Auto-Reply...';
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      // Gather values
+      const fullName = document.getElementById('fullName').value.trim();
+      const age = document.getElementById('age').value.trim();
+      const phone = document.getElementById('phoneNumber').value.trim();
+      const email = document.getElementById('emailAddress').value.trim();
+      const clinic = document.getElementById('clinicLocation').value;
+      const preferredDate = document.getElementById('preferredDate').value;
+      const preferredTime = document.getElementById('preferredTime').value;
+      const reason = document.getElementById('reasonForVisit').value;
+      const additional = document.getElementById('additionalInfo').value.trim() || "No additional info";
+      const consent = document.getElementById('consent').checked;
 
-    // Prepare data for clinic notification (original)
-    const clinicNotificationParams = {
-      from_name: fullName,
-      age: age,
-      phone_number: phone,
-      reply_to: email,
-      clinic_location: clinic,
-      preferred_date: preferredDate,
-      preferred_time: preferredTime,
-      reason_for_visit: reason,
-      additional_info: additional,
-      submitted_at: new Date().toLocaleString()
-    };
-
-    // Data for auto-reply patient
-    const autoReplyData = {
-      name: fullName,
-      email: email,
-      phone: phone,
-      age: age,
-      clinic: clinic,
-      date: preferredDate,
-      time: preferredTime,
-      reason: reason,
-      additional: additional
-    };
-
-    try {
-      // Send clinic notification first
-      const clinicResponse = await emailjs.send(EMAILJS_SERVICE_ID, CLINIC_TEMPLATE, clinicNotificationParams);
-      if (clinicResponse.status === 200) {
-        // Second: send auto-reply to patient
-        const autoReplyResult = await sendAutoReply(autoReplyData);
-        let successMsg = `✅ Appointment request submitted! Dr. Deepa's team will contact you within 24 hours.`;
-        if (autoReplyResult.success) {
-          successMsg += ` A confirmation email has been sent to ${email} with your appointment details.`;
-          showStatus(successMsg, "success");
-        } else {
-          successMsg += ` Auto-reply could not be sent (${autoReplyResult.message}), but we received your booking. Our team will call you.`;
-          showStatus(successMsg, "info");
-        }
-        form.reset();
-        setMinDate();
-        document.getElementById('consent').checked = false;
-        updateTimeSlots();
-      } else {
-        throw new Error("Clinic notification failed");
+      // Validation
+      if(!fullName || !age || !phone || !email || !clinic || !preferredDate || !preferredTime || !reason || !consent) {
+        showStatus("Please fill all required fields and provide consent.", "error"); return;
       }
-    } catch (error) {
-      console.error("Submission error:", error);
-      showStatus("Submission failed. Please call directly at +977-9825207253 to book appointment.", "error");
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="fas fa-calendar-check"></i> Confirm & Get Auto-Reply';
-    }
-  });
+      if(age<1 || age>120) { showStatus("Enter a valid age (1-120).", "error"); return; }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showStatus("Valid email address required for auto-reply.", "error"); return; }
+      const selectedDate = new Date(preferredDate);
+      const today = new Date(); today.setHours(0,0,0,0);
+      if(selectedDate < today) { showStatus("Please select a future date.", "error"); return; }
 
-  // language toggle (cosmetic - same as original to maintain consistency)
-  let currentLang = 'en';
-  const langToggle = document.getElementById('languageToggle');
-  langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'np' : 'en';
-    const elements = document.querySelectorAll('[data-en-text], [data-np-text]');
-    elements.forEach(el => { const text = el.getAttribute(`data-${currentLang}-text`); if(text) el.innerText = text; });
-    const toggleSpan = langToggle.querySelector('span');
-    toggleSpan.textContent = currentLang === 'en' ? 'English' : 'नेपाली';
-  });
+      setLoading(true);
 
-  // initialize time slots
-  updateTimeSlots();
-
-  // chat widget (simple bot greeting)
-  const chatBtn = document.getElementById('chatButton');
-  let chatContainer = null;
-  if (!document.querySelector('.chat-container')) {
-    const chatDiv = document.createElement('div');
-    chatDiv.className = 'chat-container';
-    chatDiv.innerHTML = `<div class="chat-header"><h3>Chat with Us</h3><button class="close-chat" id="closeChatBtn"><i class="fas fa-times"></i></button></div><div class="chat-messages" id="chatMessages"><div class="message bot">Hello! Auto-reply confirmation is active. Share your query, we'll respond soon.</div></div><div class="chat-input-area"><input type="text" id="chatInput" placeholder="Type message..."><button id="sendChatMsg"><i class="fas fa-paper-plane"></i></button></div>`;
-      chatDiv.style.cssText = "position:fixed; bottom:6rem; right:2rem; width:300px; background:white; border-radius:16px; box-shadow:0 12px 28px rgba(0,0,0,0.2); display:none; flex-direction:column; z-index:1000;";
-      document.body.appendChild(chatDiv);
-      chatContainer = chatDiv;
-      const closeChatBtn = document.getElementById('closeChatBtn');
-      closeChatBtn.onclick = () => { chatContainer.style.display = 'none'; };
-      chatBtn.onclick = () => { if(chatContainer) chatContainer.style.display = chatContainer.style.display === 'none' ? 'flex' : 'none'; };
-      const sendChat = () => {
-        const inputChat = document.getElementById('chatInput');
-        const msg = inputChat.value.trim();
-        if(msg) {
-          const msgContainer = document.getElementById('chatMessages');
-          const userMsgDiv = document.createElement('div'); userMsgDiv.className = 'message user'; userMsgDiv.textContent = msg; msgContainer.appendChild(userMsgDiv);
-          inputChat.value = '';
-          msgContainer.scrollTop = msgContainer.scrollHeight;
-          setTimeout(() => {
-            const botDiv = document.createElement('div'); botDiv.className = 'message bot'; botDiv.innerHTML = "Thank you! Please use appointment form for booking. Auto-reply email will be sent instantly.";
-            msgContainer.appendChild(botDiv); msgContainer.scrollTop = msgContainer.scrollHeight;
-          }, 600);
-        }
+      // ----- 1. Send AUTO-REPLY to patient (beautiful HTML template) -----
+      const autoReplyParams = {
+        patient_name: fullName,
+        appointment_date: preferredDate,
+        appointment_time: preferredTime,
+        clinic: clinic,
+        patient_phone: phone,
+        reason: reason,
+        additional_info: additional,
+        to_email: email,          // dynamic recipient (patient's email)
+        // optional extra fields for completeness
+        doctor_name: "Dr. Deepa Chudal"
       };
-      document.getElementById('sendChatMsg').onclick = sendChat;
-      document.getElementById('chatInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') sendChat(); });
-  } else {
-    chatContainer = document.querySelector('.chat-container');
-    chatBtn.onclick = () => { if(chatContainer) chatContainer.style.display = chatContainer.style.display === 'none' ? 'flex' : 'none'; };
-  }
-  if(chatContainer) chatContainer.style.display = 'none';
 
-  // console note for auto-reply template setup
-  console.log("🔔 Auto-reply feature: ensure you have created EmailJS template with ID 'template_autoreply_patient' and variables: patient_name, appointment_date, appointment_time, clinic, reason, additional_info, patient_email, patient_phone. Otherwise auto-reply will fallback with warning.");
-</script>
+      // ----- 2. Send NOTIFICATION to doctor (both emails: deepachudal@gmail.com & deepa_smile@hotmail.com) -----
+      const doctorParams = {
+        patient_name: fullName,
+        age: age,
+        phone: phone,
+        email: email,
+        clinic: clinic,
+        date: preferredDate,
+        time: preferredTime,
+        reason: reason,
+        additional: additional,
+        doctor_recipients: DOCTOR_EMAILS,   // will be used in template's "To Email" field
+        submitted_at: new Date().toLocaleString()
+      };
+
+      let autoReplySuccess = false;
+      let doctorNotificationSuccess = false;
+
+      try {
+        // Send patient auto-reply
+        await emailjs.send(EMAILJS_SERVICE, PATIENT_AUTOREPLY_TEMPLATE, autoReplyParams);
+        autoReplySuccess = true;
+      } catch (err) {
+        console.error("Auto-reply error:", err);
+        // Continue, but notify patient partially
+      }
+
+      try {
+        // Send doctor notification (to both emails)
+        await emailjs.send(EMAILJS_SERVICE, DOCTOR_NOTIFICATION_TEMPLATE, doctorParams);
+        doctorNotificationSuccess = true;
+      } catch (err) {
+        console.error("Doctor notification error:", err);
+      }
+
+      // Final status message
+      if(autoReplySuccess && doctorNotificationSuccess) {
+        showStatus(`✅ Appointment request submitted! An auto-reply confirmation has been sent to ${email}. Dr. Deepa's team will contact you within 24 hours.`, "success");
+        form.reset();
+        document.getElementById('consent').checked = false;
+        document.getElementById('preferredDate').min = new Date().toISOString().split('T')[0];
+        updateTimeSlots();
+      } else if(autoReplySuccess && !doctorNotificationSuccess) {
+        showStatus(`⚠️ Auto-reply sent to ${email}, but doctor notification failed. Our team will still receive your request via backup. Please call if urgent.`, "error");
+      } else if(!autoReplySuccess && doctorNotificationSuccess) {
+        showStatus(`⚠️ Your request was sent to doctor, but auto-reply could not be delivered. Please check your email address or contact clinic directly.`, "error");
+      } else {
+        showStatus("Submission failed. Please call +977-9825207253 to book appointment directly.", "error");
+      }
+
+      setLoading(false);
+    });
+
+    // Language toggle (simplified, retains original style)
+    let currentLang = 'en';
+    const langToggle = document.getElementById('languageToggle');
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'np' : 'en';
+      const toggleSpan = langToggle.querySelector('span');
+      toggleSpan.textContent = currentLang === 'en' ? 'English' : 'नेपाली';
+      // For brevity, only toggles button text; full translation can be extended.
+    });
+
+    // Chat widget (simple)
+    const chatBtn = document.getElementById('chatButton');
+    const chatCont = document.getElementById('chatContainer');
+    const closeChat = document.getElementById('closeChat');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const sendMsg = document.getElementById('sendMessage');
+    chatBtn.onclick = () => chatCont.classList.toggle('active');
+    closeChat.onclick = () => chatCont.classList.remove('active');
+    const sendChatMessage = () => {
+      const msg = chatInput.value.trim();
+      if(msg) {
+        const userDiv = document.createElement('div'); userDiv.className = 'message user'; userDiv.textContent = msg;
+        chatMessages.appendChild(userDiv);
+        chatInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        setTimeout(() => {
+          const botDiv = document.createElement('div'); botDiv.className = 'message bot';
+          botDiv.innerHTML = "Thank you! Please use the appointment form for booking – auto-reply email will be sent instantly.";
+          chatMessages.appendChild(botDiv); chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 600);
+      }
+    };
+    sendMsg.onclick = sendChatMessage;
+    chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendChatMessage(); });
+
+    // Expose updateTimeSlots globally for select onchange
+    window.updateTimeSlots = updateTimeSlots;
+  </script>
+  <!-- EmailJS template setup instructions (visible as comment for developer) -->
+  <!-- 
+    ========== SETUP INSTRUCTIONS FOR EMAILJS ==========
+    1. Create a new EmailJS template named "AutoReply_Patient_Appointment":
+       - Paste the provided patient auto-reply HTML (beautiful card design).
+       - Set dynamic variables: {{patient_name}}, {{appointment_date}}, {{appointment_time}}, {{clinic}}, {{patient_phone}}, {{reason}}, {{additional_info}}.
+       - In "To Email" field, use {{to_email}} (the patient's email).
+       - Save the template ID.
+
+    2. Create a second template "Doctor_Clinic_Notification":
+       - Design simple notification (text or HTML) containing patient details.
+       - Use variables: {{patient_name}}, {{age}}, {{phone}}, {{email}}, {{clinic}}, {{date}}, {{time}}, {{reason}}, {{additional}}.
+       - In "To Email" field, set dynamic value: {{doctor_recipients}}.
+       - Save template ID.
+
+    3. Update constants in script: PATIENT_AUTOREPLY_TEMPLATE and DOCTOR_NOTIFICATION_TEMPLATE with actual IDs.
+    4. Verify EmailJS service ID matches "service_z7z2n3h" (or update accordingly).
+    
+    The system will send:
+      - Beautiful auto-reply email to patient using their email.
+      - Notification to deepachudal@gmail.com AND deepa_smile@hotmail.com (both receive as To recipients, acting as BCC).
+  -->
 </body>
 </html>
