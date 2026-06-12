@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Dr. Deepa Chudal – Best Gynecologist & Infertility Expert | Book Appointment</title>
-  <meta name="description" content="Request an appointment with Dr. Deepa Chudal, Associate Professor at NAMS & infertility specialist. Instant email confirmation.">
-  <meta name="keywords" content="gynecologist Kathmandu, infertility specialist, appointment booking, auto-reply">
+  <title>Dr. Deepa Chudal – Gynecologist & Infertility Expert | Book Appointment with Auto‑Reply</title>
+  <meta name="description" content="Request an appointment with Dr. Deepa Chudal, Associate Professor at NAMS. Instant email confirmation sent to your inbox.">
+  <meta name="keywords" content="gynecologist Kathmandu, infertility specialist, appointment booking, auto-reply email">
   <meta name="author" content="Dr. Deepa Chudal">
   <link rel="canonical" href="https://deepachudal.com.np/appointment.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <style>
-    /* ========== REFINED MEDICAL COLOR SCHEME (Deepa Chudal) ========== */
+    /* ========== MEDICAL COLOR SCHEME (Deepa Chudal) ========== */
     :root {
       --primary: #7B2C6F;
       --primary-light: #9B428C;
@@ -474,23 +474,17 @@
 <div class="chat-container" id="chatContainer"><div class="chat-header"><h3>Chat with Us</h3><button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button></div><div class="chat-messages"><div class="message bot">Hello! Auto‑reply is active. Fill the form to get instant confirmation.</div></div><div class="chat-input-area"><input type="text" id="chatInput" placeholder="Type message..."><button id="sendMessage"><i class="fas fa-paper-plane"></i></button></div></div>
 
 <script>
-  // ========== EMAILJS CONFIGURATION ==========
-  // Public key (same as working Vikash Paudel page)
-  emailjs.init("nPsKsuZlR3ghah6k-");
+  // ========== CORRECTED EMAILJS CREDENTIALS ==========
+  emailjs.init("nPsKsuZlR3ghah6k-");   // public key (unchanged, works with your account)
 
-  // Service ID – must match your EmailJS service
-  const EMAILJS_SERVICE = "service_z7z2n3h";
+  const EMAILJS_SERVICE = "service_qjy53db";               // your service ID
+  const PATIENT_TEMPLATE = "template_g2art0a";             // patient auto‑reply
+  const DOCTOR_TEMPLATE = "template_4k28mlx";              // doctor notification
 
-  // Patient auto‑reply template (the one you provided: template_g2art0a)
-  const PATIENT_AUTOREPLY_TEMPLATE = "template_g2art0a";
-
-  // Doctor notification template (existing working template from original appointment.html)
-  const DOCTOR_NOTIFICATION_TEMPLATE = "template_hqr000g";
-
-  // Doctor emails – both will receive the notification (acts as BCC)
+  // Doctor emails – both will receive the notification
   const DOCTOR_EMAILS = "deepachudal@gmail.com, deepa_smile@hotmail.com";
 
-  // Helper functions for time slots
+  // Helper: update time slots based on clinic
   function updateTimeSlots() {
     const clinic = document.getElementById('clinicLocation').value;
     const timeSelect = document.getElementById('preferredTime');
@@ -531,7 +525,7 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Get form values
+    // Get values
     const fullName = document.getElementById('fullName').value.trim();
     const age = document.getElementById('age').value.trim();
     const phone = document.getElementById('phoneNumber').value.trim();
@@ -555,7 +549,7 @@
 
     setLoading(true);
 
-    // 1. Auto‑reply to patient (using template_g2art0a)
+    // 1. Auto‑reply to patient (template_g2art0a)
     const autoReplyParams = {
       patient_name: fullName,
       appointment_date: preferredDate,
@@ -564,49 +558,44 @@
       patient_phone: phone,
       reason: reason,
       additional_info: additional,
-      to_email: email,      // recipient is the patient
+      to_email: email,          // dynamic recipient (patient)
       doctor_name: "Dr. Deepa Chudal"
     };
 
-    // 2. Doctor notification (using template_hqr000g) – sent to both doctor emails
+    // 2. Doctor notification (template_4k28mlx) – sent to both doctor emails
     const doctorParams = {
-      from_name: fullName,
+      patient_name: fullName,
       age: age,
-      phone_number: phone,
-      reply_to: email,
-      clinic_location: clinic,
-      preferred_date: preferredDate,
-      preferred_time: preferredTime,
-      reason_for_visit: reason,
-      additional_info: additional,
+      phone: phone,
+      email: email,
+      clinic: clinic,
+      date: preferredDate,
+      time: preferredTime,
+      reason: reason,
+      additional: additional,
       submitted_at: new Date().toLocaleString(),
-      // The template_hqr000g expects these exact variable names as used originally
-      // We also need to set the "to" email dynamically – EmailJS will use the email address we specify in the 'to' parameter.
-      // However, since template_hqr000g probably has a fixed recipient, we must override it.
-      // We'll use the 'to' parameter in send() – see below.
+      doctor_recipients: DOCTOR_EMAILS   // will be used in template's "To Email"
     };
 
     let autoReplySuccess = false;
     let doctorSuccess = false;
 
     try {
-      // Send auto‑reply to patient
-      await emailjs.send(EMAILJS_SERVICE, PATIENT_AUTOREPLY_TEMPLATE, autoReplyParams);
+      await emailjs.send(EMAILJS_SERVICE, PATIENT_TEMPLATE, autoReplyParams);
       autoReplySuccess = true;
     } catch (err) {
       console.error("Auto-reply error:", err);
     }
 
     try {
-      // Send doctor notification to both emails using template_hqr000g
-      // We explicitly set the 'to' parameter as a comma‑separated list.
-      await emailjs.send(EMAILJS_SERVICE, DOCTOR_NOTIFICATION_TEMPLATE, doctorParams, { to: DOCTOR_EMAILS });
+      // Important: send doctor notification to both emails using the 'to' parameter
+      await emailjs.send(EMAILJS_SERVICE, DOCTOR_TEMPLATE, doctorParams, { to: DOCTOR_EMAILS });
       doctorSuccess = true;
     } catch (err) {
       console.error("Doctor notification error:", err);
     }
 
-    // Final status
+    // Final status message
     if(autoReplySuccess && doctorSuccess) {
       showStatus(`✅ Appointment request submitted! An auto‑reply confirmation has been sent to ${email}. Dr. Deepa's team will contact you within 24 hours.`, "success");
       form.reset();
@@ -624,7 +613,7 @@
     setLoading(false);
   });
 
-  // Language toggle (simplified)
+  // Language toggle (simple)
   let currentLang = 'en';
   const langToggle = document.getElementById('languageToggle');
   langToggle.addEventListener('click', () => {
