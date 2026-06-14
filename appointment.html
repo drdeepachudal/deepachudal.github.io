@@ -565,12 +565,68 @@
       cursor: pointer;
     }
 
-    footer {
+    /* Enhanced Footer - matches index style */
+    .main-footer {
       background: var(--foreground);
-      color: white;
-      text-align: center;
-      padding: 2rem;
+      color: #e0e0e0;
       margin-top: 4rem;
+      padding: 3rem 2rem 1.5rem;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #cbd5e1;
+      text-decoration: none;
+      line-height: 1.6;
+      transition: var(--transition);
+    }
+
+    .footer-col a:hover {
+      color: var(--primary-light);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      background: rgba(255,255,255,0.1);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.85rem;
     }
 
     @keyframes slideDown {
@@ -611,13 +667,20 @@
       .hero-content h1 {
         font-size: 2rem;
       }
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .social-links {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
 <nav class="navbar">
   <div class="navbar-container">
-    <a href="#" class="navbar-logo"><i class="fas fa-female"></i><span>Dr. Deepa Chudal</span></a>
+    <a href="index.html" class="navbar-logo"><i class="fas fa-female"></i><span>Dr. Deepa Chudal</span></a>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">Biography</a></li>
@@ -634,6 +697,7 @@
     <div class="hero-content">
       <h1>Dr. Deepa Chudal – Gynecologist & Infertility Expert</h1>
       <div class="professional-roles">
+        <span class="role-badge"><i class="fas fa-user-md"></i> Senior Consultant Gynecologist and Obstetrician, Laparoscopic Gyne-Surgeon</span>
         <span class="role-badge"><i class="fas fa-chalkboard-teacher"></i> Associate Professor</span>
       </div>
       <div style="margin-top: 1rem;">
@@ -736,7 +800,7 @@
               <label>I consent to the collection and processing of my personal information for appointment scheduling & auto-reply. *</label>
             </div>
 
-            <!-- Submit Button (Single action) -->
+            <!-- Submit Button -->
             <button type="submit" class="btn btn-primary" id="submit-btn">
               <i class="fas fa-calendar-check"></i> Submit Appointment
             </button>
@@ -785,8 +849,36 @@
   </div>
 </main>
 
-<footer>
-  <p>© 2026 Dr. Deepa Chudal – Best Gynecologist in Kathmandu | Infertility Specialist | Auto‑Reply System</p>
+<!-- Enhanced Footer - matching Dr. Deepa's site style -->
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>Dr. Deepa Chudal</h4>
+      <p>Senior Consultant Gynecologist & Obstetrician<br>Laparoscopic Gyne-Surgeon<br>Associate Professor, NAMS</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="about.html">Biography</a></p>
+      <p><a href="research.html">Research</a></p>
+      <p><a href="blog.html">Blog</a></p>
+      <p><a href="appointment.html">Appointment</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <p><i class="fas fa-phone"></i> +977-9840057830</p>
+      <p><i class="fab fa-whatsapp"></i> +977-9825207253</p>
+      <p><i class="fas fa-envelope"></i> deepachudal@gmail.com</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Dr. Deepa Chudal – Best Gynecologist in Kathmandu | Infertility Specialist | Auto‑Reply System</p>
+  </div>
 </footer>
 
 <!-- Floating Chat & WhatsApp -->
@@ -801,14 +893,14 @@
 </div>
 
 <script>
-  // ========== EMAILJS CONFIGURATION (VERIFIED) ==========
-  emailjs.init("gydV88SySwPSahSAt-");   // Public Key
+  // ========== EMAILJS CONFIGURATION (CORRECTED PUBLIC KEY) ==========
+  emailjs.init("gydV88SySwPSahSAt");   // Updated public key (no trailing dash)
 
   const EMAILJS_SERVICE = "service_qjy53db";          // Your service ID
   const PATIENT_TEMPLATE = "template_g2art0a";        // Patient auto-reply template
   const DOCTOR_TEMPLATE = "template_4k28mlx";         // Doctor notification template
   const DOCTOR_EMAILS = "deepachudal@gmail.com, deepa_smile@hotmail.com";
-  const FALLBACK_PHONE = "9840057830";                // Updated fallback number
+  const FALLBACK_PHONE = "9840057830";
 
   // Helper: update time slots based on clinic
   function updateTimeSlots() {
@@ -865,7 +957,6 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Get field values
     const fullName = document.getElementById('fullName').value.trim();
     const age = document.getElementById('age').value.trim();
     const phone = document.getElementById('phoneNumber').value.trim();
@@ -877,7 +968,6 @@
     const additional = document.getElementById('additionalInfo').value.trim() || "No additional info";
     const consent = document.getElementById('consent').checked;
 
-    // Validations
     if (!fullName || !age || !phone || !email || !clinic || !preferredDate || !preferredTime || !reason || !consent) {
       showStatus("Please fill all required fields and provide consent.", "error");
       return;
@@ -899,7 +989,6 @@
 
     setLoading(true);
 
-    // Patient auto-reply parameters (matches template_g2art0a)
     const autoReplyParams = {
       patient_name: fullName,
       appointment_date: preferredDate,
@@ -912,7 +1001,6 @@
       doctor_name: "Dr. Deepa Chudal"
     };
 
-    // Doctor notification parameters (template_4k28mlx)
     const doctorParams = {
       patient_name: fullName,
       age: age,
@@ -924,7 +1012,7 @@
       reason: reason,
       additional: additional,
       submitted_at: new Date().toLocaleString(),
-      to_email: DOCTOR_EMAILS   // Both doctor emails receive notification
+      to_email: DOCTOR_EMAILS
     };
 
     let autoReplySuccess = false;
@@ -950,7 +1038,6 @@
       doctorError = err.text || err.message || "Unknown doctor notification error";
     }
 
-    // Final feedback
     if (autoReplySuccess && doctorSuccess) {
       showStatus(`✅ Appointment request submitted! An auto‑reply confirmation has been sent to ${email}. Dr. Deepa's team will contact you within 24 hours.`, "success");
       form.reset();
@@ -958,9 +1045,9 @@
       document.getElementById('preferredDate').min = new Date().toISOString().split('T')[0];
       updateTimeSlots();
     } else if (autoReplySuccess && !doctorSuccess) {
-      showStatus(`⚠️ Auto‑reply sent to ${email}, but doctor notification encountered an issue (${doctorError}). Your request is saved and our team will still receive it. For urgent help, call ${FALLBACK_PHONE}.`, "warning");
+      showStatus(`⚠️ Auto‑reply sent to ${email}, but doctor notification encountered an issue (${doctorError}). Your request is saved. For urgent help, call ${FALLBACK_PHONE}.`, "warning");
     } else if (!autoReplySuccess && doctorSuccess) {
-      showStatus(`⚠️ Your request was delivered to Dr. Deepa's team, but auto‑reply could not reach your inbox (${autoReplyError}). Please check your email address or call ${FALLBACK_PHONE}.`, "warning");
+      showStatus(`⚠️ Your request was delivered to Dr. Deepa's team, but auto‑reply could not reach your inbox (${autoReplyError}). Please check your email or call ${FALLBACK_PHONE}.`, "warning");
     } else {
       showStatus(`❌ Submission failed. Auto-reply error: ${autoReplyError}. Doctor notification error: ${doctorError}. Please call ${FALLBACK_PHONE} to book directly.`, "error");
     }
@@ -968,7 +1055,7 @@
     setLoading(false);
   });
 
-  // Chat widget logic
+  // Chat widget
   const chatBtn = document.getElementById('chatButton');
   const chatCont = document.getElementById('chatContainer');
   const closeChat = document.getElementById('closeChat');
