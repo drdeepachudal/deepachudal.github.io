@@ -1,734 +1,708 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Dr. Deepa Chudal – Gynecologist & Infertility Expert | Book Appointment with Auto‑Reply</title>
-  <meta name="description" content="Request an appointment with Dr. Deepa Chudal, Associate Professor. Instant email confirmation sent to your inbox.">
-  <meta name="keywords" content="gynecologist Kathmandu, infertility specialist, appointment">
-  <meta name="author" content="Dr. Deepa Chudal">
-  <link rel="canonical" href="https://deepachudal.com.np/appointment.html">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <style>
-    /* ========== MEDICAL COLOR SCHEME (Deepa Chudal) ========== */
-    :root {
-      --primary: #7B2C6F;
-      --primary-light: #9B428C;
-      --primary-dark: #5F2355;
-      --primary-soft: #F9F0F7;
-      --accent: #2D6A4F;
-      --accent-light: #409C7A;
-      --accent-soft: #EAF9F2;
-      --background: #FFFFFF;
-      --background-alt: #FFFBFD;
-      --foreground: #1E2A3E;
-      --foreground-light: #4B5B6C;
-      --foreground-muted: #6F7D8C;
-      --border: #E9E2E8;
-      --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
-      --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
-      --shadow-lg: 0 16px 32px rgba(0,0,0,0.1);
-      --success: #2D6A4F;
-      --error: #B91C1C;
-      --border-radius-sm: 8px;
-      --border-radius-md: 12px;
-      --border-radius-lg: 16px;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Best Gynecologist & Infertility Specialist in Kathmandu | Dr. Deepa Chudal</title>
+    <meta name="description" content="Consult Dr. Deepa Chudal, leading gynecologist and infertility specialist in Kathmandu, Nepal. Expert in IVF, PCOS, laparoscopic surgery, and high-risk pregnancy care. Book online.">
+    <meta name="keywords" content="best gynecologist in Kathmandu, infertility specialist Nepal, IVF doctor Kathmandu, PCOS treatment Nepal, fertility clinic Kathmandu">
+    <meta name="author" content="Dr. Deepa Chudal">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://deepachudal.com.np/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Best Gynecologist & Infertility Specialist in Kathmandu | Dr. Deepa Chudal">
+    <meta property="og:description" content="Expert in IVF, PCOS, high-risk pregnancy & laparoscopic surgery. Internationally trained.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deepachudal.com.np/">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Deepa Chudal",
+      "specialty": ["Gynecology", "Infertility", "Laparoscopic Surgery"],
+      "address": {"@type": "PostalAddress", "addressLocality": "Kathmandu", "addressCountry": "NP"},
+      "telephone": "+977-9840057830"
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      color: var(--foreground);
-      background: linear-gradient(135deg, var(--background-alt) 0%, #FFFFFF 100%);
-      min-height: 100vh;
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Dr. Deepa Chudal",
+      "alternateName": "Deepa Chudal",
+      "url": "https://deepachudal.com.np/"
     }
-    h1, h2, h3 { font-weight: 600; line-height: 1.3; }
-    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    h2 { font-size: 1.75rem; margin-bottom: 1rem; }
-
-    /* Navigation */
-    .navbar {
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow-sm);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid var(--border);
-    }
-    .navbar-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .navbar-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 1.25rem;
-    }
-    .navbar-logo i { font-size: 1.5rem; color: var(--accent); }
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .navbar a {
-      text-decoration: none;
-      color: var(--foreground);
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      transition: all 0.2s;
-      font-size: 0.95rem;
-    }
-    .navbar a:hover, .navbar a.active {
-      color: var(--primary);
-      background: var(--primary-soft);
-    }
-    .language-toggle {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      background: var(--background-alt);
-      cursor: pointer;
-      border: 1px solid var(--border);
-    }
-    .book-now-btn {
-      background: var(--primary);
-      color: white !important;
-      border-radius: 30px;
-      padding: 0.5rem 1.5rem !important;
-      font-weight: 600;
-      box-shadow: var(--shadow-sm);
-    }
-    .book-now-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
-
-    main { max-width: 1400px; margin: 2rem auto; padding: 0 2rem; }
-
-    /* Hero */
-    .booking-hero {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      border-radius: var(--border-radius-lg);
-      padding: 2.5rem 3rem;
-      margin-bottom: 2rem;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-    .hero-content { flex: 1; }
-    .hero-content h1 { color: white; font-size: 2rem; margin-bottom: 1rem; }
-    .professional-roles {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin: 1rem 0;
-    }
-    .role-badge {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(4px);
-      padding: 0.4rem 1rem;
-      border-radius: 40px;
-      font-size: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .doctor-photo {
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(5px);
-      border: 4px solid rgba(255,255,255,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .doctor-photo i { font-size: 5rem; color: white; }
-
-    /* Services */
-    .services-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-    .service-card {
-      background: white;
-      border-radius: var(--border-radius-lg);
-      padding: 1.5rem;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-    }
-    .service-card h2, .service-card h3 { color: var(--primary); margin-bottom: 1rem; }
-    .service-card ul { list-style: none; }
-    .service-card li { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
-    .service-card i { color: var(--accent); width: 1.5rem; }
-
-    /* Booking grid */
-    .booking-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      align-items: start;
-    }
-    .form-card {
-      background: white;
-      border-radius: var(--border-radius-lg);
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-    }
-    .form-header {
-      background: linear-gradient(135deg, var(--primary-soft) 0%, white 100%);
-      padding: 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .form-header h2 { color: var(--primary); margin-bottom: 0.5rem; }
-    .form-body { padding: 2rem; }
-    .form-section {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
-      font-weight: 600;
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .form-group { margin-bottom: 1rem; }
-    .form-label { font-weight: 500; margin-bottom: 0.5rem; display: block; }
-    .required-star { color: #E76F51; }
-    .form-input, .form-select, .form-textarea {
-      width: 100%;
-      padding: 0.875rem 1rem;
-      border: 2px solid var(--border);
-      border-radius: var(--border-radius-sm);
-      font-size: 1rem;
-      transition: all 0.2s;
-    }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--primary);
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(123,44,111,0.1);
-    }
-    .checkbox-group {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      background: var(--primary-soft);
-      padding: 1rem;
-      border-radius: var(--border-radius-sm);
-      margin: 1.5rem 0;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: var(--border-radius-sm);
-      cursor: pointer;
-      width: 100%;
-      transition: all 0.2s;
-    }
-    .btn-primary { background: var(--primary); color: white; }
-    .btn-primary:hover:not(:disabled) { background: var(--primary-dark); transform: translateY(-2px); }
-    .btn-primary:disabled { opacity: 0.7; cursor: not-allowed; }
-
-    /* Sidebar */
-    .info-sidebar { position: sticky; top: 6rem; }
-    .info-card {
-      background: white;
-      border-radius: var(--border-radius-lg);
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-    }
-    .info-card h3 {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--primary);
-      margin-bottom: 1.2rem;
-    }
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .info-item i { color: var(--accent); width: 1.5rem; }
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: var(--accent-soft);
-      padding: 0.8rem;
-      border-radius: var(--border-radius-sm);
-      margin: 1rem 0;
-    }
-    .status-message {
-      padding: 1rem;
-      border-radius: var(--border-radius-sm);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      animation: slideDown 0.3s ease;
-    }
-    .status-success { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-light); }
-    .status-error { background: #FEF2F2; color: var(--error); border: 1px solid #FECACA; }
-    .status-warning { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
-    .spinner {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 3px solid rgba(255,255,255,0.3);
-      border-radius: 50%;
-      border-top-color: white;
-      animation: spin 0.8s linear infinite;
-    }
-    .floating-buttons {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      z-index: 99;
-    }
-    .floating-button {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      box-shadow: var(--shadow-lg);
-      cursor: pointer;
-      border: none;
-    }
-    .whatsapp-button { background: #25D366; }
-    .chat-button { background: var(--primary); }
-    .chat-container {
-      position: fixed;
-      bottom: 6rem;
-      right: 2rem;
-      width: 300px;
-      background: white;
-      border-radius: var(--border-radius-lg);
-      box-shadow: var(--shadow-lg);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 100;
-      border: 1px solid var(--border);
-    }
-    .chat-container.active { display: flex; }
-    .chat-header {
-      background: var(--primary);
-      color: white;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-    }
-    .chat-messages {
-      flex: 1;
-      padding: 1rem;
-      overflow-y: auto;
-      background: #F9FAFB;
-      max-height: 300px;
-      min-height: 200px;
-    }
-    .message {
-      margin-bottom: 0.75rem;
-      padding: 0.75rem;
-      border-radius: 1rem;
-      max-width: 85%;
-      word-wrap: break-word;
-    }
-    .message.bot {
-      background: white;
-      align-self: flex-start;
-      border: 1px solid var(--border);
-    }
-    .message.user {
-      background: var(--primary);
-      color: white;
-      align-self: flex-end;
-      margin-left: auto;
-    }
-    .chat-input-area {
-      display: flex;
-      padding: 1rem;
-      gap: 0.5rem;
-      background: white;
-      border-top: 1px solid var(--border);
-    }
-    .chat-input-area input {
-      flex: 1;
-      padding: 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-    }
-    .chat-input-area button {
-      background: var(--primary);
-      border: none;
-      color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    footer {
-      background: var(--foreground);
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 4rem;
-    }
-    @keyframes slideDown { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes spin { to { transform:rotate(360deg); } }
-    @media (max-width:1024px) { .booking-grid { grid-template-columns:1fr; } .info-sidebar { position:static; } .services-section { grid-template-columns:1fr; } }
-    @media (max-width:768px) { .navbar-container { flex-direction:column; gap:1rem; } .booking-hero { flex-direction:column; text-align:center; } .hero-content h1 { font-size:1.8rem; } }
-    .helper-text { font-size:0.75rem; color:var(--foreground-muted); margin-top:0.3rem; display:flex; align-items:center; gap:0.3rem; }
-  </style>
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #6b1e4a;
+            --primary-dark: #4a1232;
+            --secondary: #d81b60;
+            --secondary-light: #fce4ec;
+            --accent: #ec407a;
+            --pink-soft: #f8bbd0;
+            --teal: #00897b;
+            --light: #fff5f7;
+            --dark: #4a1a3a;
+            --text: #2d1a2a;
+            --text-light: #6a4a5a;
+            --gold: #f9a825;
+            --whatsapp: #25D366;
+            --facebook: #1877F2;
+            --instagram: #E4405F;
+            --linkedin: #0A66C2;
+            --tiktok: #000000;
+            --youtube: #FF0000;
+            --bg-color: #ffffff;
+            --card-bg: #ffffff;
+            --header-bg: rgba(255,245,247,0.98);
+            --footer-bg: #2d0a1d;
+            --border-light: #f0d0da;
+            --shadow-sm: 0 5px 20px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 35px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        body.dark-mode {
+            --primary: #f0a0c0;
+            --primary-dark: #e07aae;
+            --secondary: #ff6b9d;
+            --secondary-light: #2d1b2e;
+            --accent: #ff80ab;
+            --light: #2a1a2a;
+            --dark: #f1e0e8;
+            --text: #e0c0d0;
+            --text-light: #c0a0b0;
+            --bg-color: #1a0a1a;
+            --card-bg: #2a1a2a;
+            --header-bg: rgba(26,10,26,0.98);
+            --footer-bg: #0a0a1a;
+            --border-light: #4a2a3a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+        
+        body.lang-np { font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header - Fixed structure */
+        header {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        /* Logo with custom image */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .logo:hover { transform: scale(1.02); }
+        
+        .logo-img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--secondary);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+        }
+        .logo-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 3px rgba(216,27,96,0.2);
+        }
+        
+        .logo-text h1 { 
+            font-size: 1.2rem; 
+            color: var(--primary); 
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .logo-text p { 
+            font-size: 0.68rem; 
+            color: var(--secondary); 
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        
+        /* Navigation */
+        nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .nav-menu { display: flex; list-style: none; gap: 6px; flex-wrap: wrap; }
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.8rem;
+            padding: 7px 12px;
+            transition: all 0.3s ease;
+            border-radius: 30px;
+        }
+        .nav-menu a:hover { color: var(--secondary); background: var(--secondary-light); transform: translateY(-2px); }
+        
+        .dropdown { position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card-bg);
+            min-width: 200px;
+            box-shadow: var(--shadow-md);
+            border-radius: 16px;
+            z-index: 100;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 10px 18px;
+            color: var(--text);
+            font-size: 0.75rem;
+        }
+        .dropdown-content a:hover { background: var(--secondary-light); transform: translateX(5px); }
+        .dropdown:hover .dropdown-content { display: block; }
+        
+        .book-now-nav { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 40px; }
+        .book-now-nav a { color: white !important; font-weight: 600; }
+        
+        .toggle-group { display: flex; gap: 10px; align-items: center; }
+        .theme-toggle, .lang-toggle {
+            background: var(--light);
+            border: 1px solid var(--border-light);
+            padding: 6px 14px;
+            border-radius: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+        .theme-toggle:hover, .lang-toggle:hover { background: var(--secondary); color: white; transform: translateY(-2px); }
+        .mobile-toggle { display: none; font-size: 1.4rem; cursor: pointer; color: var(--primary); background: var(--light); padding: 6px 12px; border-radius: 30px; }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(120deg, #fce4ec 0%, #f8bbd0 100%);
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        body.dark-mode .hero { background: linear-gradient(120deg, #2a1a2a 0%, #3a1a3a 100%); }
+        
+        .hero-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .badge {
+            background: var(--secondary-light);
+            color: var(--secondary);
+            padding: 5px 15px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .hero-title { font-size: 2.2rem; font-weight: 800; color: var(--primary); font-family: 'Playfair Display', serif; line-height: 1.2; margin-bottom: 15px; }
+        .hero-highlight { color: var(--secondary); }
+        .hero-subtitle { font-size: 0.9rem; color: var(--text-light); margin-bottom: 20px; line-height: 1.6; }
+        .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            padding: 10px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(216,27,96,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--secondary); color: var(--secondary); }
+        .btn-outline:hover { background: var(--secondary); color: white; }
+        .doctor-img { max-width: 100%; width: 100%; max-width: 360px; border-radius: 30px; box-shadow: var(--shadow-lg); animation: floatImage 5s ease-in-out infinite; }
+        @keyframes floatImage { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-10px); } }
+        
+        /* Trust Bar */
+        .trust-bar { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 35px 0; }
+        .trust-stats { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; text-align: center; }
+        .stat-item h3 { font-size: 1.8rem; font-weight: 800; color: var(--gold); }
+        .stat-item p { font-size: 0.8rem; opacity: 0.9; }
+        
+        /* Sections */
+        .section { padding: 60px 0; }
+        .section:nth-child(even) { background-color: var(--light); }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 1.9rem; color: var(--primary); font-family: 'Playfair Display', serif; }
+        
+        /* Services Grid - 4 columns on desktop (4x3) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 22px 18px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .service-icon { font-size: 2.2rem; color: var(--secondary); margin-bottom: 12px; }
+        .service-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .service-card p {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+        
+        /* Two Column */
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .why-list { list-style: none; }
+        .why-list li { display: flex; gap: 12px; margin-bottom: 20px; align-items: flex-start; }
+        .why-list i { color: var(--secondary); font-size: 1.2rem; margin-top: 2px; }
+        
+        /* Testimonials */
+        .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            position: relative;
+        }
+        .testimonial-card:before { content: '"'; position: absolute; top: 10px; left: 15px; font-size: 3rem; color: var(--border-light); font-family: Georgia; opacity: 0.5; }
+        .stars { color: var(--gold); margin-bottom: 10px; font-size: 0.9rem; letter-spacing: 2px; }
+        .testimonial-text { font-size: 0.85rem; margin-bottom: 12px; }
+        
+        /* Blog */
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .blog-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 22px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s;
+        }
+        .blog-card:hover { transform: translateY(-4px); }
+        .blog-card h3 { font-size: 1rem; margin: 10px 0; color: var(--primary); }
+        .read-more { font-size: 0.75rem; transition: all 0.2s; display: inline-block; color: var(--secondary) !important; text-decoration: none; font-weight: 500; }
+        .read-more:hover { transform: translateX(4px); color: var(--accent) !important; }
+        
+        /* FAQ */
+        .faq-list { max-width: 900px; margin: 0 auto; }
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            margin-bottom: 14px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 15px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        .faq-question:hover { background: var(--secondary-light); color: var(--secondary); }
+        .faq-answer { padding: 0 20px 18px; display: none; color: var(--text-light); font-size: 0.85rem; line-height: 1.5; }
+        .faq-item.active .faq-answer { display: block; }
+        
+        /* Appointment CTA */
+        .appointment-cta { background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 24px; padding: 40px 30px; text-align: center; color: white; }
+        .appointment-cta h3 { font-size: 1.5rem; margin-bottom: 12px; }
+        .appointment-cta p { font-size: 0.9rem; margin-bottom: 20px; }
+        .appointment-cta .btn { background: white; color: var(--secondary); }
+        
+        /* Footer */
+        footer { background: var(--footer-bg); color: #e0b0c0; padding: 45px 0 25px; }
+        .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 35px; margin-bottom: 35px; }
+        .footer-column h3 { color: white; font-size: 1rem; margin-bottom: 15px; }
+        .footer-contact { list-style: none; }
+        .footer-contact li { display: flex; margin-bottom: 10px; gap: 10px; align-items: center; font-size: 0.8rem; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { color: #e0b0c0; text-decoration: none; font-size: 0.8rem; transition: all 0.2s; }
+        .footer-links a:hover { color: var(--secondary); padding-left: 4px; }
+        .social-links { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .social-links a { width: 34px; height: 34px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: all 0.3s; }
+        .social-links a:hover { transform: translateY(-3px); background: var(--secondary); }
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.7rem; }
+        
+        /* Left Social Widget */
+        .left-social-widget {
+            position: fixed;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .social-left-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: var(--shadow-sm);
+        }
+        .social-left-btn:hover { transform: scale(1.1) translateX(3px); }
+        .fb-left { background: var(--facebook); }
+        .ig-left { background: var(--instagram); }
+        .tt-left { background: #000000; }
+        .yt-left { background: var(--youtube); }
+        .li-left { background: var(--linkedin); }
+        
+        /* Floating Right Buttons */
+        .floating-buttons { position: fixed; right: 15px; bottom: 25px; z-index: 1000; display: flex; flex-direction: column; gap: 10px; }
+        .float-btn { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; transition: all 0.3s; text-decoration: none; box-shadow: var(--shadow-md); }
+        .float-btn:hover { transform: scale(1.08); }
+        .btn-wa { background: var(--whatsapp); }
+        .btn-call { background: var(--secondary); }
+        .btn-book { background: var(--teal); }
+        .btn-fb { background: var(--facebook); }
+        
+        /* Fade-in */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; align-items: stretch; }
+            .mobile-toggle { display: block; align-self: flex-end; margin-top: -50px; margin-bottom: 5px; }
+            .nav-menu { display: none; flex-direction: column; width: 100%; background: var(--card-bg); padding: 15px; border-radius: 16px; margin-top: 10px; }
+            .nav-menu.active { display: flex; }
+            .toggle-group { justify-content: flex-end; margin-top: 5px; }
+            .dropdown-content { position: static; box-shadow: none; border: none; background: var(--secondary-light); margin-top: 5px; }
+            .dropdown:hover .dropdown-content { display: none; }
+            .dropdown.active .dropdown-content { display: block; }
+            .hero-container { grid-template-columns: 1fr; text-align: center; margin-left: 0; }
+            .hero-title { font-size: 1.8rem; }
+            .hero-buttons { justify-content: center; }
+            .hero-image { order: -1; display: flex; justify-content: center; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .testimonials-grid, .blog-grid, .two-col { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+            .left-social-widget { left: 5px; }
+            .social-left-btn { width: 34px; height: 34px; font-size: 0.9rem; }
+        }
+        @media (max-width: 550px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 1.6rem; }
+            .container { padding: 0 16px; }
+            .floating-buttons { right: 10px; }
+            .float-btn { width: 42px; height: 42px; font-size: 1.1rem; }
+            .logo-img { width: 44px; height: 44px; }
+            .logo-text h1 { font-size: 1rem; }
+        }
+        
+        /* Improved contrast */
+        .service-card p, .blog-card p, .testimonial-text { color: var(--text-light); }
+        .btn, .book-now-nav a { font-weight: 600; }
+        .hero-subtitle { font-weight: 500; }
+    </style>
 </head>
 <body>
-<nav class="navbar">
-  <div class="navbar-container">
-    <a href="#" class="navbar-logo"><i class="fas fa-female"></i><span>Dr. Deepa Chudal</span></a>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Biography</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="appointment.html" class="active">Appointment</a></li>
-      <li class="language-toggle" id="languageToggle"><i class="fas fa-globe"></i><span>English</span></li>
-      <li><a href="#appointment-form" class="book-now-btn"><i class="fas fa-calendar-alt"></i> Book Now</a></li>
-    </ul>
-  </div>
-</nav>
 
-<main>
-  <section class="booking-hero">
-    <div class="hero-content">
-      <h1>Dr. Deepa Chudal – Gynecologist & Infertility Expert</h1>
-      <div class="professional-roles">
-        <span class="role-badge"><i class="fas fa-chalkboard-teacher"></i> Associate Professor at NAMS</span>
-        <span class="role-badge"><i class="fas fa-journal-whills"></i> Journal of Menopause Society (JMESON)</span>
-      </div>
-      <div style="margin-top:1rem;"><span class="trust-badge" style="background:rgba(255,255,255,0.15); color:white; display:inline-flex;"><i class="fas fa-star"></i>4.9 ★ (160+ reviews)</span></div>
-    </div>
-    <div class="doctor-photo"><i class="fas fa-user-md"></i></div>
-  </section>
+<!-- Left Side Social Widget -->
+<div class="left-social-widget">
+    <a href="https://facebook.com/deepaobgy" target="_blank" class="social-left-btn fb-left"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" class="social-left-btn ig-left"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com/@deepachudalpaudel" target="_blank" class="social-left-btn tt-left"><i class="fab fa-tiktok"></i></a>
+    <a href="https://youtube.com" target="_blank" class="social-left-btn yt-left"><i class="fab fa-youtube"></i></a>
+    <a href="https://linkedin.com/in/deepachudal/" target="_blank" class="social-left-btn li-left"><i class="fab fa-linkedin-in"></i></a>
+</div>
 
-  <div class="services-section">
-    <div class="service-card"><h2><i class="fas fa-stethoscope"></i> Services Offered</h2><ul><li><i class="fas fa-female"></i> Infertility Treatment (IUI, IVF)</li><li><i class="fas fa-cut"></i> Laparoscopic Surgery</li><li><i class="fas fa-chart-line"></i> PCOS Management</li><li><i class="fas fa-baby-carriage"></i> High-Risk Pregnancy</li><li><i class="fas fa-procedures"></i> Menopause Care</li></ul></div>
-    <div class="service-card"><h3><i class="fas fa-notes-medical"></i> Conditions Treated</h3><ul><li><i class="fas fa-uterus"></i> Endometriosis</li><li><i class="fas fa-heart-broken"></i> Recurrent Pregnancy Loss</li><li><i class="fas fa-weight"></i> PCOS & Metabolic Syndrome</li><li><i class="fas fa-calendar-alt"></i> Menstrual Disorders</li></ul></div>
-  </div>
-
-  <div class="booking-grid">
-    <div>
-      <div class="form-card" id="appointment-form">
-        <div class="form-header"><h2>Request an Appointment</h2><p>Instant auto‑reply confirmation + doctor notification</p></div>
-        <div class="form-body">
-          <div id="form-status"></div>
-          <form id="appointmentForm">
-            <div class="form-section">
-              <div class="section-title"><i class="fas fa-user"></i><span>Patient Details</span></div>
-              <div class="form-row">
-                <div class="form-group"><label class="form-label">Full Name <span class="required-star">*</span></label><input type="text" id="fullName" required class="form-input" placeholder="Sita Sharma"></div>
-                <div class="form-group"><label class="form-label">Age <span class="required-star">*</span></label><input type="number" id="age" required class="form-input" min="1" max="120"></div>
-              </div>
+<header>
+    <div class="container header-container">
+        <div class="logo" onclick="location.href='index.html'">
+            <!-- Custom image instead of font-awesome icon -->
+            <img src="deepaicon.jpg" alt="Dr. Deepa Chudal" class="logo-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="logo-img" style="display: none; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--accent)); align-items: center; justify-content: center; color: white; font-size: 1.3rem;">
+                <i class="fas fa-female"></i>
             </div>
-            <div class="form-section">
-              <div class="section-title"><i class="fas fa-phone-alt"></i><span>Contact Information</span></div>
-              <div class="form-row">
-                <div class="form-group"><label class="form-label">Phone Number <span class="required-star">*</span></label><input type="tel" id="phoneNumber" required class="form-input" placeholder="+977-98XXXXXXXX"><div class="helper-text"><i class="fas fa-info-circle"></i> We'll send SMS confirmation</div></div>
-                <div class="form-group"><label class="form-label">Email Address <span class="required-star">*</span></label><input type="email" id="emailAddress" required class="form-input" placeholder="patient@example.com"><div class="helper-text"><i class="fas fa-envelope"></i> Auto‑reply will be sent here</div></div>
-              </div>
+            <div class="logo-text">
+                <h1 id="brandName" data-en="Dr. Deepa Chudal" data-np="डा. दीपा चुडाल">Dr. Deepa Chudal</h1>
+                <p id="brandTag" data-en="MBBS, MD | Gynecologist, Infertility & Laparoscopic Expert" data-np="एमबीबीएस, एमडी | नि:सन्तानपन र ल्याप्रोस्कोपिक विशेषज्ञ">MBBS, MD | Gynecologist, Infertility & Laparoscopic Expert</p>
             </div>
-            <div class="form-section">
-              <div class="section-title"><i class="fas fa-calendar-alt"></i><span>Appointment Details</span></div>
-              <div class="form-row"><div class="form-group"><label class="form-label">Clinic Location <span class="required-star">*</span></label><select id="clinicLocation" required class="form-select" onchange="updateTimeSlots()"><option value="">Select a clinic</option><option value="Elite Health Clinic, Lagankhel">Elite Health Clinic, Lagankhel</option><option value="Deepa Fertility & Gynecology Clinic, Shankhamul Health Care">Deepa Fertility Clinic, Shankhamul</option><option value="Maya IVF Clinic, Kupandole">Maya IVF Clinic, Kupandole</option><option value="NIFLC - BBC Building, UN Park, Kathmandu">NIFLC - UN Park</option><option value="Tele-Gynecology Consultation">Tele-Gynecology Consultation</option></select></div></div>
-              <div class="form-row"><div class="form-group"><label class="form-label">Preferred Date <span class="required-star">*</span></label><input type="date" id="preferredDate" required class="form-input"></div><div class="form-group"><label class="form-label">Preferred Time <span class="required-star">*</span></label><select id="preferredTime" required class="form-select"></select></div></div>
-              <div class="form-group"><label class="form-label">Reason for Visit <span class="required-star">*</span></label><select id="reasonForVisit" required class="form-select"><option value="">Select reason</option><option value="Infertility Evaluation">Infertility Evaluation</option><option value="PCOS Management">PCOS Management</option><option value="Menstrual Disorders">Menstrual Disorders</option><option value="Pregnancy & Antenatal Care">Pregnancy & Antenatal Care</option><option value="Menopause Management">Menopause Management</option></select></div>
-              <div class="form-group"><label class="form-label">Additional Information</label><textarea id="additionalInfo" rows="2" class="form-textarea" placeholder="Share any concerns or previous history..."></textarea></div>
-            </div>
-            <div class="checkbox-group"><input type="checkbox" id="consent" required><label>I consent to the collection and processing of my personal information for appointment scheduling & auto-reply. *</label></div>
-            <div class="cta-container"><button type="submit" class="btn btn-primary" id="submit-btn"><i class="fas fa-calendar-check"></i> Confirm & Get Auto‑Reply</button><div class="helper-text" style="justify-content:center;"><i class="fas fa-lock"></i> Secure + instant email confirmation</div></div>
-          </form>
         </div>
-      </div>
+        <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home" data-en="Home" data-np="गृहपृष्ठ">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" data-en="Services" data-np="सेवाहरू">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="ivf.html" data-en="IVF / IUI Treatment" data-np="आईभीएफ / आईयूआई उपचार">IVF / IUI Treatment</a>
+                        <a href="pmos.html" data-en="PCOS/PMOS Care" data-np="पीसीओएस हेरचाह">PCOS/PMOS Care</a>
+                        <a href="#services" data-en="High-Risk Pregnancy" data-np="उच्च जोखिम गर्भावस्था">High-Risk Pregnancy</a>
+                        <a href="#services" data-en="Laparoscopic Surgery" data-np="ल्याप्रोस्कोपिक सर्जरी">Laparoscopic Surgery</a>
+                        <a href="#services" data-en="Fertility Assessment" data-np="प्रजनन मूल्यांकन">Fertility Assessment</a>
+                        <a href="#services" data-en="Well-Being" data-np="कल्याण">Well-Being</a>
+                    </div>
+                </li>
+                <li><a href="research.html" data-en="Research" data-np="अनुसन्धान">Research</a></li>
+                <li><a href="about.html" data-en="About Us" data-np="हाम्रो बारेमा">About Us</a></li>
+                <li><a href="blog.html" data-en="Blog" data-np="ब्लग">Blog</a></li>
+                <li><a href="contact.html" data-en="Contact" data-np="सम्पर्क">Contact</a></li>
+                <li class="book-now-nav"><a href="appointment.html" data-en="Book Now" data-np="अपोइन्टमेन्ट बुक गर्नुहोस्"><i class="fas fa-calendar-check"></i> <span>Book Now</span></a></li>
+            </ul>
+            <div class="toggle-group">
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i> <span>Dark</span></button>
+                <button class="lang-toggle" id="langToggle"><i class="fas fa-globe"></i> <span id="langBtnText">🇳🇵 नेपाली</span></button>
+            </div>
+        </nav>
     </div>
-    <div class="info-sidebar">
-      <div class="info-card"><h3><i class="fas fa-clock"></i> Clinic Hours</h3><div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Elite Health Clinic, Lagankhel</strong><p>Mon, Wed, Fri: 4PM-7PM</p></div></div><div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Deepa Fertility Clinic, Shankhamul</strong><p>Tue, Thu, Sat: 10AM-2PM, 5PM-8PM</p></div></div><div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Maya IVF Clinic, Kupandole</strong><p>Daily: 4PM-7PM</p></div></div></div>
-      <div class="info-card"><h3><i class="fas fa-envelope"></i> Auto‑Reply Active</h3><div class="trust-badge"><i class="fas fa-check-circle"></i><div><strong>Instant email to you</strong><p>Appointment summary + clinic info sent to your inbox.</p></div></div><div class="trust-badge"><i class="fas fa-bell"></i><div><strong>Doctor notified</strong><p>Notification sent to Dr. Deepa + BCC copy.</p></div></div></div>
-    </div>
-  </div>
-</main>
-<footer><p>© 2026 Dr. Deepa Chudal – Best Gynecologist in Kathmandu | Infertility Specialist | Auto‑Reply System</p></footer>
+</header>
 
-<div class="floating-buttons"><a href="https://wa.me/9779825207253?text=Hello%20Dr.%20Deepa,%20appointment%20inquiry" class="floating-button whatsapp-button" target="_blank"><i class="fab fa-whatsapp"></i></a><button class="floating-button chat-button" id="chatButton"><i class="fas fa-comments"></i></button></div>
-<div class="chat-container" id="chatContainer"><div class="chat-header"><h3>Chat with Us</h3><button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button></div><div class="chat-messages" id="chatMessagesBox"><div class="message bot">Hello! Auto‑reply is active. Fill the form to get instant confirmation.</div></div><div class="chat-input-area"><input type="text" id="chatInput" placeholder="Type message..."><button id="sendMessage"><i class="fas fa-paper-plane"></i></button></div></div>
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container hero-container">
+        <div class="hero-content">
+            <span class="badge" data-en="⭐ Most Trusted Women's Health Expert" data-np="⭐ विश्वसनीय महिला स्वास्थ्य विशेषज्ञ">⭐ Most Trusted Women's Health Expert</span>
+            <h1 class="hero-title"><span data-en="Best " data-np="उत्कृष्ट ">Best </span><span class="hero-highlight" data-en="Gynecologist & Infertility Specialist" data-np="स्त्री रोग विशेषज्ञ र नि:सन्तानपन उपचार विशेषज्ञ">Gynecologist & Infertility Specialist</span><span data-en=" in Kathmandu" data-np=" काठमाडौंमा"> in Kathmandu</span></h1>
+            <p class="hero-subtitle" data-en="IVF • PCOS • Pregnancy Care • Laparoscopic Surgery — Internationally trained with 15+ years of experience. 10,000+ happy families." data-np="आईभीएफ • पीसीओएस • गर्भावस्था हेरचाह • ल्याप्रोस्कोपिक सर्जरी — अन्तर्राष्ट्रिय रूपमा प्रशिक्षित र १५+ वर्षको अनुभव। १०,०००+ खुसी परिवारहरू।">IVF • PCOS • Pregnancy Care • Laparoscopic Surgery — Internationally trained with 15+ years of experience. 10,000+ happy families.</p>
+            <div class="hero-buttons">
+                <a href="appointment.html" class="btn" data-en="Book Appointment" data-np="अपोइन्टमेन्ट बुक गर्नुहोस्"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+                <a href="https://wa.me/9779840057830" class="btn btn-outline"><i class="fab fa-whatsapp"></i> <span data-en="WhatsApp Consultation" data-np="व्हाट्सएप परामर्श">WhatsApp Consultation</span></a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="deepa.jpg" alt="Dr. Deepa Chudal" class="doctor-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'400\' height=\'500\' fill=\'%23fce4ec\'/%3E%3Ctext x=\'200\' y=\'250\' text-anchor=\'middle\' fill=\'%23d81b60\' font-size=\'22\'%3EDr. Deepa Chudal%3C/text%3E%3C/svg%3E'">
+        </div>
+    </div>
+</section>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+    <div class="container trust-stats">
+        <div class="stat-item"><h3 id="yearsExp">0</h3><p data-en="Years Experience" data-np="वर्षको अनुभव">Years Experience</p></div>
+        <div class="stat-item"><h3 id="happyPatients">0</h3><p data-en="Happy Patients" data-np="खुसी रोगीहरू">Happy Patients</p></div>
+        <div class="stat-item"><h3 id="publications">0</h3><p data-en="Research Publications" data-np="अनुसन्धान पत्रहरू">Research Publications</p></div>
+        <div class="stat-item"><h3>5+</h3><p data-en="International Fellowships" data-np="अन्तर्राष्ट्रिय फेलोशिप">International Fellowships</p></div>
+    </div>
+</div>
+
+<!-- Services Section - 12 items, 4 columns (4x3 grid) -->
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-title"><h2 data-en="Comprehensive Women's Health Services" data-np="सम्पूर्ण महिला स्वास्थ्य सेवाहरू">Comprehensive Women's Health Services</h2></div>
+        <div class="services-grid">
+            <div class="service-card fade-in" onclick="location.href='ivf.html'"><i class="fas fa-baby-carriage service-icon"></i><h3 class="service-title" data-en="IVF / IUI Treatment" data-np="आईभीएफ / आईयूआई उपचार">IVF / IUI Treatment</h3><p data-en="Advanced fertility solutions with high success rates." data-np="उच्च सफलता दरको उन्नत प्रजनन समाधान।">Advanced fertility solutions with high success rates.</p></div>
+            <div class="service-card fade-in" onclick="location.href='pmos.html'"><i class="fas fa-female service-icon"></i><h3 class="service-title" data-en="PMOS / PCOS Care" data-np="पीएमओएस / पीसीओएस हेरचाह">PMOS / PCOS Care</h3><p data-en="Evidence-based PMOS management and fertility support." data-np="प्रमाण-आधारित पीएमओएस व्यवस्थापन र प्रजनन सहायता।">Evidence-based PMOS management and fertility support.</p></div>
+            <div class="service-card fade-in" onclick="location.href='risk.html'"><i class="fas fa-heartbeat service-icon"></i><h3 class="service-title" data-en="High-Risk Pregnancy" data-np="उच्च जोखिम गर्भावस्था">High-Risk Pregnancy</h3><p data-en="Expert monitoring for diabetes, hypertension, multiples." data-np="मधुमेह, उच्च रक्तचाप, जुम्ल्याहा बच्चाको लागि विशेषज्ञ निगरानी।">Expert monitoring for diabetes, hypertension, multiples.</p></div>
+            <div class="service-card fade-in" onclick="location.href='laparoscopy.html'"><i class="fas fa-cut service-icon"></i><h3 class="service-title" data-en="Laparoscopic Surgery" data-np="ल्याप्रोस्कोपिक सर्जरी">Laparoscopic Surgery</h3><p data-en="Minimally invasive with faster recovery." data-np="न्यूनतम आक्रामक र छिटो रिकभरी।">Minimally invasive with faster recovery.</p></div>
+            <div class="service-card fade-in" onclick="location.href='counseling.html'"><i class="fas fa-chalkboard-teacher service-icon"></i><h3 class="service-title" data-en="Preconception Counseling" data-np="गर्भधारण पूर्व परामर्श">Preconception Counseling</h3><p data-en="Optimize health before pregnancy." data-np="गर्भावस्था अघि स्वास्थ्य अनुकूलन।">Optimize health before pregnancy.</p></div>
+            <div class="service-card fade-in" onclick="location.href='gynecology.html'"><i class="fas fa-clinic-medical service-icon"></i><h3 class="service-title" data-en="Routine Gynecology" data-np="नियमित स्त्री रोग">Routine Gynecology</h3><p data-en="Pap smear, menstrual disorders, menopause care." data-np="प्याप स्मियर, मासिक धर्म विकार, मेनोपज हेरचाह।">Pap smear, menstrual disorders, menopause care.</p></div>
+            <div class="service-card fade-in" onclick="location.href='fertility.html'"><i class="fas fa-stethoscope service-icon"></i><h3 class="service-title" data-en="Fertility Assessment & Diagnostics" data-np="प्रजनन मूल्यांकन र निदान">Fertility Assessment & Diagnostics</h3><p data-en="Comprehensive fertility testing and diagnosis." data-np="व्यापक प्रजनन परीक्षण र निदान।">Comprehensive fertility testing and diagnosis.</p></div>
+            <div class="service-card fade-in" onclick="location.href='techniques.html'"><i class="fas fa-microscope service-icon"></i><h3 class="service-title" data-en="Reproductive Techniques" data-np="प्रजनन प्रविधिहरू">Reproductive Techniques</h3><p data-en="IUI, IVF, ICSI, and more advanced procedures." data-np="आईयूआई, आईभीएफ, आईसीएसआई, र अन्य उन्नत प्रक्रियाहरू।">IUI, IVF, ICSI, and more advanced procedures.</p></div>
+            <div class="service-card fade-in" onclick="location.href='maleinfertility.html'"><i class="fas fa-male service-icon"></i><h3 class="service-title" data-en="Male Fertility Solutions" data-np="पुरुष प्रजनन समाधान">Male Fertility Solutions</h3><p data-en="Specialized care for male factor infertility." data-np="पुरुष कारक बांझपनको लागि विशेष हेरचाह।">Specialized care for male factor infertility.</p></div>
+            <div class="service-card fade-in" onclick="location.href='genetics.html'"><i class="fas fa-dna service-icon"></i><h3 class="service-title" data-en="Genetic & Advanced Procedures" data-np="आनुवंशिक र उन्नत प्रक्रियाहरू">Genetic & Advanced Procedures</h3><p data-en="PGT, genetic screening, and advanced fertility options." data-np="पीजीटी, आनुवंशिक जाँच, र उन्नत प्रजनन विकल्पहरू।">PGT, genetic screening, and advanced fertility options.</p></div>
+            <div class="service-card fade-in" onclick="location.href='gyneobs.html'"><i class="fas fa-ambulance service-icon"></i><h3 class="service-title" data-en="Gynecological & Obstetric Care" data-np="स्त्री रोग र प्रसूति हेरचाह">Gynecological & Obstetric Care</h3><p data-en="Full spectrum women's health from adolescence to menopause." data-np="किशोरावस्थादेखि रजोनिवृत्तिसम्म पूर्ण महिला स्वास्थ्य।">Full spectrum women's health from adolescence to menopause.</p></div>
+            <div class="service-card fade-in" onclick="location.href='wellbeing.html'"><i class="fas fa-smile service-icon"></i><h3 class="service-title" data-en="Well-Being" data-np="कल्याण">Well-Being</h3><p data-en="Holistic wellness, nutrition, and lifestyle guidance." data-np="समग्र कल्याण, पोषण, र जीवनशैली मार्गदर्शन।">Holistic wellness, nutrition, and lifestyle guidance.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="section" id="about">
+    <div class="container two-col">
+        <div class="fade-in"><h2 style="color: var(--primary); font-size: 1.7rem; margin-bottom: 15px;" data-en="About Dr. Deepa Chudal" data-np="डा. दीपा चुडालको बारेमा">About Dr. Deepa Chudal</h2><p data-en="Dr. Deepa Chudal is a renowned gynecologist and infertility specialist with over 15 years of experience. She holds prestigious Fellowships in Reproductive Medicine from IHR Guwahati and is dedicated to providing compassionate, evidence-based care." data-np="डा. दीपा चुडाल १५+ वर्षको अनुभव सहितकी प्रख्यात स्त्री रोग विशेषज्ञ र नि:सन्तानपन विशेषज्ञ हुन्। उनले आईएचआर गुवाहाटीबाट प्रतिष्ठित फेलोशिप प्राप्त गरेकी छिन्।">Dr. Deepa Chudal is a renowned gynecologist and infertility specialist with over 15 years of experience. She holds prestigious Fellowships in Reproductive Medicine and is dedicated to providing compassionate, evidence-based care.</p></div>
+        <div class="fade-in"><h2 style="color: var(--primary); font-size: 1.7rem; margin-bottom: 15px;" data-en="Why Choose Dr. Deepa Chudal?" data-np="किन डा. दीपा चुडाल?">Why Choose Dr. Deepa Chudal?</h2><ul class="why-list"><li><i class="fas fa-check-circle"></i> <div><strong>15+ Years & 1,000+ Success Stories</strong></div></li><li><i class="fas fa-globe"></i> <div><strong>5+ International Fellowships & Trainings</strong></div></li><li><i class="fas fa-heart"></i> <div><strong>Personalized Fertility Plans</strong></div></li><li><i class="fas fa-lock"></i> <div><strong>Confidential, Ethical Care</strong></div></li></ul></div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section" id="testimonials">
+    <div class="container"><div class="section-title"><h2 data-en="Patient Success Stories" data-np="रोगीहरूको सफलताका कथाहरू">Patient Success Stories</h2></div><div class="testimonials-grid"><div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p class="testimonial-text" data-en='"After years of infertility, Dr. Deepa gave us hope. Today we are proud parents of twins."' data-np='"वर्षौंको बांझपन पछि, डा. दीपाले हामीलाई आशा दिनुभयो। आज हामी जुम्ल्याहा बच्चाका गर्वित आमाबुवा हौं।"'>"After years of infertility, Dr. Deepa gave us hope. Today we are proud parents of twins."</p><strong>- S. Sharma</strong></div><div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p class="testimonial-text" data-en='"Her PCOS treatment plan changed my life. I conceived naturally within 4 months."' data-np='"उहाँको पीसीओएस उपचार योजनाले मेरो जीवन परिवर्तन गर्यो। ४ महिनै म प्राकृतिक रूपमा गर्भवती भएँ।"'>"Her PCOS treatment plan changed my life. I conceived naturally within 4 months."</p><strong>- N. Shrestha</strong></div></div><div style="text-align: center; margin-top: 25px;"><i class="fab fa-google"></i> <span data-en="4.9/5 Rating from 150+ Google Reviews" data-np="१५०+ गुगल समीक्षाहरूमा ४.९/५ मूल्याङ्कन">4.9/5 Rating from 150+ Google Reviews</span></div></div>
+</section>
+
+<!-- Blog -->
+<section class="section" id="blog"><div class="container"><div class="section-title"><h2 data-en="Women's Health & Fertility Blog" data-np="महिला स्वास्थ्य र प्रजनन ब्लग">Women's Health & Fertility Blog</h2></div><div class="blog-grid"><div class="blog-card fade-in"><i class="fas fa-coins" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="IVF Cost in Nepal: Complete Guide 2025" data-np="नेपालमा आईभीएफ लागत: पूर्ण गाइड २०२५">IVF Cost in Nepal: Complete Guide 2025</h3><a href="cost.html" class="read-more" style="color:var(--secondary);" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div><div class="blog-card fade-in"><i class="fas fa-exclamation-triangle" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="7 Early Signs of Infertility in Women" data-np="महिलामा बांझपनको ७ प्रारम्भिक संकेतहरू">7 Early Signs of Infertility in Women</h3><a href="earlysigns.html" class="read-more" style="color:var(--secondary);" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div><div class="blog-card fade-in"><i class="fas fa-apple-alt" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="PCOS Diet & Lifestyle Plan" data-np="पीसीओएस आहार र जीवनशैली योजना">PCOS Diet & Lifestyle Plan</h3><a href="dietpcos.html" class="read-more" style="color:var(--secondary);" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div></div></div></section>
+
+<!-- FAQ Section -->
+<section class="section"><div class="container"><div class="section-title"><h2 data-en="Frequently Asked Questions" data-np="सोधिने प्रश्नहरू">Frequently Asked Questions</h2></div><div class="faq-list">
+    <div class="faq-item"><div class="faq-question" data-en="What is the cost of IVF treatment in Nepal?" data-np="नेपालमा आईभीएफ उपचारको लागत कति छ?">What is the cost of IVF treatment in Nepal? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="IVF treatment ranges from NPR 1.5 to 2.5 lakhs. IUI costs around NPR 15k–25k. We offer transparent pricing." data-np="आईभीएफ उपचार १.५ देखि २.५ लाख रुपैयाँसम्म हुन्छ। आईयूआईको लागत १५-२५ हजार रुपैयाँ। हामी पारदर्शी मूल्य निर्धारण प्रदान गर्दछौं।">IVF treatment ranges from NPR 1.5 to 2.5 lakhs. IUI costs around NPR 15k–25k.</div></div>
+    <div class="faq-item"><div class="faq-question" data-en="When should I see a fertility specialist?" data-np="मैले प्रजनन विशेषज्ञलाई कहिले देखाउनु पर्छ?">When should I see a fertility specialist? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="If under 35 trying for 1+ year, or over 35 trying for 6+ months, or have PCOS/endometriosis." data-np="यदि ३५ वर्ष मुनि १+ वर्ष प्रयास गर्दा, वा ३५ वर्ष माथि ६+ महिना प्रयास गर्दा, वा पीसीओएस/एन्डोमेट्रियोसिस छ भने।">If under 35 trying for 1+ year, or over 35 trying for 6+ months, or have PCOS/endometriosis.</div></div>
+    <div class="faq-item"><div class="faq-question" data-en="What is the success rate of IUI and IVF?" data-np="आईयूआई र आईभीएफको सफलता दर कति छ?">What is the success rate of IUI and IVF? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="IUI success rates: 10-20% per cycle. IVF success rates: 40-55% depending on age and condition." data-np="आईयूआई सफलता दर: प्रति चक्र १०-२०%。 आईभीएफ सफलता दर: उमेर र अवस्था अनुसार ४०-५५%。">IUI success rates: 10-20% per cycle. IVF success rates: 40-55% depending on age.</div></div>
+    <div class="faq-item"><div class="faq-question" data-en="Does Dr. Deepa Chudal offer laparoscopic surgery?" data-np="डा. दीपा चुडालले ल्याप्रोस्कोपिक सर्जरी प्रदान गर्छिन्?">Does Dr. Deepa Chudal offer laparoscopic surgery? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="Yes, she specializes in minimally invasive gynecological surgeries including fibroid removal, ovarian cystectomy, and endometriosis surgery." data-np="हो, उनी न्यूनतम आक्रामक स्त्री रोग सर्जरीहरूमा विशेषज्ञ छिन्।">Yes, she specializes in minimally invasive gynecological surgeries.</div></div>
+</div></div></section>
+
+<!-- Appointment CTA -->
+<section class="container" id="appointment" style="margin-bottom: 60px;"><div class="appointment-cta"><h3 data-en="📅 Book Your Consultation Today" data-np="📅 आजै तपाईंको परामर्श बुक गर्नुहोस्">📅 Book Your Consultation Today</h3><p data-en="Take the first step towards expert gynecological and fertility care." data-np="विशेषज्ञ स्त्री रोग र प्रजनन हेरचाह तर्फ पहिलो कदम चाल्नुहोस्।">Take the first step towards expert gynecological and fertility care.</p><a href="appointment.html" class="btn" style="background: white; color: var(--secondary);"><i class="fas fa-calendar-check"></i> <span data-en="Schedule Appointment" data-np="अपोइन्टमेन्ट तालिका बनाउनुहोस्">Schedule Appointment</span></a></div></section>
+
+<!-- Footer -->
+<footer id="contact"><div class="container footer-container">
+    <div class="footer-column"><h3>Dr. Deepa Chudal</h3><p>MBBS, MD (Obs/Gyne)<br>Fellowship in Reproductive Medicine</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+    <div class="footer-column"><h3 data-en="Quick Links" data-np="द्रुत लिङ्कहरू">Quick Links</h3><ul class="footer-links"><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="appointment.html">Appointment</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+   <div class="footer-column">
+  <h3 data-en="Clinics" data-np="क्लिनिकहरू">Clinics</h3>
+  <ul class="footer-contact">
+    <li>
+      <i class="fas fa-hospital"></i>
+      <div>
+        <strong>Nepal Police Hospital</strong><br>
+        Maharajgunj
+      </div>
+    </li>
+    <li>
+      <i class="fas fa-clinic-medical"></i>
+      <div>
+        <strong>Shankhmaul Healthcare</strong><br>
+        New Baneswor, Evening 4-7pm
+      </div>
+    </li>
+    <li>
+      <i class="fas fa-clinic-medical"></i>
+      <div>
+        <strong>Maya IVF Clinic</strong><br>
+        Kupandole, Evening 3-7pm
+      </div>
+    </li>
+  </ul>
+</div>
+    <div class="footer-column"><h3 data-en="Contact" data-np="सम्पर्क">Contact</h3><ul class="footer-contact"><li><i class="fas fa-phone"></i> +977-9840057830</li><li><i class="fas fa-envelope"></i> deepa_smile@hotmail.com</li></ul></div>
+</div><div class="container copyright"><p>&copy; 2025 Dr. Deepa Chudal | <span data-en="Best Gynecologist & Infertility Specialist in Kathmandu" data-np="काठमाडौंमा उत्कृष्ट स्त्री रोग विशेषज्ञ र बांझपन विशेषज्ञ">Best Gynecologist & Infertility Specialist in Kathmandu</span></p></div></footer>
+
+<!-- Floating Right Buttons -->
+<div class="floating-buttons">
+    <a href="https://facebook.com/deepaobgy" target="_blank" class="float-btn btn-fb"><i class="fab fa-facebook-f"></i></a>
+    <a href="appointment.html" class="float-btn btn-book"><i class="fas fa-calendar-check"></i></a>
+    <a href="https://wa.me/9779840057830" class="float-btn btn-wa"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+9779840057830" class="float-btn btn-call"><i class="fas fa-phone-alt"></i></a>
+</div>
 
 <script>
-  // ========== EMAILJS CONFIGURATION (VERIFIED & CORRECTED) ==========
-  emailjs.init("nPsKsuZlR3ghah6k-");   // Public Key - DO NOT CHANGE
-  
-  const EMAILJS_SERVICE = "service_qjy53db";               // Service ID
-  const PATIENT_TEMPLATE = "template_g2art0a";             // Patient auto-reply
-  const DOCTOR_TEMPLATE = "template_4k28mlx";              // Doctor notification
-  
-  // Doctor will receive notification on both emails
-  const DOCTOR_EMAILS = "deepachudal@gmail.com, deepa_smile@hotmail.com";
-  // Fallback phone number if system fails (updated as requested)
-  const FALLBACK_PHONE = "9840057830";
-  
-  // ========== Helper: Update time slots based on clinic ==========
-  function updateTimeSlots() {
-    const clinic = document.getElementById('clinicLocation').value;
-    const timeSelect = document.getElementById('preferredTime');
-    timeSelect.innerHTML = '';
-    if (clinic === "Elite Health Clinic, Lagankhel") addTimeOption("Evening (4:00 PM - 7:00 PM)");
-    else if (clinic === "Deepa Fertility & Gynecology Clinic, Shankhamul Health Care") {
-      addTimeOption("Morning (10:00 AM - 2:00 PM)");
-      addTimeOption("Evening (5:00 PM - 8:00 PM)");
-    } else if (clinic === "Maya IVF Clinic, Kupandole" || clinic === "NIFLC - BBC Building, UN Park, Kathmandu") 
-      addTimeOption("Evening (4:00 PM - 7:00 PM)");
-    else if (clinic === "Tele-Gynecology Consultation") addTimeOption("Tele-Gynecology (Flexible Hours)");
-    else addTimeOption("Evening (4:00 PM - 7:00 PM)");
-  }
-  function addTimeOption(text) { 
-    const opt = document.createElement('option'); 
-    opt.value = text; 
-    opt.textContent = text; 
-    document.getElementById('preferredTime').appendChild(opt); 
-  }
-  
-  // Set minimum date to today
-  document.addEventListener('DOMContentLoaded', () => {
-    const dateInput = document.getElementById('preferredDate');
-    if(dateInput) dateInput.min = new Date().toISOString().split('T')[0];
-    updateTimeSlots();
+    // Dark mode
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i> <span>Light</span>' : '<i class="fas fa-moon"></i> <span>Dark</span>';
+        localStorage.setItem('darkMode', isDark);
+    });
+    if (localStorage.getItem('darkMode') === 'true') { document.body.classList.add('dark-mode'); themeToggle.innerHTML = '<i class="fas fa-sun"></i> <span>Light</span>'; }
     
-    // Fix chat messages reference
-    window.chatMessages = document.getElementById('chatMessagesBox');
-  });
-  
-  const form = document.getElementById('appointmentForm');
-  const submitBtn = document.getElementById('submit-btn');
-  const statusDiv = document.getElementById('form-status');
-  
-  function showStatus(msg, type) {
-    statusDiv.innerHTML = `<div class="status-message status-${type}"><i class="fas ${type==='success'?'fa-check-circle':type==='error'?'fa-exclamation-circle':'fa-info-circle'}"></i>${msg}</div>`;
-    statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => statusDiv.innerHTML = '', 8000);
-  }
-  
-  function setLoading(loading) {
-    if(loading) { 
-      submitBtn.innerHTML = '<span class="spinner"></span> Sending confirmation...'; 
-      submitBtn.disabled = true; 
-    } else { 
-      submitBtn.innerHTML = '<i class="fas fa-calendar-check"></i> Confirm & Get Auto‑Reply'; 
-      submitBtn.disabled = false; 
+    // Bilingual (English/Nepali)
+    let currentLang = localStorage.getItem('language') || 'en';
+    function switchLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('language', lang);
+        document.body.classList.toggle('lang-np', lang === 'np');
+        document.querySelectorAll('[data-en][data-np]').forEach(el => {
+            el.innerHTML = el.getAttribute(`data-${lang}`);
+        });
+        document.getElementById('langBtnText').innerHTML = lang === 'en' ? '🇳🇵 नेपाली' : '🇬🇧 English';
     }
-  }
-  
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-  
-    // Get all field values
-    const fullName = document.getElementById('fullName').value.trim();
-    const age = document.getElementById('age').value.trim();
-    const phone = document.getElementById('phoneNumber').value.trim();
-    const email = document.getElementById('emailAddress').value.trim();
-    const clinic = document.getElementById('clinicLocation').value;
-    const preferredDate = document.getElementById('preferredDate').value;
-    const preferredTime = document.getElementById('preferredTime').value;
-    const reason = document.getElementById('reasonForVisit').value;
-    const additional = document.getElementById('additionalInfo').value.trim() || "No additional info";
-    const consent = document.getElementById('consent').checked;
-  
-    // Validation
-    if(!fullName || !age || !phone || !email || !clinic || !preferredDate || !preferredTime || !reason || !consent) {
-      showStatus("Please fill all required fields and provide consent.", "error"); 
-      return;
+    document.getElementById('langToggle').addEventListener('click', () => switchLanguage(currentLang === 'en' ? 'np' : 'en'));
+    switchLanguage(currentLang);
+    
+    // Mobile menu toggle
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
     }
-    if(age<1 || age>120) { showStatus("Enter a valid age (1-120).", "error"); return; }
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showStatus("Valid email address required for auto-reply.", "error"); return; }
-    const selectedDate = new Date(preferredDate);
-    const today = new Date(); today.setHours(0,0,0,0);
-    if(selectedDate < today) { showStatus("Please select a future date.", "error"); return; }
-  
-    setLoading(true);
-  
-    // 1. Patient auto-reply parameters (template_g2art0a)
-    const autoReplyParams = {
-      patient_name: fullName,
-      appointment_date: preferredDate,
-      appointment_time: preferredTime,
-      clinic: clinic,
-      patient_phone: phone,
-      reason: reason,
-      additional_info: additional,
-      to_email: email,               // dynamic recipient (patient)
-      doctor_name: "Dr. Deepa Chudal"
-    };
-  
-    // 2. Doctor notification parameters (template_4k28mlx)
-    // IMPORTANT: Using to_email field to send to doctor's addresses (comma separated works if template configured)
-    const doctorParams = {
-      patient_name: fullName,
-      age: age,
-      phone: phone,
-      email: email,
-      clinic: clinic,
-      date: preferredDate,
-      time: preferredTime,
-      reason: reason,
-      additional: additional,
-      submitted_at: new Date().toLocaleString(),
-      to_email: DOCTOR_EMAILS       // Both doctor emails receive notification
-    };
-  
-    let autoReplySuccess = false;
-    let doctorSuccess = false;
-    let autoReplyErrorDetail = "";
-    let doctorErrorDetail = "";
-  
-    // Send patient auto-reply
-    try {
-      const patientResponse = await emailjs.send(EMAILJS_SERVICE, PATIENT_TEMPLATE, autoReplyParams);
-      if(patientResponse && patientResponse.status === 200) {
-        autoReplySuccess = true;
-      } else {
-        autoReplyErrorDetail = "Unexpected response";
-      }
-    } catch (err) {
-      console.error("Auto-reply EmailJS Error:", err);
-      autoReplyErrorDetail = err.text || err.message || "Email service error";
+    // Dropdown for mobile
+    document.querySelectorAll('.dropdown > a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                link.parentElement.classList.toggle('active');
+            }
+        });
+    });
+    
+    // Stats animation - updated Happy Patients to 1000+
+    function animateStats() {
+        let y=0, p=0, pu=0;
+        // Years Experience → 15
+        const yI=setInterval(()=>{y++;document.getElementById('yearsExp').textContent=y+'+';if(y>=15)clearInterval(yI);},100);
+        // Happy Patients → 1000 (animated smoothly)
+        const pI=setInterval(()=>{p+=20; if(p>1000) p=1000; document.getElementById('happyPatients').textContent=p.toLocaleString()+'+'; if(p>=1000) clearInterval(pI); }, 10);
+        // Publications → 15
+        const puI=setInterval(()=>{pu++;document.getElementById('publications').textContent=pu+'+';if(pu>=15)clearInterval(puI);},120);
     }
-  
-    // Send doctor notification (without extra options parameter - use to_email inside params)
-    try {
-      const doctorResponse = await emailjs.send(EMAILJS_SERVICE, DOCTOR_TEMPLATE, doctorParams);
-      if(doctorResponse && doctorResponse.status === 200) {
-        doctorSuccess = true;
-      } else {
-        doctorErrorDetail = "Doctor notification rejected";
-      }
-    } catch (err) {
-      console.error("Doctor notification Error:", err);
-      doctorErrorDetail = err.text || err.message || "Failed to notify clinic";
-    }
-  
-    // Final status based on results
-    if(autoReplySuccess && doctorSuccess) {
-      showStatus(`✅ Appointment request submitted successfully! An auto‑reply confirmation has been sent to ${email}. Dr. Deepa's team will contact you within 24 hours.`, "success");
-      form.reset();
-      document.getElementById('consent').checked = false;
-      document.getElementById('preferredDate').min = new Date().toISOString().split('T')[0];
-      updateTimeSlots();
-    } 
-    else if(autoReplySuccess && !doctorSuccess) {
-      showStatus(`✅ Auto‑reply sent to ${email}, but doctor notification encountered a temporary issue (${doctorErrorDetail}). Your request is saved and our team will still receive it via backup logs. You may call ${FALLBACK_PHONE} for confirmation.`, "warning");
-    } 
-    else if(!autoReplySuccess && doctorSuccess) {
-      showStatus(`⚠️ Your request was successfully delivered to Dr. Deepa's team, but the auto‑reply could not reach your inbox (${autoReplyErrorDetail}). Please check your email address or contact clinic at ${FALLBACK_PHONE}.`, "warning");
-    } 
-    else {
-      // Both failed — show detailed error and fallback number
-      let detailedMsg = `Submission failed due to email service issues. `;
-      if(autoReplyErrorDetail) detailedMsg += `Auto-reply error: ${autoReplyErrorDetail}. `;
-      if(doctorErrorDetail) detailedMsg += `Doctor notification error: ${doctorErrorDetail}. `;
-      detailedMsg += `Please call ${FALLBACK_PHONE} to book directly.`;
-      showStatus(detailedMsg, "error");
-    }
-  
-    setLoading(false);
-  });
-  
-  // Language toggle (simple UI)
-  let currentLang = 'en';
-  const langToggle = document.getElementById('languageToggle');
-  langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'np' : 'en';
-    const toggleSpan = langToggle.querySelector('span');
-    toggleSpan.textContent = currentLang === 'en' ? 'English' : 'नेपाली';
-    // simple hint: no full translation needed for demo
-  });
-  
-  // Chat widget (fixed missing element IDs)
-  const chatBtn = document.getElementById('chatButton');
-  const chatCont = document.getElementById('chatContainer');
-  const closeChatBtn = document.getElementById('closeChat');
-  const chatMsgContainer = document.getElementById('chatMessagesBox');
-  const chatInputField = document.getElementById('chatInput');
-  const sendChatMsgBtn = document.getElementById('sendMessage');
-  
-  chatBtn.onclick = () => chatCont.classList.toggle('active');
-  closeChatBtn.onclick = () => chatCont.classList.remove('active');
-  
-  const sendChatMessage = () => {
-    const msg = chatInputField.value.trim();
-    if(msg && chatMsgContainer) {
-      const userDiv = document.createElement('div'); 
-      userDiv.className = 'message user'; 
-      userDiv.textContent = msg;
-      chatMsgContainer.appendChild(userDiv);
-      chatInputField.value = '';
-      chatMsgContainer.scrollTop = chatMsgContainer.scrollHeight;
-      setTimeout(() => {
-        const botDiv = document.createElement('div'); 
-        botDiv.className = 'message bot';
-        botDiv.innerHTML = "Thank you! Please use the appointment form for booking – auto‑reply email will be sent instantly. For urgent help, call " + FALLBACK_PHONE + ".";
-        chatMsgContainer.appendChild(botDiv); 
-        chatMsgContainer.scrollTop = chatMsgContainer.scrollHeight;
-      }, 600);
-    }
-  };
-  
-  sendChatMsgBtn.onclick = sendChatMessage;
-  if(chatInputField) chatInputField.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendChatMessage(); });
-  
-  window.updateTimeSlots = updateTimeSlots;
+    animateStats();
+    
+    // Fade-in
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(e=>e.forEach(entry=>entry.isIntersecting&&entry.target.classList.add('visible')),{threshold:0.2});
+    faders.forEach(f=>observer.observe(f));
+    
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item=>item.querySelector('.faq-question').addEventListener('click',()=>item.classList.toggle('active')));
+    
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>anchor.addEventListener('click',function(e){const href=this.getAttribute('href');if(href&&href!=='#'){e.preventDefault();const target=document.querySelector(href);if(target)target.scrollIntoView({behavior:'smooth'});}}));
 </script>
 </body>
 </html>
