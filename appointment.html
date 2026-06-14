@@ -475,7 +475,10 @@
 
 <script>
   // ========== CORRECTED EMAILJS CREDENTIALS ==========
-  emailjs.init("nPsKsuZlR3ghah6k-");   // public key (unchanged, works with your account)
+  // Initialize EmailJS
+    (function() {
+      emailjs.init("nPsKsuZlR3ghah6k-");
+    })();
 
   const EMAILJS_SERVICE = "service_qjy53db";               // your service ID
   const PATIENT_TEMPLATE = "template_g2art0a";             // patient auto‑reply
@@ -580,11 +583,21 @@
     let autoReplySuccess = false;
     let doctorSuccess = false;
 
-    try {
-      await emailjs.send(EMAILJS_SERVICE, PATIENT_TEMPLATE, autoReplyParams);
-      autoReplySuccess = true;
-    } catch (err) {
-      console.error("Auto-reply error:", err);
+   emailjs.send('service_qjy53db', 'template_g2art0a', template_4k28mlx')
+            .then(function(response) {
+              console.log('SUCCESS!', response.status, response.text);
+              showStatus('Thank you! We will contact you within 24 hours to confirm your appointment.', 'success');
+              appointmentForm.reset();
+              preferredDateInput.min = today;
+              updateTimeSlots();
+            }, function(error) {
+              console.log('FAILED...', error);
+              let errorMessage = 'There was an error submitting your request. Please try again or call us directly.';
+              showStatus(errorMessage, 'error');
+            })
+            .finally(function() {
+              setLoading(false);
+            });
     }
 
     try {
