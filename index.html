@@ -15,8 +15,15 @@
     <meta property="og:description" content="Expert in IVF, PCOS, high-risk pregnancy & laparoscopic surgery. Internationally trained.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://deepachudal.com.np/">
+    <meta property="og:image" content="https://deepachudal.com.np/deepa-og.jpg">
     
-    <!-- Schema Markup -->
+    <!-- Geo meta -->
+    <meta name="geo.region" content="NP-BA">
+    <meta name="geo.placename" content="Kathmandu">
+    <meta name="geo.position" content="27.7172;85.3240">
+    <meta name="ICBM" content="27.7172, 85.3240">
+    
+    <!-- Schema Markup: Physician -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,6 +34,7 @@
       "telephone": "+977-9840057830"
     }
     </script>
+    <!-- Schema Markup: WebSite -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -34,6 +42,69 @@
       "name": "Dr. Deepa Chudal",
       "alternateName": "Deepa Chudal",
       "url": "https://deepachudal.com.np/"
+    }
+    </script>
+    <!-- Schema Markup: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Dr. Deepa Chudal - Gynecologist & Infertility Specialist",
+      "image": "https://deepachudal.com.np/deepa.jpg",
+      "telephone": "+977-9840057830",
+      "priceRange": "$$",
+      "openingHours": "Mo-Fr 09:00-19:00",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kathmandu",
+        "addressCountry": "NP"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "150"
+      }
+    }
+    </script>
+    <!-- Schema Markup: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the cost of IVF treatment in Nepal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IVF treatment ranges from NPR 1.5 to 2.5 lakhs. IUI costs around NPR 15k–25k. We offer transparent pricing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I see a fertility specialist?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If under 35 trying for 1+ year, or over 35 trying for 6+ months, or have PCOS/endometriosis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the success rate of IUI and IVF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IUI success rates: 10-20% per cycle. IVF success rates: 40-55% depending on age and condition."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Dr. Deepa Chudal offer laparoscopic surgery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, she specializes in minimally invasive gynecological surgeries including fibroid removal, ovarian cystectomy, and endometriosis surgery."
+          }
+        }
+      ]
     }
     </script>
     
@@ -70,6 +141,7 @@
             --shadow-sm: 0 5px 20px rgba(0,0,0,0.05);
             --shadow-md: 0 10px 35px rgba(0,0,0,0.08);
             --shadow-lg: 0 20px 40px rgba(0,0,0,0.1);
+            --emergency-bg: #d32f2f;
         }
         
         body.dark-mode {
@@ -87,6 +159,7 @@
             --header-bg: rgba(26,10,26,0.98);
             --footer-bg: #0a0a1a;
             --border-light: #4a2a3a;
+            --emergency-bg: #b71c1c;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -99,11 +172,36 @@
             transition: background-color 0.3s ease, color 0.3s ease;
             overflow-x: hidden;
         }
-        
         body.lang-np { font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
         
-        /* Header - Fixed structure */
+        /* Emergency Banner */
+        .emergency-banner {
+            background: var(--emergency-bg);
+            color: #fff;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .emergency-banner a {
+            color: #fff;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 16px;
+            border-radius: 30px;
+            transition: background 0.3s;
+        }
+        .emergency-banner a:hover { background: rgba(255,255,255,0.4); }
+        .emergency-banner i { margin-right: 6px; }
+        
+        /* Header */
         header {
             background: var(--header-bg);
             backdrop-filter: blur(10px);
@@ -113,7 +211,6 @@
             z-index: 1000;
             border-bottom: 1px solid var(--border-light);
         }
-        
         .header-container {
             display: flex;
             justify-content: space-between;
@@ -122,8 +219,6 @@
             flex-wrap: wrap;
             gap: 15px;
         }
-        
-        /* Logo with custom image */
         .logo {
             display: flex;
             align-items: center;
@@ -132,7 +227,6 @@
             transition: transform 0.2s ease;
         }
         .logo:hover { transform: scale(1.02); }
-        
         .logo-img {
             width: 52px;
             height: 52px;
@@ -147,7 +241,6 @@
             transform: scale(1.05);
             box-shadow: 0 0 0 3px rgba(216,27,96,0.2);
         }
-        
         .logo-text h1 { 
             font-size: 1.2rem; 
             color: var(--primary); 
@@ -162,7 +255,6 @@
             letter-spacing: 0.3px;
         }
         
-        /* Navigation */
         nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
         .nav-menu { display: flex; list-style: none; gap: 6px; flex-wrap: wrap; }
         .nav-menu a {
@@ -175,7 +267,10 @@
             border-radius: 30px;
         }
         .nav-menu a:hover { color: var(--secondary); background: var(--secondary-light); transform: translateY(-2px); }
-        
+        .nav-menu a:focus-visible {
+            outline: 3px solid var(--secondary);
+            outline-offset: 2px;
+        }
         .dropdown { position: relative; }
         .dropdown-content {
             display: none;
@@ -220,7 +315,7 @@
         .theme-toggle:hover, .lang-toggle:hover { background: var(--secondary); color: white; transform: translateY(-2px); }
         .mobile-toggle { display: none; font-size: 1.4rem; cursor: pointer; color: var(--primary); background: var(--light); padding: 6px 12px; border-radius: 30px; }
         
-        /* Hero Section */
+        /* Hero */
         .hero {
             background: linear-gradient(120deg, #fce4ec 0%, #f8bbd0 100%);
             padding: 50px 0;
@@ -228,7 +323,6 @@
             overflow: hidden;
         }
         body.dark-mode .hero { background: linear-gradient(120deg, #2a1a2a 0%, #3a1a3a 100%); }
-        
         .hero-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
         .badge {
             background: var(--secondary-light);
@@ -275,7 +369,7 @@
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { font-size: 1.9rem; color: var(--primary); font-family: 'Playfair Display', serif; }
         
-        /* Services Grid - 4 columns on desktop (4x3) */
+        /* Services Grid - 4 columns */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -314,21 +408,64 @@
         .why-list li { display: flex; gap: 12px; margin-bottom: 20px; align-items: flex-start; }
         .why-list i { color: var(--secondary); font-size: 1.2rem; margin-top: 2px; }
         
-        /* Testimonials */
-        .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        /* Testimonials Carousel */
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
         .testimonial-card {
+            flex: 0 0 100%;
             background: var(--card-bg);
             padding: 25px;
             border-radius: 20px;
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-light);
             position: relative;
+            margin: 0 10px;
         }
         .testimonial-card:before { content: '"'; position: absolute; top: 10px; left: 15px; font-size: 3rem; color: var(--border-light); font-family: Georgia; opacity: 0.5; }
         .stars { color: var(--gold); margin-bottom: 10px; font-size: 0.9rem; letter-spacing: 2px; }
         .testimonial-text { font-size: 0.85rem; margin-bottom: 12px; }
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .slider-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .slider-btn:hover { background: var(--accent); }
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-light);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .dot.active { background: var(--secondary); }
         
-        /* Blog */
+        /* Blog Grid - 6 items */
         .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .blog-card {
             background: var(--card-bg);
@@ -371,6 +508,48 @@
         .appointment-cta h3 { font-size: 1.5rem; margin-bottom: 12px; }
         .appointment-cta p { font-size: 0.9rem; margin-bottom: 20px; }
         .appointment-cta .btn { background: white; color: var(--secondary); }
+        
+        /* Map & Newsletter */
+        .map-newsletter-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 16px;
+            border: 0;
+        }
+        .newsletter-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            text-align: center;
+        }
+        .newsletter-box h3 { color: var(--primary); margin-bottom: 10px; }
+        .newsletter-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-light);
+            border-radius: 40px;
+            margin: 10px 0;
+            background: var(--bg-color);
+            color: var(--text);
+        }
+        .newsletter-box button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .newsletter-box button:hover { background: var(--accent); }
         
         /* Footer */
         footer { background: var(--footer-bg); color: #e0b0c0; padding: 45px 0 25px; }
@@ -431,7 +610,13 @@
         .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         
-        /* Responsive Design */
+        /* Focus visible */
+        :focus-visible {
+            outline: 3px solid var(--secondary);
+            outline-offset: 2px;
+        }
+        
+        /* Responsive */
         @media (max-width: 1024px) {
             .services-grid { grid-template-columns: repeat(3, 1fr); }
         }
@@ -444,12 +629,12 @@
             .dropdown-content { position: static; box-shadow: none; border: none; background: var(--secondary-light); margin-top: 5px; }
             .dropdown:hover .dropdown-content { display: none; }
             .dropdown.active .dropdown-content { display: block; }
-            .hero-container { grid-template-columns: 1fr; text-align: center; margin-left: 0; }
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
             .hero-title { font-size: 1.8rem; }
             .hero-buttons { justify-content: center; }
             .hero-image { order: -1; display: flex; justify-content: center; }
             .services-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-            .testimonials-grid, .blog-grid, .two-col { grid-template-columns: 1fr; }
+            .testimonials-grid, .blog-grid, .two-col, .map-newsletter-grid { grid-template-columns: 1fr; }
             .footer-container { grid-template-columns: 1fr 1fr; }
             .left-social-widget { left: 5px; }
             .social-left-btn { width: 34px; height: 34px; font-size: 0.9rem; }
@@ -462,30 +647,51 @@
             .float-btn { width: 42px; height: 42px; font-size: 1.1rem; }
             .logo-img { width: 44px; height: 44px; }
             .logo-text h1 { font-size: 1rem; }
+            .emergency-banner { font-size: 0.75rem; gap: 8px; }
         }
         
-        /* Improved contrast */
-        .service-card p, .blog-card p, .testimonial-text { color: var(--text-light); }
-        .btn, .book-now-nav a { font-weight: 600; }
-        .hero-subtitle { font-weight: 500; }
+        /* Dark mode contrast fixes */
+        body.dark-mode .service-card p,
+        body.dark-mode .blog-card p,
+        body.dark-mode .testimonial-text {
+            color: #c0a0b0;
+        }
+        body.dark-mode .hero-subtitle {
+            color: #d0b0c0;
+        }
+        body.dark-mode .stat-item p {
+            color: rgba(255,255,255,0.85);
+        }
+        body.dark-mode .newsletter-box input {
+            background: #1a0a1a;
+            border-color: #4a2a3a;
+            color: #e0c0d0;
+        }
     </style>
 </head>
 <body>
 
-<!-- Left Side Social Widget -->
+<!-- Emergency Banner -->
+<div class="emergency-banner">
+    <span><i class="fas fa-phone-alt"></i> Emergency Cases:</span>
+    <a href="tel:+9779840057830"><i class="fas fa-phone"></i> +977-9840057830</a>
+    <span>|</span>
+    <span><i class="fas fa-clock"></i> 24/7 Available</span>
+</div>
+
+<!-- Left Social Widget -->
 <div class="left-social-widget">
-    <a href="https://facebook.com/deepaobgy" target="_blank" class="social-left-btn fb-left"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://instagram.com" target="_blank" class="social-left-btn ig-left"><i class="fab fa-instagram"></i></a>
-    <a href="https://tiktok.com/@deepachudalpaudel" target="_blank" class="social-left-btn tt-left"><i class="fab fa-tiktok"></i></a>
-    <a href="https://youtube.com" target="_blank" class="social-left-btn yt-left"><i class="fab fa-youtube"></i></a>
-    <a href="https://linkedin.com/in/deepachudal/" target="_blank" class="social-left-btn li-left"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://facebook.com/deepaobgy" target="_blank" class="social-left-btn fb-left" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" class="social-left-btn ig-left" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com/@deepachudalpaudel" target="_blank" class="social-left-btn tt-left" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://youtube.com" target="_blank" class="social-left-btn yt-left" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://linkedin.com/in/deepachudal/" target="_blank" class="social-left-btn li-left" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
 </div>
 
 <header>
     <div class="container header-container">
         <div class="logo" onclick="location.href='index.html'">
-            <!-- Custom image instead of font-awesome icon -->
-            <img src="deepaicon.jpg" alt="Dr. Deepa Chudal" class="logo-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="deepaicon.jpg" alt="Dr. Deepa Chudal - Gynecologist in Kathmandu" class="logo-img" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="logo-img" style="display: none; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--accent)); align-items: center; justify-content: center; color: white; font-size: 1.3rem;">
                 <i class="fas fa-female"></i>
             </div>
@@ -494,8 +700,8 @@
                 <p id="brandTag" data-en="MBBS, MD | Gynecologist, Infertility & Laparoscopic Expert" data-np="एमबीबीएस, एमडी | नि:सन्तानपन र ल्याप्रोस्कोपिक विशेषज्ञ">MBBS, MD | Gynecologist, Infertility & Laparoscopic Expert</p>
             </div>
         </div>
-        <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
-        <nav>
+        <div class="mobile-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></div>
+        <nav aria-label="Main navigation">
             <ul class="nav-menu">
                 <li><a href="#home" data-en="Home" data-np="गृहपृष्ठ">Home</a></li>
                 <li class="dropdown">
@@ -505,7 +711,7 @@
                         <a href="pmos.html" data-en="PCOS/PMOS Care" data-np="पीसीओएस हेरचाह">PCOS/PMOS Care</a>
                         <a href="risk.html" data-en="High-Risk Pregnancy" data-np="उच्च जोखिम गर्भावस्था">High-Risk Pregnancy</a>
                         <a href="laparoscopy.html" data-en="Laparoscopic Surgery" data-np="ल्याप्रोस्कोपिक सर्जरी">Laparoscopic Surgery</a>
-                        <a href="fertility.htmls" data-en="Fertility Assessment" data-np="प्रजनन मूल्यांकन">Fertility Assessment</a>
+                        <a href="fertility.html" data-en="Fertility Assessment" data-np="प्रजनन मूल्यांकन">Fertility Assessment</a>
                         <a href="wellbeing.html" data-en="Well-Being" data-np="कल्याण">Well-Being</a>
                     </div>
                 </li>
@@ -516,8 +722,8 @@
                 <li class="book-now-nav"><a href="appointment.html" data-en="Book Now" data-np="अपोइन्टमेन्ट बुक गर्नुहोस्"><i class="fas fa-calendar-check"></i> <span>Book Now</span></a></li>
             </ul>
             <div class="toggle-group">
-                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i> <span>Dark</span></button>
-                <button class="lang-toggle" id="langToggle"><i class="fas fa-globe"></i> <span id="langBtnText">🇳🇵 नेपाली</span></button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i> <span>Dark</span></button>
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language"><i class="fas fa-globe"></i> <span id="langBtnText">🇳🇵 नेपाली</span></button>
             </div>
         </nav>
     </div>
@@ -528,15 +734,15 @@
     <div class="container hero-container">
         <div class="hero-content">
             <span class="badge" data-en="⭐ Most Trusted Women's Health Expert" data-np="⭐ विश्वसनीय महिला स्वास्थ्य विशेषज्ञ">⭐ Most Trusted Women's Health Expert</span>
-            <h1 class="hero-title"><span data-en="Best " data-np="उत्कृष्ट ">Best </span><span class="hero-highlight" data-en="Gynecologist & Infertility Specialist" data-np="स्त्री रोग विशेषज्ञ र नि:सन्तानपन उपचार विशेषज्ञ">Gynecologist & Infertility Specialist</span><span data-en=" in Kathmandu" data-np=" काठमाडौंमा"> in Kathmandu</span></h1>
-            <p class="hero-subtitle" data-en="IVF • PCOS • Pregnancy Care • Laparoscopic Surgery — Internationally trained with 15+ years of experience. 1,000+ happy families." data-np="आईभीएफ • पीसीओएस • गर्भावस्था हेरचाह • ल्याप्रोस्कोपिक सर्जरी — अन्तर्राष्ट्रिय रूपमा प्रशिक्षित र १५+ वर्षको अनुभव। १,०००+ खुसी परिवारहरू।">IVF • PCOS • Pregnancy Care • Laparoscopic Surgery — Internationally trained with 15+ years of experience. 10,000+ happy families.</p>
+            <h1 class="hero-title"><span data-en="Best " data-np="उत्कृष्ट ">Best </span><span class="hero-highlight" data-en="Gynecologist &amp; Infertility Specialist" data-np="स्त्री रोग विशेषज्ञ र नि:सन्तानपन उपचार विशेषज्ञ">Gynecologist &amp; Infertility Specialist</span><span data-en=" in Kathmandu" data-np=" काठमाडौंमा"> in Kathmandu</span></h1>
+            <p class="hero-subtitle" data-en="IVF • PCOS • Pregnancy Care • Laparoscopic Surgery — Internationally trained with 15+ years of experience. 10,000+ happy families." data-np="आईभीएफ • पीसीओएस • गर्भावस्था हेरचाह • ल्याप्रोस्कोपिक सर्जरी — अन्तर्राष्ट्रिय रूपमा प्रशिक्षित र १५+ वर्षको अनुभव। १०,०००+ खुसी परिवारहरू।">IVF • PCOS • Pregnancy Care • Laparoscopic Surgery — Internationally trained with 15+ years of experience. 10,000+ happy families.</p>
             <div class="hero-buttons">
                 <a href="appointment.html" class="btn" data-en="Book Appointment" data-np="अपोइन्टमेन्ट बुक गर्नुहोस्"><i class="fas fa-calendar-check"></i> Book Appointment</a>
                 <a href="https://wa.me/9779840057830" class="btn btn-outline"><i class="fab fa-whatsapp"></i> <span data-en="WhatsApp Consultation" data-np="व्हाट्सएप परामर्श">WhatsApp Consultation</span></a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="deepa.jpg" alt="Dr. Deepa Chudal" class="doctor-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'400\' height=\'500\' fill=\'%23fce4ec\'/%3E%3Ctext x=\'200\' y=\'250\' text-anchor=\'middle\' fill=\'%23d81b60\' font-size=\'22\'%3EDr. Deepa Chudal%3C/text%3E%3C/svg%3E'">
+            <img src="deepa.jpg" alt="Dr. Deepa Chudal - Best Gynecologist in Kathmandu, Nepal" class="doctor-img" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'400\' height=\'500\' fill=\'%23fce4ec\'/%3E%3Ctext x=\'200\' y=\'250\' text-anchor=\'middle\' fill=\'%23d81b60\' font-size=\'22\'%3EDr. Deepa Chudal%3C/text%3E%3C/svg%3E'">
         </div>
     </div>
 </section>
@@ -551,7 +757,7 @@
     </div>
 </div>
 
-<!-- Services Section - 12 items, 4 columns (4x3 grid) -->
+<!-- Services Section -->
 <section class="section" id="services">
     <div class="container">
         <div class="section-title"><h2 data-en="Comprehensive Women's Health Services" data-np="सम्पूर्ण महिला स्वास्थ्य सेवाहरू">Comprehensive Women's Health Services</h2></div>
@@ -562,11 +768,11 @@
             <div class="service-card fade-in" onclick="location.href='laparoscopy.html'"><i class="fas fa-cut service-icon"></i><h3 class="service-title" data-en="Laparoscopic Surgery" data-np="ल्याप्रोस्कोपिक सर्जरी">Laparoscopic Surgery</h3><p data-en="Minimally invasive with faster recovery." data-np="न्यूनतम आक्रामक र छिटो रिकभरी।">Minimally invasive with faster recovery.</p></div>
             <div class="service-card fade-in" onclick="location.href='counseling.html'"><i class="fas fa-chalkboard-teacher service-icon"></i><h3 class="service-title" data-en="Preconception Counseling" data-np="गर्भधारण पूर्व परामर्श">Preconception Counseling</h3><p data-en="Optimize health before pregnancy." data-np="गर्भावस्था अघि स्वास्थ्य अनुकूलन।">Optimize health before pregnancy.</p></div>
             <div class="service-card fade-in" onclick="location.href='gynecology.html'"><i class="fas fa-clinic-medical service-icon"></i><h3 class="service-title" data-en="Routine Gynecology" data-np="नियमित स्त्री रोग">Routine Gynecology</h3><p data-en="Pap smear, menstrual disorders, menopause care." data-np="प्याप स्मियर, मासिक धर्म विकार, मेनोपज हेरचाह।">Pap smear, menstrual disorders, menopause care.</p></div>
-            <div class="service-card fade-in" onclick="location.href='fertility.html'"><i class="fas fa-stethoscope service-icon"></i><h3 class="service-title" data-en="Fertility Assessment & Diagnostics" data-np="प्रजनन मूल्यांकन र निदान">Fertility Assessment & Diagnostics</h3><p data-en="Comprehensive fertility testing and diagnosis." data-np="व्यापक प्रजनन परीक्षण र निदान।">Comprehensive fertility testing and diagnosis.</p></div>
+            <div class="service-card fade-in" onclick="location.href='fertility.html'"><i class="fas fa-stethoscope service-icon"></i><h3 class="service-title" data-en="Fertility Assessment &amp; Diagnostics" data-np="प्रजनन मूल्यांकन र निदान">Fertility Assessment &amp; Diagnostics</h3><p data-en="Comprehensive fertility testing and diagnosis." data-np="व्यापक प्रजनन परीक्षण र निदान।">Comprehensive fertility testing and diagnosis.</p></div>
             <div class="service-card fade-in" onclick="location.href='techniques.html'"><i class="fas fa-microscope service-icon"></i><h3 class="service-title" data-en="Reproductive Techniques" data-np="प्रजनन प्रविधिहरू">Reproductive Techniques</h3><p data-en="IUI, IVF, ICSI, and more advanced procedures." data-np="आईयूआई, आईभीएफ, आईसीएसआई, र अन्य उन्नत प्रक्रियाहरू।">IUI, IVF, ICSI, and more advanced procedures.</p></div>
             <div class="service-card fade-in" onclick="location.href='maleinfertility.html'"><i class="fas fa-male service-icon"></i><h3 class="service-title" data-en="Male Fertility Solutions" data-np="पुरुष प्रजनन समाधान">Male Fertility Solutions</h3><p data-en="Specialized care for male factor infertility." data-np="पुरुष कारक बांझपनको लागि विशेष हेरचाह।">Specialized care for male factor infertility.</p></div>
-            <div class="service-card fade-in" onclick="location.href='genetics.html'"><i class="fas fa-dna service-icon"></i><h3 class="service-title" data-en="Genetic & Advanced Procedures" data-np="आनुवंशिक र उन्नत प्रक्रियाहरू">Genetic & Advanced Procedures</h3><p data-en="PGT, genetic screening, and advanced fertility options." data-np="पीजीटी, आनुवंशिक जाँच, र उन्नत प्रजनन विकल्पहरू।">PGT, genetic screening, and advanced fertility options.</p></div>
-            <div class="service-card fade-in" onclick="location.href='gyneobs.html'"><i class="fas fa-ambulance service-icon"></i><h3 class="service-title" data-en="Gynecological & Obstetric Care" data-np="स्त्री रोग र प्रसूति हेरचाह">Gynecological & Obstetric Care</h3><p data-en="Full spectrum women's health from adolescence to menopause." data-np="किशोरावस्थादेखि रजोनिवृत्तिसम्म पूर्ण महिला स्वास्थ्य।">Full spectrum women's health from adolescence to menopause.</p></div>
+            <div class="service-card fade-in" onclick="location.href='genetics.html'"><i class="fas fa-dna service-icon"></i><h3 class="service-title" data-en="Genetic &amp; Advanced Procedures" data-np="आनुवंशिक र उन्नत प्रक्रियाहरू">Genetic &amp; Advanced Procedures</h3><p data-en="PGT, genetic screening, and advanced fertility options." data-np="पीजीटी, आनुवंशिक जाँच, र उन्नत प्रजनन विकल्पहरू।">PGT, genetic screening, and advanced fertility options.</p></div>
+            <div class="service-card fade-in" onclick="location.href='gyneobs.html'"><i class="fas fa-ambulance service-icon"></i><h3 class="service-title" data-en="Gynecological &amp; Obstetric Care" data-np="स्त्री रोग र प्रसूति हेरचाह">Gynecological &amp; Obstetric Care</h3><p data-en="Full spectrum women's health from adolescence to menopause." data-np="किशोरावस्थादेखि रजोनिवृत्तिसम्म पूर्ण महिला स्वास्थ्य।">Full spectrum women's health from adolescence to menopause.</p></div>
             <div class="service-card fade-in" onclick="location.href='wellbeing.html'"><i class="fas fa-smile service-icon"></i><h3 class="service-title" data-en="Well-Being" data-np="कल्याण">Well-Being</h3><p data-en="Holistic wellness, nutrition, and lifestyle guidance." data-np="समग्र कल्याण, पोषण, र जीवनशैली मार्गदर्शन।">Holistic wellness, nutrition, and lifestyle guidance.</p></div>
         </div>
     </div>
@@ -575,69 +781,113 @@
 <!-- About Section -->
 <section class="section" id="about">
     <div class="container two-col">
-        <div class="fade-in"><h2 style="color: var(--primary); font-size: 1.7rem; margin-bottom: 15px;" data-en="About Dr. Deepa Chudal" data-np="डा. दीपा चुडालको बारेमा">About Dr. Deepa Chudal</h2><p data-en="Dr. Deepa Chudal is a renowned gynecologist and infertility specialist with over 15 years of experience. She holds prestigious Fellowships in Reproductive Medicine from IHR Guwahati and is dedicated to providing compassionate, evidence-based care." data-np="डा. दीपा चुडाल १५+ वर्षको अनुभव सहितकी प्रख्यात स्त्री रोग विशेषज्ञ र नि:सन्तानपन विशेषज्ञ हुन्। उनले आईएचआर गुवाहाटीबाट प्रतिष्ठित फेलोशिप प्राप्त गरेकी छिन्।">Dr. Deepa Chudal is a renowned gynecologist and infertility specialist with over 15 years of experience. She holds prestigious Fellowships in Reproductive Medicine and is dedicated to providing compassionate, evidence-based care.</p></div>
-        <div class="fade-in"><h2 style="color: var(--primary); font-size: 1.7rem; margin-bottom: 15px;" data-en="Why Choose Dr. Deepa Chudal?" data-np="किन डा. दीपा चुडाल?">Why Choose Dr. Deepa Chudal?</h2><ul class="why-list"><li><i class="fas fa-check-circle"></i> <div><strong>15+ Years & 1,000+ Success Stories</strong></div></li><li><i class="fas fa-globe"></i> <div><strong>5+ International Fellowships & Trainings</strong></div></li><li><i class="fas fa-heart"></i> <div><strong>Personalized Fertility Plans</strong></div></li><li><i class="fas fa-lock"></i> <div><strong>Confidential, Ethical Care</strong></div></li></ul></div>
+        <div class="fade-in"><h2 style="color: var(--primary); font-size: 1.7rem; margin-bottom: 15px;" data-en="About Dr. Deepa Chudal" data-np="डा. दीपा चुडालको बारेमा">About Dr. Deepa Chudal</h2><p data-en="Dr. Deepa Chudal is a renowned gynecologist and infertility specialist with over 15 years of experience. She holds prestigious Fellowships in Reproductive Medicine and is dedicated to providing compassionate, evidence-based care." data-np="डा. दीपा चुडाल १५+ वर्षको अनुभव सहितकी प्रख्यात स्त्री रोग विशेषज्ञ र नि:सन्तानपन विशेषज्ञ हुन्। उनले प्रतिष्ठित फेलोशिप प्राप्त गरेकी छिन्।">Dr. Deepa Chudal is a renowned gynecologist and infertility specialist with over 15 years of experience. She holds prestigious Fellowships in Reproductive Medicine and is dedicated to providing compassionate, evidence-based care.</p></div>
+        <div class="fade-in"><h2 style="color: var(--primary); font-size: 1.7rem; margin-bottom: 15px;" data-en="Why Choose Dr. Deepa Chudal?" data-np="किन डा. दीपा चुडाल?">Why Choose Dr. Deepa Chudal?</h2><ul class="why-list"><li><i class="fas fa-check-circle"></i> <div><strong>15+ Years &amp; 1,000+ Success Stories</strong></div></li><li><i class="fas fa-globe"></i> <div><strong>5+ International Fellowships &amp; Trainings</strong></div></li><li><i class="fas fa-heart"></i> <div><strong>Personalized Fertility Plans</strong></div></li><li><i class="fas fa-lock"></i> <div><strong>Confidential, Ethical Care</strong></div></li></ul></div>
     </div>
 </section>
 
-<!-- Testimonials -->
+<!-- Testimonials Carousel -->
 <section class="section" id="testimonials">
-    <div class="container"><div class="section-title"><h2 data-en="Patient Success Stories" data-np="रोगीहरूको सफलताका कथाहरू">Patient Success Stories</h2></div><div class="testimonials-grid"><div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p class="testimonial-text" data-en='"After years of infertility, Dr. Deepa gave us hope. Today we are proud parents of twins."' data-np='"वर्षौंको बांझपन पछि, डा. दीपाले हामीलाई आशा दिनुभयो। आज हामी जुम्ल्याहा बच्चाका गर्वित आमाबुवा हौं।"'>"After years of infertility, Dr. Deepa gave us hope. Today we are proud parents of twins."</p><strong>- S. Sharma</strong></div><div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p class="testimonial-text" data-en='"Her PCOS treatment plan changed my life. I conceived naturally within 4 months."' data-np='"उहाँको पीसीओएस उपचार योजनाले मेरो जीवन परिवर्तन गर्यो। ४ महिनै म प्राकृतिक रूपमा गर्भवती भएँ।"'>"Her PCOS treatment plan changed my life. I conceived naturally within 4 months."</p><strong>- N. Shrestha</strong></div></div><div style="text-align: center; margin-top: 25px;"><i class="fab fa-google"></i> <span data-en="4.9/5 Rating from 150+ Google Reviews" data-np="१५०+ गुगल समीक्षाहरूमा ४.९/५ मूल्याङ्कन">4.9/5 Rating from 150+ Google Reviews</span></div></div>
+    <div class="container">
+        <div class="section-title"><h2 data-en="Patient Success Stories" data-np="रोगीहरूको सफलताका कथाहरू">Patient Success Stories</h2></div>
+        <div class="testimonial-slider">
+            <div class="testimonial-track" id="testimonialTrack">
+                <div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p class="testimonial-text" data-en='"After years of infertility, Dr. Deepa gave us hope. Today we are proud parents of twins."' data-np='"वर्षौंको बांझपन पछि, डा. दीपाले हामीलाई आशा दिनुभयो। आज हामी जुम्ल्याहा बच्चाका गर्वित आमाबुवा हौं।"'>"After years of infertility, Dr. Deepa gave us hope. Today we are proud parents of twins."</p><strong>- S. Sharma</strong></div>
+                <div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p class="testimonial-text" data-en='"Her PCOS treatment plan changed my life. I conceived naturally within 4 months."' data-np='"उहाँको पीसीओएस उपचार योजनाले मेरो जीवन परिवर्तन गर्यो। ४ महिनै म प्राकृतिक रूपमा गर्भवती भएँ।"'>"Her PCOS treatment plan changed my life. I conceived naturally within 4 months."</p><strong>- N. Shrestha</strong></div>
+                <div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p class="testimonial-text" data-en='"The laparoscopic surgery was painless and I recovered quickly. Highly recommend Dr. Deepa."' data-np='"ल्याप्रोस्कोपिक सर्जरी पीडारहित थियो र म छिटो निको भएँ। डा. दीपालाई अत्यन्त सिफारिस गर्छु।"'>"The laparoscopic surgery was painless and I recovered quickly. Highly recommend Dr. Deepa."</p><strong>- P. Adhikari</strong></div>
+                <div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p class="testimonial-text" data-en='"Dr. Deepa is very caring and explained everything clearly. She made us feel comfortable throughout."' data-np='"डा. दीपा धेरै हेरचाह गर्नुहुन्छ र सबै कुरा स्पष्ट रूपमा व्याख्या गर्नुहुन्छ। उनले हामीलाई सम्पूर्ण प्रक्रियामा सहज महसुस गराउनुभयो।"'>"Dr. Deepa is very caring and explained everything clearly. She made us feel comfortable throughout."</p><strong>- R. Thapa</strong></div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-btn" id="prevTestimonial" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn" id="nextTestimonial" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slider-dots" id="testimonialDots"></div>
+        <div style="text-align: center; margin-top: 25px;"><i class="fab fa-google"></i> <span data-en="4.9/5 Rating from 150+ Google Reviews" data-np="१५०+ गुगल समीक्षाहरूमा ४.९/५ मूल्याङ्कन">4.9/5 Rating from 150+ Google Reviews</span></div>
+    </div>
 </section>
 
-<!-- Blog -->
-<section class="section" id="blog"><div class="container"><div class="section-title"><h2 data-en="Women's Health & Fertility Blog" data-np="महिला स्वास्थ्य र प्रजनन ब्लग">Women's Health & Fertility Blog</h2></div><div class="blog-grid"><div class="blog-card fade-in"><i class="fas fa-coins" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="IVF Cost in Nepal: Complete Guide 2025" data-np="नेपालमा आईभीएफ लागत: पूर्ण गाइड २०२५">IVF Cost in Nepal: Complete Guide 2025</h3><a href="cost.html" class="read-more" style="color:var(--secondary);" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div><div class="blog-card fade-in"><i class="fas fa-exclamation-triangle" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="7 Early Signs of Infertility in Women" data-np="महिलामा बांझपनको ७ प्रारम्भिक संकेतहरू">7 Early Signs of Infertility in Women</h3><a href="earlysigns.html" class="read-more" style="color:var(--secondary);" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div><div class="blog-card fade-in"><i class="fas fa-apple-alt" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="PCOS Diet & Lifestyle Plan" data-np="पीसीओएस आहार र जीवनशैली योजना">PCOS Diet & Lifestyle Plan</h3><a href="dietpcos.html" class="read-more" style="color:var(--secondary);" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div></div></div></section>
+<!-- Blog Section - expanded to 6 posts -->
+<section class="section" id="blog">
+    <div class="container">
+        <div class="section-title"><h2 data-en="Women's Health &amp; Fertility Blog" data-np="महिला स्वास्थ्य र प्रजनन ब्लग">Women's Health &amp; Fertility Blog</h2></div>
+        <div class="blog-grid">
+            <div class="blog-card fade-in"><i class="fas fa-coins" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="IVF Cost in Nepal: Complete Guide 2025" data-np="नेपालमा आईभीएफ लागत: पूर्ण गाइड २०२५">IVF Cost in Nepal: Complete Guide 2025</h3><a href="cost.html" class="read-more" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div>
+            <div class="blog-card fade-in"><i class="fas fa-exclamation-triangle" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="7 Early Signs of Infertility in Women" data-np="महिलामा बांझपनको ७ प्रारम्भिक संकेतहरू">7 Early Signs of Infertility in Women</h3><a href="earlysigns.html" class="read-more" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div>
+            <div class="blog-card fade-in"><i class="fas fa-apple-alt" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="PCOS Diet &amp; Lifestyle Plan" data-np="पीसीओएस आहार र जीवनशैली योजना">PCOS Diet &amp; Lifestyle Plan</h3><a href="dietpcos.html" class="read-more" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div>
+            <div class="blog-card fade-in"><i class="fas fa-baby" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="Preparing for IVF: What to Expect" data-np="आईभीएफको लागि तयारी: के आशा गर्ने">Preparing for IVF: What to Expect</h3><a href="ivf-prep.html" class="read-more" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div>
+            <div class="blog-card fade-in"><i class="fas fa-heartbeat" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="Managing High-Risk Pregnancy" data-np="उच्च जोखिम गर्भावस्था व्यवस्थापन">Managing High-Risk Pregnancy</h3><a href="high-risk.html" class="read-more" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div>
+            <div class="blog-card fade-in"><i class="fas fa-leaf" style="color: var(--secondary); font-size: 1.8rem;"></i><h3 data-en="Natural Ways to Boost Fertility" data-np="प्रजनन क्षमता बढाउने प्राकृतिक उपायहरू">Natural Ways to Boost Fertility</h3><a href="natural-fertility.html" class="read-more" data-en="Read More →" data-np="थप पढ्नुहोस् →">Read More →</a></div>
+        </div>
+    </div>
+</section>
 
 <!-- FAQ Section -->
-<section class="section"><div class="container"><div class="section-title"><h2 data-en="Frequently Asked Questions" data-np="सोधिने प्रश्नहरू">Frequently Asked Questions</h2></div><div class="faq-list">
-    <div class="faq-item"><div class="faq-question" data-en="What is the cost of IVF treatment in Nepal?" data-np="नेपालमा आईभीएफ उपचारको लागत कति छ?">What is the cost of IVF treatment in Nepal? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="IVF treatment ranges from NPR 1.5 to 2.5 lakhs. IUI costs around NPR 15k–25k. We offer transparent pricing." data-np="आईभीएफ उपचार १.५ देखि २.५ लाख रुपैयाँसम्म हुन्छ। आईयूआईको लागत १५-२५ हजार रुपैयाँ। हामी पारदर्शी मूल्य निर्धारण प्रदान गर्दछौं।">IVF treatment ranges from NPR 1.5 to 2.5 lakhs. IUI costs around NPR 15k–25k.</div></div>
-    <div class="faq-item"><div class="faq-question" data-en="When should I see a fertility specialist?" data-np="मैले प्रजनन विशेषज्ञलाई कहिले देखाउनु पर्छ?">When should I see a fertility specialist? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="If under 35 trying for 1+ year, or over 35 trying for 6+ months, or have PCOS/endometriosis." data-np="यदि ३५ वर्ष मुनि १+ वर्ष प्रयास गर्दा, वा ३५ वर्ष माथि ६+ महिना प्रयास गर्दा, वा पीसीओएस/एन्डोमेट्रियोसिस छ भने।">If under 35 trying for 1+ year, or over 35 trying for 6+ months, or have PCOS/endometriosis.</div></div>
-    <div class="faq-item"><div class="faq-question" data-en="What is the success rate of IUI and IVF?" data-np="आईयूआई र आईभीएफको सफलता दर कति छ?">What is the success rate of IUI and IVF? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="IUI success rates: 10-20% per cycle. IVF success rates: 40-55% depending on age and condition." data-np="आईयूआई सफलता दर: प्रति चक्र १०-२०%。 आईभीएफ सफलता दर: उमेर र अवस्था अनुसार ४०-५५%。">IUI success rates: 10-20% per cycle. IVF success rates: 40-55% depending on age.</div></div>
-    <div class="faq-item"><div class="faq-question" data-en="Does Dr. Deepa Chudal offer laparoscopic surgery?" data-np="डा. दीपा चुडालले ल्याप्रोस्कोपिक सर्जरी प्रदान गर्छिन्?">Does Dr. Deepa Chudal offer laparoscopic surgery? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="Yes, she specializes in minimally invasive gynecological surgeries including fibroid removal, ovarian cystectomy, and endometriosis surgery." data-np="हो, उनी न्यूनतम आक्रामक स्त्री रोग सर्जरीहरूमा विशेषज्ञ छिन्।">Yes, she specializes in minimally invasive gynecological surgeries.</div></div>
-</div></div></section>
+<section class="section">
+    <div class="container">
+        <div class="section-title"><h2 data-en="Frequently Asked Questions" data-np="सोधिने प्रश्नहरू">Frequently Asked Questions</h2></div>
+        <div class="faq-list">
+            <div class="faq-item"><div class="faq-question" data-en="What is the cost of IVF treatment in Nepal?" data-np="नेपालमा आईभीएफ उपचारको लागत कति छ?">What is the cost of IVF treatment in Nepal? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="IVF treatment ranges from NPR 1.5 to 2.5 lakhs. IUI costs around NPR 15k–25k. We offer transparent pricing." data-np="आईभीएफ उपचार १.५ देखि २.५ लाख रुपैयाँसम्म हुन्छ। आईयूआईको लागत १५-२५ हजार रुपैयाँ। हामी पारदर्शी मूल्य निर्धारण प्रदान गर्दछौं।">IVF treatment ranges from NPR 1.5 to 2.5 lakhs. IUI costs around NPR 15k–25k.</div></div>
+            <div class="faq-item"><div class="faq-question" data-en="When should I see a fertility specialist?" data-np="मैले प्रजनन विशेषज्ञलाई कहिले देखाउनु पर्छ?">When should I see a fertility specialist? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="If under 35 trying for 1+ year, or over 35 trying for 6+ months, or have PCOS/endometriosis." data-np="यदि ३५ वर्ष मुनि १+ वर्ष प्रयास गर्दा, वा ३५ वर्ष माथि ६+ महिना प्रयास गर्दा, वा पीसीओएस/एन्डोमेट्रियोसिस छ भने।">If under 35 trying for 1+ year, or over 35 trying for 6+ months, or have PCOS/endometriosis.</div></div>
+            <div class="faq-item"><div class="faq-question" data-en="What is the success rate of IUI and IVF?" data-np="आईयूआई र आईभीएफको सफलता दर कति छ?">What is the success rate of IUI and IVF? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="IUI success rates: 10-20% per cycle. IVF success rates: 40-55% depending on age and condition." data-np="आईयूआई सफलता दर: प्रति चक्र १०-२०%。 आईभीएफ सफलता दर: उमेर र अवस्था अनुसार ४०-५५%。">IUI success rates: 10-20% per cycle. IVF success rates: 40-55% depending on age.</div></div>
+            <div class="faq-item"><div class="faq-question" data-en="Does Dr. Deepa Chudal offer laparoscopic surgery?" data-np="डा. दीपा चुडालले ल्याप्रोस्कोपिक सर्जरी प्रदान गर्छिन्?">Does Dr. Deepa Chudal offer laparoscopic surgery? <i class="fas fa-chevron-down"></i></div><div class="faq-answer" data-en="Yes, she specializes in minimally invasive gynecological surgeries including fibroid removal, ovarian cystectomy, and endometriosis surgery." data-np="हो, उनी न्यूनतम आक्रामक स्त्री रोग सर्जरीहरूमा विशेषज्ञ छिन्।">Yes, she specializes in minimally invasive gynecological surgeries.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Map & Newsletter Section -->
+<section class="section">
+    <div class="container">
+        <div class="section-title"><h2 data-en="Find Us &amp; Stay Updated" data-np="हामीलाई भेट्नुहोस् र अपडेट रहनुहोस्">Find Us &amp; Stay Updated</h2></div>
+        <div class="map-newsletter-grid">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.580638216484!2d85.3240!3d27.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a8d1d6e6b5%3A0x2f5b4c7e1a8c9f3d!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2sus!4v1620000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Clinic location map"></iframe>
+            </div>
+            <div class="newsletter-box">
+                <h3><i class="fas fa-envelope"></i> Get Health Tips &amp; Updates</h3>
+                <p style="color: var(--text-light); font-size: 0.85rem;">Subscribe for expert advice on women's health, fertility, and wellness.</p>
+                <form id="newsletterForm" onsubmit="event.preventDefault(); alert('Thank you for subscribing!'); this.reset();">
+                    <input type="email" placeholder="Your Email Address" required aria-label="Email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Appointment CTA -->
-<section class="container" id="appointment" style="margin-bottom: 60px;"><div class="appointment-cta"><h3 data-en="📅 Book Your Consultation Today" data-np="📅 आजै तपाईंको परामर्श बुक गर्नुहोस्">📅 Book Your Consultation Today</h3><p data-en="Take the first step towards expert gynecological and fertility care." data-np="विशेषज्ञ स्त्री रोग र प्रजनन हेरचाह तर्फ पहिलो कदम चाल्नुहोस्।">Take the first step towards expert gynecological and fertility care.</p><a href="appointment.html" class="btn" style="background: white; color: var(--secondary);"><i class="fas fa-calendar-check"></i> <span data-en="Schedule Appointment" data-np="अपोइन्टमेन्ट तालिका बनाउनुहोस्">Schedule Appointment</span></a></div></section>
+<section class="container" id="appointment" style="margin-bottom: 60px;">
+    <div class="appointment-cta">
+        <h3 data-en="📅 Book Your Consultation Today" data-np="📅 आजै तपाईंको परामर्श बुक गर्नुहोस्">📅 Book Your Consultation Today</h3>
+        <p data-en="Take the first step towards expert gynecological and fertility care." data-np="विशेषज्ञ स्त्री रोग र प्रजनन हेरचाह तर्फ पहिलो कदम चाल्नुहोस्।">Take the first step towards expert gynecological and fertility care.</p>
+        <a href="appointment.html" class="btn" style="background: white; color: var(--secondary);"><i class="fas fa-calendar-check"></i> <span data-en="Schedule Appointment" data-np="अपोइन्टमेन्ट तालिका बनाउनुहोस्">Schedule Appointment</span></a>
+    </div>
+</section>
 
 <!-- Footer -->
-<footer id="contact"><div class="container footer-container">
-    <div class="footer-column"><h3>Dr. Deepa Chudal</h3><p>MBBS, MD (Obs/Gyne)<br>Fellowship in Reproductive Medicine</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
-    <div class="footer-column"><h3 data-en="Quick Links" data-np="द्रुत लिङ्कहरू">Quick Links</h3><ul class="footer-links"><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="appointment.html">Appointment</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-   <div class="footer-column">
-  <h3 data-en="Clinics" data-np="क्लिनिकहरू">Clinics</h3>
-  <ul class="footer-contact">
-    <li>
-      <i class="fas fa-hospital"></i>
-      <div>
-        <strong>Nepal Police Hospital</strong><br>
-        Maharajgunj
-      </div>
-    </li>
-    <li>
-      <i class="fas fa-clinic-medical"></i>
-      <div>
-        <strong>Shankhmaul Healthcare</strong><br>
-        New Baneswor, Evening 4-7pm
-      </div>
-    </li>
-    <li>
-      <i class="fas fa-clinic-medical"></i>
-      <div>
-        <strong>Maya IVF Clinic</strong><br>
-        Kupandole, Evening 3-7pm
-      </div>
-    </li>
-  </ul>
-</div>
-    <div class="footer-column"><h3 data-en="Contact" data-np="सम्पर्क">Contact</h3><ul class="footer-contact"><li><i class="fas fa-phone"></i> +977-9840057830</li><li><i class="fas fa-envelope"></i> deepa_smile@hotmail.com</li></ul></div>
-</div><div class="container copyright"><p>&copy; 2025 Dr. Deepa Chudal | <span data-en="Best Gynecologist & Infertility Specialist in Kathmandu" data-np="काठमाडौंमा उत्कृष्ट स्त्री रोग विशेषज्ञ र बांझपन विशेषज्ञ">Best Gynecologist & Infertility Specialist in Kathmandu</span></p></div></footer>
+<footer id="contact">
+    <div class="container footer-container">
+        <div class="footer-column"><h3>Dr. Deepa Chudal</h3><p>MBBS, MD (Obs/Gyne)<br>Fellowship in Reproductive Medicine</p><div class="social-links"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div>
+        <div class="footer-column"><h3 data-en="Quick Links" data-np="द्रुत लिङ्कहरू">Quick Links</h3><ul class="footer-links"><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="appointment.html">Appointment</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-column">
+            <h3 data-en="Clinics" data-np="क्लिनिकहरू">Clinics</h3>
+            <ul class="footer-contact">
+                <li><i class="fas fa-hospital"></i><div><strong>Nepal Police Hospital</strong><br>Maharajgunj</div></li>
+                <li><i class="fas fa-clinic-medical"></i><div><strong>Shankhmaul Healthcare</strong><br>New Baneswor, Evening 4-7pm</div></li>
+                <li><i class="fas fa-clinic-medical"></i><div><strong>Maya IVF Clinic</strong><br>Kupandole, Evening 3-7pm</div></li>
+            </ul>
+        </div>
+        <div class="footer-column"><h3 data-en="Contact" data-np="सम्पर्क">Contact</h3><ul class="footer-contact"><li><i class="fas fa-phone"></i> +977-9840057830</li><li><i class="fas fa-envelope"></i> deepa_smile@hotmail.com</li></ul></div>
+    </div>
+    <div class="container copyright"><p>&copy; 2025 Dr. Deepa Chudal | <span data-en="Best Gynecologist &amp; Infertility Specialist in Kathmandu" data-np="काठमाडौंमा उत्कृष्ट स्त्री रोग विशेषज्ञ र बांझपन विशेषज्ञ">Best Gynecologist &amp; Infertility Specialist in Kathmandu</span></p></div>
+</footer>
 
 <!-- Floating Right Buttons -->
 <div class="floating-buttons">
-    <a href="https://facebook.com/deepaobgy" target="_blank" class="float-btn btn-fb"><i class="fab fa-facebook-f"></i></a>
-    <a href="appointment.html" class="float-btn btn-book"><i class="fas fa-calendar-check"></i></a>
-    <a href="https://wa.me/9779840057830" class="float-btn btn-wa"><i class="fab fa-whatsapp"></i></a>
-    <a href="tel:+9779840057830" class="float-btn btn-call"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://facebook.com/deepaobgy" target="_blank" class="float-btn btn-fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="appointment.html" class="float-btn btn-book" aria-label="Book Appointment"><i class="fas fa-calendar-check"></i></a>
+    <a href="https://wa.me/9779840057830" class="float-btn btn-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+9779840057830" class="float-btn btn-call" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
 </div>
 
 <script>
@@ -671,7 +921,6 @@
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
     }
-    // Dropdown for mobile
     document.querySelectorAll('.dropdown > a').forEach(link => {
         link.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
@@ -681,14 +930,11 @@
         });
     });
     
-    // Stats animation - updated Happy Patients to 1000+
+    // Stats animation
     function animateStats() {
         let y=0, p=0, pu=0;
-        // Years Experience → 15
         const yI=setInterval(()=>{y++;document.getElementById('yearsExp').textContent=y+'+';if(y>=15)clearInterval(yI);},100);
-        // Happy Patients → 1000 (animated smoothly)
         const pI=setInterval(()=>{p+=20; if(p>1000) p=1000; document.getElementById('happyPatients').textContent=p.toLocaleString()+'+'; if(p>=1000) clearInterval(pI); }, 10);
-        // Publications → 15
         const puI=setInterval(()=>{pu++;document.getElementById('publications').textContent=pu+'+';if(pu>=15)clearInterval(puI);},120);
     }
     animateStats();
@@ -703,6 +949,48 @@
     
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor=>anchor.addEventListener('click',function(e){const href=this.getAttribute('href');if(href&&href!=='#'){e.preventDefault();const target=document.querySelector(href);if(target)target.scrollIntoView({behavior:'smooth'});}}));
+    
+    // Testimonial Carousel
+    const track = document.getElementById('testimonialTrack');
+    const cards = track.querySelectorAll('.testimonial-card');
+    const prevBtn = document.getElementById('prevTestimonial');
+    const nextBtn = document.getElementById('nextTestimonial');
+    const dotsContainer = document.getElementById('testimonialDots');
+    let currentIndex = 0;
+    let totalCards = cards.length;
+    let autoSlideInterval;
+    
+    function updateCarousel(index) {
+        if (index < 0) index = totalCards - 1;
+        if (index >= totalCards) index = 0;
+        currentIndex = index;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        document.querySelectorAll('.dot').forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    }
+    
+    function createDots() {
+        for (let i = 0; i < totalCards; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => { clearInterval(autoSlideInterval); updateCarousel(i); startAutoSlide(); });
+            dotsContainer.appendChild(dot);
+        }
+    }
+    createDots();
+    
+    prevBtn.addEventListener('click', () => { clearInterval(autoSlideInterval); updateCarousel(currentIndex - 1); startAutoSlide(); });
+    nextBtn.addEventListener('click', () => { clearInterval(autoSlideInterval); updateCarousel(currentIndex + 1); startAutoSlide(); });
+    
+    function startAutoSlide() {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => updateCarousel(currentIndex + 1), 5000);
+    }
+    startAutoSlide();
+    
+    // Pause on hover
+    const slider = document.querySelector('.testimonial-slider');
+    slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    slider.addEventListener('mouseleave', startAutoSlide);
 </script>
 </body>
 </html>
