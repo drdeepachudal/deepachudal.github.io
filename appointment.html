@@ -6,7 +6,7 @@
   <title>Dr. Deepa Chudal – Gynecologist & Infertility Expert | Book Appointment</title>
 
   <!-- ====== SEO & META ====== -->
-  <meta name="description" content=" Request an appointment with Dr. Deepa Chudal, Associate Professor. Instant email confirmation sent to your inbox." />
+  <meta name="description" content="Request an appointment with Dr. Deepa Chudal, Associate Professor. Instant email confirmation sent to your inbox." />
   <meta name="keywords" content="gynecologist Kathmandu, infertility specialist, appointment" />
   <meta name="author" content="Dr. Deepa Chudal" />
   <meta name="robots" content="index, follow" />
@@ -15,7 +15,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Book Appointment with Dr. Deepa Chudal – Gynecologist & Infertility Expert" />
-  <meta property="og: description" content="Request an appointment with Dr. Deepa Chudal, Associate Professor. Instant email confirmation sent to your inbox." />
+  <meta property="og:description" content="Request an appointment with Dr. Deepa Chudal, Associate Professor. Instant email confirmation sent to your inbox." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://deepachudal.com.np/appointment.html" />
   <meta property="og:image" content="https://deepachudal.com.np/assets/images/og-appointment.jpg" />
@@ -50,22 +50,6 @@
       "openingHours": "Mo,We,Fr 16:00-19:00; Tu,Th,Sa 10:00-14:00,17:00-20:00"
     }
   </script>
-
-  <!-- ====== GOOGLE ANALYTICS (placeholder) ====== -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
-
-  <!-- ====== GOOGLE reCAPTCHA (placeholder) ====== -->
-  <!--
-  <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY"></script>
-  -->
 
   <style>
     /* ====== MEDICAL COLOR SCHEME ====== */
@@ -197,6 +181,46 @@
       padding: 0 2rem;
     }
 
+    /* ====== EMERGENCY BANNER ====== */
+    .emergency-banner {
+      background: #B00020;
+      color: white;
+      padding: 0.75rem 2rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem 1.5rem;
+      border-radius: var(--border-radius-md);
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(176, 0, 32, 0.3);
+    }
+    .emergency-banner i {
+      font-size: 1.4rem;
+      margin-right: 0.3rem;
+    }
+    .emergency-banner a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+      padding: 0.1rem 0.3rem;
+      transition: var(--transition);
+    }
+    .emergency-banner a:hover {
+      border-bottom-color: white;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+    }
+    .emergency-banner .emergency-numbers {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
     /* ====== HERO ====== */
     .booking-hero {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
@@ -268,6 +292,57 @@
       margin-top: 1rem;
     }
 
+    /* ====== QUICK FACTS ROW ====== */
+    .quick-facts-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .fact-card {
+      background: white;
+      border-radius: var(--border-radius-md);
+      padding: 1.25rem 1rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+    .fact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .fact-card i {
+      font-size: 2rem;
+      color: var(--primary);
+      width: 2.8rem;
+      text-align: center;
+    }
+    .fact-card .fact-content {
+      flex: 1;
+    }
+    .fact-card .fact-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--foreground-muted);
+      font-weight: 600;
+    }
+    .fact-card .fact-value {
+      font-weight: 600;
+      color: var(--foreground);
+      font-size: 0.95rem;
+    }
+    .fact-card .fact-value a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .fact-card .fact-value a:hover {
+      text-decoration: underline;
+    }
+
     /* ====== GRID ====== */
     .booking-grid {
       display: grid;
@@ -299,6 +374,11 @@
       margin-bottom: 2rem;
       padding-bottom: 2rem;
       border-bottom: 1px solid var(--border);
+    }
+    .form-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
     .section-title {
       display: flex;
@@ -334,6 +414,13 @@
       border-radius: var(--border-radius-sm);
       font-size: 1rem;
       transition: var(--transition);
+      background: white;
+      color: var(--foreground);
+    }
+    .form-input:hover,
+    .form-select:hover,
+    .form-textarea:hover {
+      border-color: var(--primary-light);
     }
     .form-input:focus,
     .form-select:focus,
@@ -341,6 +428,11 @@
       border-color: var(--primary);
       outline: none;
       box-shadow: 0 0 0 4px rgba(123, 44, 111, 0.1);
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--foreground-muted);
+      opacity: 0.6;
     }
     .helper-text {
       font-size: 0.75rem;
@@ -350,6 +442,8 @@
       align-items: center;
       gap: 0.3rem;
     }
+
+    /* ====== CHECKBOX ====== */
     .checkbox-group {
       display: flex;
       align-items: flex-start;
@@ -359,6 +453,29 @@
       border-radius: var(--border-radius-sm);
       margin: 1.5rem 0;
     }
+    .checkbox-input {
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-top: 0.125rem;
+      accent-color: var(--primary);
+    }
+    .checkbox-label {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* ====== CTA CONTAINER ====== */
+    .cta-container {
+      position: sticky;
+      bottom: 2rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -380,99 +497,14 @@
     .btn-primary:hover:not(:disabled) {
       background: var(--primary-dark);
       transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-primary:active:not(:disabled) {
+      transform: translateY(0);
     }
     .btn-primary:disabled {
       opacity: 0.7;
       cursor: not-allowed;
-    }
-
-    /* ====== PROGRESS INDICATOR ====== */
-    .form-progress {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 2rem;
-      padding: 0 0.5rem;
-      font-size: 0.85rem;
-      color: var(--foreground-muted);
-    }
-    .form-progress .step {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .form-progress .step .circle {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: white;
-      transition: var(--transition);
-    }
-    .form-progress .step.active .circle {
-      background: var(--primary);
-    }
-    .form-progress .step.done .circle {
-      background: var(--accent);
-    }
-
-    /* ====== INFO SIDEBAR ====== */
-    .info-sidebar {
-      position: sticky;
-      top: 6rem;
-    }
-    .info-card {
-      background: white;
-      border-radius: var(--border-radius-lg);
-      padding: 1.8rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-    }
-    .info-card h3 {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--primary);
-      margin-bottom: 1.2rem;
-    }
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .info-item i {
-      color: var(--accent);
-      width: 1.5rem;
-    }
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: var(--accent-soft);
-      padding: 0.8rem;
-      border-radius: var(--border-radius-sm);
-      margin: 1rem 0;
-    }
-    .service-list {
-      list-style: none;
-      margin-top: 0.5rem;
-    }
-    .service-list li {
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .service-list i {
-      color: var(--accent);
-      width: 1.5rem;
     }
 
     /* ====== STATUS MESSAGES ====== */
@@ -554,6 +586,65 @@
       margin: 0 auto;
     }
 
+    /* ====== INFO SIDEBAR ====== */
+    .info-sidebar {
+      position: sticky;
+      top: 6rem;
+    }
+    .info-card {
+      background: white;
+      border-radius: var(--border-radius-lg);
+      padding: 1.8rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+    }
+    .info-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+    }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-item:last-child {
+      border-bottom: none;
+    }
+    .info-item i {
+      color: var(--accent);
+      width: 1.5rem;
+      text-align: center;
+    }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--accent-soft);
+      padding: 0.8rem;
+      border-radius: var(--border-radius-sm);
+      margin: 1rem 0;
+    }
+    .service-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+    .service-list li {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .service-list i {
+      color: var(--accent);
+      width: 1.5rem;
+    }
+
     /* ====== FLOATING BUTTONS ====== */
     .floating-buttons {
       position: fixed;
@@ -577,20 +668,22 @@
       cursor: pointer;
       border: none;
       transition: var(--transition);
+      text-decoration: none;
+    }
+    .floating-button:hover {
+      transform: scale(1.05);
     }
     .whatsapp-button {
       background: #25D366;
     }
     .whatsapp-button:hover {
       background: #128C7E;
-      transform: scale(1.05);
     }
-    .chat-button {
-      background: var(--primary);
+    .viber-button {
+      background: #665CAC;
     }
-    .chat-button:hover {
-      background: var(--primary-dark);
-      transform: scale(1.05);
+    .viber-button:hover {
+      background: #4A3F8A;
     }
 
     /* ====== CHAT WIDGET ====== */
@@ -675,32 +768,6 @@
       height: 36px;
       border-radius: 50%;
       cursor: pointer;
-    }
-
-    /* ====== LANGUAGE TOGGLE ====== */
-    .lang-toggle {
-      display: inline-flex;
-      gap: 0.3rem;
-      background: var(--primary-soft);
-      border-radius: 30px;
-      padding: 0.2rem;
-      margin-left: 0.5rem;
-    }
-    .lang-toggle button {
-      background: transparent;
-      border: none;
-      padding: 0.2rem 0.6rem;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: 500;
-      font-size: 0.8rem;
-      color: var(--foreground-muted);
-      transition: var(--transition);
-    }
-    .lang-toggle button.active {
-      background: white;
-      color: var(--primary);
-      box-shadow: var(--shadow-sm);
     }
 
     /* ====== FOOTER ====== */
@@ -805,13 +872,14 @@
       .booking-hero {
         flex-direction: column;
         text-align: center;
+        padding: 2rem;
       }
       .hero-content h1 {
         font-size: 2rem;
       }
       .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 1rem;
       }
       .social-links {
         justify-content: center;
@@ -820,15 +888,35 @@
         width: 140px;
         height: 140px;
       }
-      .form-progress {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
-      }
       .chat-container {
         width: 90%;
         right: 5%;
         bottom: 5rem;
+      }
+      .emergency-banner {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .quick-facts-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 480px) {
+      main {
+        padding: 0 1rem;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .cta-container {
+        bottom: 1rem;
+        padding: 1rem;
+      }
+      .btn {
+        padding: 0.875rem 1.5rem;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -853,6 +941,16 @@
   </nav>
 
   <main>
+    <!-- ====== EMERGENCY BANNER ====== -->
+    <div class="emergency-banner">
+      <span><i class="fas fa-triangle-exclamation"></i> <strong>24/7 Emergency:</strong> For Medical Emergency? Call <a href="tel:102">102</a> immediately</span>
+      <div class="emergency-numbers">
+        <span><i class="fas fa-ambulance"></i> <a href="tel:102">102</a> – Nepal Ambulance</span>
+        <span><i class="fas fa-police"></i> <a href="tel:100">100</a> – Nepal Police</span>
+      </div>
+      <span style="font-size:0.85rem; opacity:0.9;"><i class="fas fa-info-circle"></i> Do not use this form for emergencies.</span>
+    </div>
+
     <!-- ====== HERO ====== -->
     <section class="booking-hero" aria-label="Appointment booking introduction">
       <div class="hero-content">
@@ -866,11 +964,62 @@
         </div>
       </div>
       <div class="doctor-photo" aria-label="Dr. Deepa Chudal photo">
-        <!-- Replace the <i> below with an actual <img> for production -->
         <i class="fas fa-user-md" aria-hidden="true"></i>
-        <!-- <img src="assets/images/dr-deepa-chudal.jpg" alt="Dr. Deepa Chudal - Gynecologist and Infertility Expert" width="180" height="180" loading="lazy"> -->
       </div>
     </section>
+
+    <!-- ====== QUICK FACTS ROW ====== -->
+    <div class="quick-facts-row">
+      <div class="fact-card">
+        <i class="fas fa-clinic-medical"></i>
+        <div class="fact-content">
+          <div class="fact-label">Specialty</div>
+          <div class="fact-value">Gynecology &amp; Infertility</div>
+        </div>
+      </div>
+      <div class="fact-card">
+        <i class="fas fa-location-dot"></i>
+        <div class="fact-content">
+          <div class="fact-label">Address</div>
+          <div class="fact-value">Kathmandu, Nepal</div>
+        </div>
+      </div>
+      <div class="fact-card">
+        <i class="fas fa-phone"></i>
+        <div class="fact-content">
+          <div class="fact-label">Phone</div>
+          <div class="fact-value"><a href="tel:+977-9840057830">+977-9840057830</a></div>
+        </div>
+      </div>
+      <div class="fact-card">
+        <i class="fas fa-clock"></i>
+        <div class="fact-content">
+          <div class="fact-label">Hours</div>
+          <div class="fact-value">Mon-Sat: 10:00 AM – 8:00 PM</div>
+        </div>
+      </div>
+      <div class="fact-card">
+        <i class="fas fa-truck-medical"></i>
+        <div class="fact-content">
+          <div class="fact-label">Emergency</div>
+          <div class="fact-value"><a href="tel:102" style="color: #B00020; font-weight:700;">Call 102</a></div>
+        </div>
+      </div>
+      <div class="fact-card">
+        <i class="fas fa-language"></i>
+        <div class="fact-content">
+          <div class="fact-label">Languages</div>
+          <div class="fact-value">Nepali, English, Hindi</div>
+        </div>
+      </div>
+      <div class="fact-card">
+        <i class="fas fa-id-card"></i>
+        <div class="fact-content">
+          <div class="fact-label">NMC Registration</div>
+          <div class="fact-value">9111</div>
+        </div>
+      </div>
+    </div>
 
     <!-- ====== BOOKING GRID ====== -->
     <div class="booking-grid">
@@ -879,74 +1028,53 @@
         <div class="form-card" id="appointment-form">
           <div class="form-header">
             <h2>Request an Appointment</h2>
-            <p>Instant auto‑reply confirmation</p>
+            <p>Fill in your details below and we'll confirm within 24 hours</p>
           </div>
           <div class="form-body">
 
-            <!-- Form progress -->
-            <div class="form-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-              <span class="step active" data-step="1"><span class="circle">1</span> Details</span>
-              <span class="step" data-step="2"><span class="circle">2</span> Contact</span>
-              <span class="step" data-step="3"><span class="circle">3</span> Appointment</span>
-              <span class="step" data-step="4"><span class="circle">4</span> Confirm</span>
-            </div>
-
-            <div id="form-status" role="alert" aria-live="polite"></div>
+            <div id="form-status"></div>
 
             <!-- ====== FORM ====== -->
-            <form id="appointmentForm" novalidate aria-label="Appointment request form">
-
-              <!-- Honeypot (anti-spam) -->
-              <div style="display:none" aria-hidden="true">
-                <label for="website">Website</label>
-                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
-              </div>
+            <form class="appointment-form" id="appointmentForm" novalidate>
 
               <!-- ====== SECTION 1: PATIENT ====== -->
-              <div class="form-section" data-section="1">
+              <div class="form-section">
                 <div class="section-title"><i class="fas fa-user" aria-hidden="true"></i><span>Patient Details</span></div>
                 <div class="form-row">
                   <div class="form-group">
                     <label class="form-label" for="fullName">Full Name <span class="required-star">*</span></label>
-                    <input type="text" id="fullName" required class="form-input" placeholder="Sita Sharma"
-                    maxlength="100" aria-required="true" aria-describedby="nameHelp" autocomplete="name" />
-                    <div id="nameHelp" class="helper-text"><i class="fas fa-info-circle" aria-hidden="true"></i> As per government ID</div>
+                    <input type="text" id="fullName" name="fullName" required class="form-input" placeholder="e.g., Sita Sharma" />
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="age">Age <span class="required-star">*</span></label>
-                    <input type="number" id="age" required class="form-input" min="1" max="120"
-                    aria-required="true" aria-describedby="ageHelp" />
-                    <div id="ageHelp" class="helper-text"><i class="fas fa-info-circle" aria-hidden="true"></i> 1–120 years</div>
+                    <input type="number" id="age" name="age" required class="form-input" placeholder="e.g., 35" min="1" max="120" />
                   </div>
                 </div>
               </div>
 
               <!-- ====== SECTION 2: CONTACT ====== -->
-              <div class="form-section" data-section="2">
+              <div class="form-section">
                 <div class="section-title"><i class="fas fa-phone-alt" aria-hidden="true"></i><span>Contact Information</span></div>
                 <div class="form-row">
                   <div class="form-group">
                     <label class="form-label" for="phoneNumber">Phone Number <span class="required-star">*</span></label>
-                    <input type="tel" id="phoneNumber" required class="form-input" placeholder="+977-98XXXXXXXX"
-                    maxlength="20" aria-required="true" aria-describedby="phoneHelp" autocomplete="tel" />
-                    <div id="phoneHelp" class="helper-text"><i class="fas fa-info-circle" aria-hidden="true"></i> We'll send SMS confirmation</div>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required class="form-input" placeholder="+977-98XXXXXXXX" />
+                    <div class="helper-text"><i class="fas fa-info-circle" aria-hidden="true"></i> We'll send confirmation via SMS</div>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="emailAddress">Email Address <span class="required-star">*</span></label>
-                    <input type="email" id="emailAddress" required class="form-input" placeholder="patient@example.com"
-                    maxlength="100" aria-required="true" aria-describedby="emailHelp" autocomplete="email" />
-                    <div id="emailHelp" class="helper-text"><i class="fas fa-envelope" aria-hidden="true"></i> Auto‑reply will be sent here</div>
+                    <input type="email" id="emailAddress" name="emailAddress" required class="form-input" placeholder="your.email@example.com" />
                   </div>
                 </div>
               </div>
 
               <!-- ====== SECTION 3: APPOINTMENT ====== -->
-              <div class="form-section" data-section="3">
+              <div class="form-section">
                 <div class="section-title"><i class="fas fa-calendar-alt" aria-hidden="true"></i><span>Appointment Details</span></div>
                 <div class="form-row">
                   <div class="form-group">
                     <label class="form-label" for="clinicLocation">Clinic Location <span class="required-star">*</span></label>
-                    <select id="clinicLocation" required class="form-select" aria-required="true" onchange="updateTimeSlots()">
+                    <select id="clinicLocation" name="clinicLocation" required class="form-select" onchange="updateTimeSlots()">
                       <option value="">Select a clinic</option>
                       <option value="Elite Health Clinic, Lagankhel">Elite Health Clinic, Lagankhel</option>
                       <option value="Deepa Fertility & Gynecology Clinic, Shankhamul Health Care">Deepa Fertility Clinic, Shankhamul</option>
@@ -958,57 +1086,50 @@
                 <div class="form-row">
                   <div class="form-group">
                     <label class="form-label" for="preferredDate">Preferred Date <span class="required-star">*</span></label>
-                    <input type="date" id="preferredDate" required class="form-input" aria-required="true" />
+                    <input type="date" id="preferredDate" name="preferredDate" required class="form-input" />
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="preferredTime">Preferred Time <span class="required-star">*</span></label>
-                    <select id="preferredTime" required class="form-select" aria-required="true"></select>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group">
-                    <label class="form-label" for="appointmentType">Appointment Type</label>
-                    <select id="appointmentType" class="form-select">
-                      <option value="regular">Regular Consultation (30 min)</option>
-                      <option value="followup">Follow-up Visit (20 min)</option>
-                      <option value="emergency">Emergency (Immediate)</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="reasonForVisit">Reason for Visit <span class="required-star">*</span></label>
-                    <select id="reasonForVisit" required class="form-select" aria-required="true">
-                      <option value="">Select reason</option>
-                      <option value="Infertility Evaluation">Infertility Evaluation</option>
-                      <option value="PCOS Management">PCOS Management</option>
-                      <option value="Menstrual Disorders">Menstrual Disorders</option>
-                      <option value="Pregnancy & Antenatal Care">Pregnancy &amp; Antenatal Care</option>
-                      <option value="Menopause Management">Menopause Management</option>
+                    <select id="preferredTime" name="preferredTime" required class="form-select">
+                      <option value="">Select a time slot</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group">
+                  <label class="form-label" for="reasonForVisit">Reason for Visit <span class="required-star">*</span></label>
+                  <select id="reasonForVisit" name="reasonForVisit" required class="form-select">
+                    <option value="">Select reason for visit</option>
+                    <option value="Infertility Evaluation">Infertility Evaluation</option>
+                    <option value="PCOS Management">PCOS Management</option>
+                    <option value="Menstrual Disorders">Menstrual Disorders</option>
+                    <option value="Pregnancy & Antenatal Care">Pregnancy &amp; Antenatal Care</option>
+                    <option value="Menopause Management">Menopause Management</option>
+                    <option value="General Consultation">General Consultation</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
                   <label class="form-label" for="additionalInfo">Additional Information</label>
-                  <textarea id="additionalInfo" rows="2" class="form-textarea" maxlength="500"
-                  placeholder="Share any concerns or previous history..." aria-describedby="addHelp"></textarea>
-                  <div id="addHelp" class="helper-text"><i class="fas fa-info-circle" aria-hidden="true"></i> Max 500 characters</div>
+                  <textarea id="additionalInfo" name="additionalInfo" rows="3" class="form-textarea" placeholder="Please share any specific concerns or questions..."></textarea>
                 </div>
               </div>
 
               <!-- ====== CONSENT ====== -->
               <div class="checkbox-group">
-                <input type="checkbox" id="consent" required aria-required="true" aria-describedby="consentHelp" />
-                <label for="consent">I consent to the collection and processing of my personal information for appointment scheduling *</label>
-              </div>
-              <div id="consentHelp" class="helper-text" style="margin-top:-0.5rem;margin-bottom:1rem;">
-                <i class="fas fa-lock" aria-hidden="true"></i> Your data is secure and used only for this purpose.
+                <input type="checkbox" id="consent" name="consent" required class="checkbox-input" />
+                <label for="consent" class="checkbox-label">
+                  I consent to the collection and processing of my personal information for appointment scheduling purposes. *
+                </label>
               </div>
 
               <!-- ====== SUBMIT ====== -->
-              <button type="submit" class="btn btn-primary" id="submit-btn">
-                <i class="fas fa-calendar-check" aria-hidden="true"></i> Submit Appointment
-              </button>
-              <div class="helper-text" style="justify-content: center; margin-top: 0.75rem;">
-                <i class="fas fa-lock" aria-hidden="true"></i> Secure + instant email confirmation
+              <div class="cta-container">
+                <button type="submit" class="btn btn-primary" id="submit-btn">
+                  <i class="fas fa-calendar-check" aria-hidden="true"></i> Confirm Appointment
+                </button>
+                <div class="helper-text" style="justify-content: center; margin-top: 0.75rem;">
+                  <i class="fas fa-lock" aria-hidden="true"></i> Your information is secure and confidential
+                </div>
               </div>
             </form>
           </div>
@@ -1017,6 +1138,7 @@
 
       <!-- ====== RIGHT: INFO SIDEBAR ====== -->
       <div class="info-sidebar">
+        <!-- Clinic Hours Card -->
         <div class="info-card">
           <h3><i class="fas fa-clock" aria-hidden="true"></i> Clinic Hours</h3>
           <div class="info-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Elite Health Clinic, Lagankhel</strong><p>Mon, Wed, Fri: 4PM–7PM</p></div></div>
@@ -1025,6 +1147,7 @@
           <div class="info-item"><i class="fas fa-video" aria-hidden="true"></i><div><strong>Tele-Gynecology</strong><p>Flexible hours</p></div></div>
         </div>
 
+        <!-- Services Card -->
         <div class="info-card">
           <h3><i class="fas fa-stethoscope" aria-hidden="true"></i> Services &amp; Conditions</h3>
           <ul class="service-list">
@@ -1037,16 +1160,21 @@
           </ul>
         </div>
 
-        <div class="info-card">
-          <h3><i class="fas fa-envelope" aria-hidden="true"></i> Auto‑Reply Active</h3>
-          <div class="trust-badge"><i class="fas fa-check-circle" aria-hidden="true"></i><div><strong>Instant email to you</strong><p>Appointment summary + clinic info sent to your inbox.</p></div></div>
-          <div class="trust-badge"><i class="fas fa-bell" aria-hidden="true"></i><div><strong>Doctor notified</strong><p>Notification sent to Dr. Deepa's team.</p></div></div>
-        </div>
-
+        <!-- Contact Card -->
         <div class="info-card">
           <h3><i class="fas fa-phone-alt" aria-hidden="true"></i> Contact Directly</h3>
-          <div class="info-item"><i class="fas fa-phone" aria-hidden="true"></i><div><strong>Emergency / Support</strong><p>9840057830</p></div></div>
-          <div class="info-item"><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp Inquiry</strong><p>+977 9825207253</p></div></div>
+          <div class="info-item"><i class="fas fa-phone" aria-hidden="true"></i><div><strong>Emergency / Support</strong><p>+977-9840057830</p></div></div>
+          <div class="info-item"><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp Inquiry</strong><p>+977-9825207253</p></div></div>
+          <div class="info-item"><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Email</strong><p>deepachudal@gmail.com</p></div></div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="info-card">
+          <h3><i class="fas fa-shield-alt" aria-hidden="true"></i> Why Choose Us</h3>
+          <div class="trust-badge"><i class="fas fa-star"></i><div><strong>4.9 Patient Rating</strong><p>Based on 160+ verified reviews</p></div></div>
+          <div class="trust-badge"><i class="fas fa-certificate"></i><div><strong>Board Certified</strong><p>Consultant Gynecologist</p></div></div>
+          <div class="trust-badge"><i class="fas fa-clock"></i><div><strong>10+ Years Experience</strong><p>Specialized gynecological care</p></div></div>
+          <div class="trust-badge"><i class="fas fa-lock"></i><div><strong>Secure & Confidential</strong><p>Your privacy is our priority</p></div></div>
         </div>
       </div>
     </div>
@@ -1083,9 +1211,9 @@
         <p><i class="fab fa-whatsapp" aria-hidden="true"></i> +977-9825207253</p>
         <p><i class="fas fa-envelope" aria-hidden="true"></i> deepachudal@gmail.com</p>
         <div class="social-links">
-          <a href="#" aria-label="Facebook (coming soon)"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Twitter (coming soon)"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-          <a href="#" aria-label="LinkedIn (coming soon)"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -1096,381 +1224,236 @@
 
   <!-- ====== FLOATING BUTTONS ====== -->
   <div class="floating-buttons">
-    <a href="https://wa.me/9779825207253?text=Hello%20Dr.%20Deepa,%20appointment%20inquiry"
-    class="floating-button whatsapp-button" target="_blank" rel="noopener noreferrer"
-    aria-label="Contact via WhatsApp">
-    <i class="fab fa-whatsapp" aria-hidden="true"></i>
-  </a>
-  <button class="floating-button chat-button" id="chatButton" aria-label="Open chat">
-    <i class="fas fa-comments" aria-hidden="true"></i>
-  </button>
-</div>
-
-<!-- ====== CHAT WIDGET ====== -->
-<div class="chat-container" id="chatContainer" role="dialog" aria-label="Chat window">
-  <div class="chat-header">
-    <h3>Chat with Us</h3>
-    <button class="close-chat" id="closeChat" aria-label="Close chat"><i class="fas fa-times" aria-hidden="true"></i></button>
+    <a href="viber://chat?number=%2B9779825207253" class="floating-button viber-button" target="_blank" aria-label="Contact via Viber">
+      <i class="fab fa-viber" aria-hidden="true"></i>
+    </a>
+    <a href="https://wa.me/9779825207253?text=Hello%20Dr.%20Deepa,%20I%20would%20like%20to%20book%20an%20appointment" class="floating-button whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
   </div>
-  <div class="chat-messages" id="chatMessagesBox">
-    <div class="message bot">Hello! Auto‑reply is active. Fill the form to get instant confirmation.</div>
-  </div>
-  <div class="chat-input-area">
-    <input type="text" id="chatInput" placeholder="Type message..." aria-label="Chat input" />
-    <button id="sendMessage" aria-label="Send message"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
-  </div>
-</div>
 
-<!-- ====== JAVASCRIPT ====== -->
-<script>
-  // ============================================================
-  //  EMAILJS CONFIGURATION
-  // ============================================================
-  emailjs.init("gydV88SySwPSahSAt");
+  <!-- ====== JAVASCRIPT ====== -->
+  <script>
+    // ============================================================
+    //  EMAILJS INITIALIZATION (using the same key pattern as Dr. Vikash)
+    // ============================================================
+    (function() {
+      emailjs.init("nPsKsuZlR3ghah6k-");
+    })();
 
-  const EMAILJS_SERVICE = "service_qjy53db";
-  const PATIENT_TEMPLATE = "template_g2art0a";
-  const DOCTOR_TEMPLATE = "template_4k28mlx";
-  const DOCTOR_EMAILS = "deepachudal@gmail.com, deepa_smile@hotmail.com";
-  const FALLBACK_PHONE = "9840057830";
+    // ============================================================
+    //  DOM REFERENCES
+    // ============================================================
+    const form = document.getElementById('appointmentForm');
+    const submitBtn = document.getElementById('submit-btn');
+    const statusDiv = document.getElementById('form-status');
+    const modal = document.getElementById('confirmationModal');
+    const modalMsg = document.getElementById('modalMessage');
+    const modalClose = document.getElementById('modalCloseBtn');
 
-  // ============================================================
-  //  DOM REFERENCES
-  // ============================================================
-  const form = document.getElementById('appointmentForm');
-  const submitBtn = document.getElementById('submit-btn');
-  const statusDiv = document.getElementById('form-status');
-  const modal = document.getElementById('confirmationModal');
-  const modalMsg = document.getElementById('modalMessage');
-  const modalClose = document.getElementById('modalCloseBtn');
+    // ============================================================
+    //  TIME SLOTS (matching Dr. Vikash implementation)
+    // ============================================================
+    function updateTimeSlots() {
+      const clinic = document.getElementById('clinicLocation').value;
+      const timeSelect = document.getElementById('preferredTime');
 
-  // ============================================================
-  //  PHONE FORMATTING
-  // ============================================================
-  document.getElementById('phoneNumber').addEventListener('input', function(e) {
-    let val = this.value.replace(/[^0-9+]/g, '');
-    if (!val.startsWith('+977')) {
-      val = '+977' + val.replace(/^\+977/, '');
-    }
-    this.value = val;
-  });
-
-  // ============================================================
-  //  TIME SLOTS
-  // ============================================================
-  function updateTimeSlots() {
-    const clinic = document.getElementById('clinicLocation').value;
-    const timeSelect = document.getElementById('preferredTime');
-    timeSelect.innerHTML = '';
-    const slots = {
-      'Elite Health Clinic, Lagankhel': ['Evening (4:00 PM - 7:00 PM)'],
-      'Deepa Fertility & Gynecology Clinic, Shankhamul Health Care': [
-        'Morning (10:00 AM - 2:00 PM)',
-        'Evening (5:00 PM - 8:00 PM)'
-      ],
-      'Maya IVF Clinic, Kupandole': ['Evening (4:00 PM - 7:00 PM)'],
-      'Tele-Gynecology Consultation': ['Tele-Gynecology (Flexible Hours)']
-    };
-    const list = slots[clinic] || ['Evening (4:00 PM - 7:00 PM)'];
-    list.forEach(text => {
-      const opt = document.createElement('option');
-      opt.value = text;
-      opt.textContent = text;
-      timeSelect.appendChild(opt);
-    });
-  }
-
-  // Set min date to today
-  document.addEventListener('DOMContentLoaded', () => {
-    const dateInput = document.getElementById('preferredDate');
-    dateInput.min = new Date().toISOString().split('T')[0];
-    updateTimeSlots();
-    loadDraft();
-  });
-
-  // ============================================================
-  //  FORM PROGRESS
-  // ============================================================
-  function updateProgress(section) {
-    const steps = document.querySelectorAll('.form-progress .step');
-    steps.forEach((step, idx) => {
-      const num = parseInt(step.dataset.step);
-      step.classList.remove('active', 'done');
-      if (num < section) step.classList.add('done');
-      else if (num === section) step.classList.add('active');
-    });
-    const pct = Math.min(100, ((section - 1) / 3) * 100);
-    document.querySelector('.form-progress').setAttribute('aria-valuenow', pct);
-  }
-
-  // ============================================================
-  //  AUTO-SAVE DRAFT (localStorage)
-  // ============================================================
-  function saveDraft() {
-    const fields = ['fullName', 'age', 'phoneNumber', 'emailAddress', 'clinicLocation',
-      'preferredDate', 'preferredTime', 'appointmentType', 'reasonForVisit', 'additionalInfo'
-    ];
-    const data = {};
-    fields.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) data[id] = el.value;
-    });
-    data.consent = document.getElementById('consent').checked;
-    localStorage.setItem('appointmentDraft', JSON.stringify(data));
-  }
-
-  function loadDraft() {
-    const raw = localStorage.getItem('appointmentDraft');
-    if (!raw) return;
-    try {
-      const data = JSON.parse(raw);
-      Object.keys(data).forEach(key => {
-        const el = document.getElementById(key);
-        if (el) {
-          if (el.type === 'checkbox') el.checked = data[key];
-          else el.value = data[key];
-        }
-      });
-    } catch (e) { /* ignore */ }
-  }
-
-  // Auto-save on change
-  document.querySelectorAll('#appointmentForm input, #appointmentForm select, #appointmentForm textarea')
-    .forEach(el => el.addEventListener('change', saveDraft));
-
-  // ============================================================
-  //  RATE LIMITING (client-side)
-  // ============================================================
-  let formSubmissions = 0;
-  const MAX_SUBMISSIONS = 3;
-  const SUBMISSION_WINDOW = 3600000; // 1 hour
-  let submissionTimestamps = [];
-
-  function isRateLimited() {
-    const now = Date.now();
-    submissionTimestamps = submissionTimestamps.filter(t => now - t < SUBMISSION_WINDOW);
-    return submissionTimestamps.length >= MAX_SUBMISSIONS;
-  }
-
-  // ============================================================
-  //  STATUS HELPER
-  // ============================================================
-  function showStatus(msg, type) {
-    statusDiv.innerHTML =
-      `<div class="status-message status-${type}"><i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}" aria-hidden="true"></i>${msg}</div>`;
-    statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => statusDiv.innerHTML = '', 8000);
-  }
-
-  function setLoading(loading) {
-    if (loading) {
-      submitBtn.innerHTML = '<span class="spinner" aria-hidden="true"></span> Sending request...';
-      submitBtn.disabled = true;
-    } else {
-      submitBtn.innerHTML = '<i class="fas fa-calendar-check" aria-hidden="true"></i> Submit Appointment';
-      submitBtn.disabled = false;
-    }
-  }
-
-  // ============================================================
-  //  FORM SUBMISSION
-  // ============================================================
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // ====== Rate limit check ======
-    if (isRateLimited()) {
-      showStatus('Too many submissions. Please wait an hour or call ' + FALLBACK_PHONE + '.', 'error');
-      return;
-    }
-
-    // ====== Honeypot ======
-    const honeypot = document.getElementById('website');
-    if (honeypot && honeypot.value) {
-      showStatus('Spam detected. Submission blocked.', 'error');
-      return;
-    }
-
-    // ====== Gather fields ======
-    const fullName = document.getElementById('fullName').value.trim();
-    const age = document.getElementById('age').value.trim();
-    const phone = document.getElementById('phoneNumber').value.trim();
-    const email = document.getElementById('emailAddress').value.trim();
-    const clinic = document.getElementById('clinicLocation').value;
-    const preferredDate = document.getElementById('preferredDate').value;
-    const preferredTime = document.getElementById('preferredTime').value;
-    const appointmentType = document.getElementById('appointmentType').value;
-    const reason = document.getElementById('reasonForVisit').value;
-    const additional = document.getElementById('additionalInfo').value.trim() || 'No additional info';
-    const consent = document.getElementById('consent').checked;
-
-    // ====== Validation ======
-    if (!fullName || !age || !phone || !email || !clinic || !preferredDate || !preferredTime || !reason || !consent) {
-      showStatus('Please fill all required fields and provide consent.', 'error');
-      return;
-    }
-    if (age < 1 || age > 120) {
-      showStatus('Enter a valid age (1-120).', 'error');
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showStatus('Valid email address required for auto-reply.', 'error');
-      return;
-    }
-    const selectedDate = new Date(preferredDate);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    if (selectedDate < today) {
-      showStatus('Please select a future date.', 'error');
-      return;
-    }
-
-    setLoading(true);
-
-    // ====== Build params ======
-    const autoReplyParams = {
-      patient_name: fullName,
-      appointment_date: preferredDate,
-      appointment_time: preferredTime,
-      clinic: clinic,
-      patient_phone: phone,
-      reason: reason,
-      additional_info: additional,
-      to_email: email,
-      doctor_name: 'Dr. Deepa Chudal',
-      appointment_type: appointmentType
-    };
-
-    const doctorParams = {
-      patient_name: fullName,
-      age: age,
-      phone: phone,
-      email: email,
-      clinic: clinic,
-      date: preferredDate,
-      time: preferredTime,
-      reason: reason,
-      additional: additional,
-      appointment_type: appointmentType,
-      submitted_at: new Date().toLocaleString(),
-      to_email: DOCTOR_EMAILS
-    };
-
-    let autoReplySuccess = false,
-      doctorSuccess = false;
-    let autoReplyError = '',
-      doctorError = '';
-
-    // ====== Send emails ======
-    try {
-      const resp = await emailjs.send(EMAILJS_SERVICE, PATIENT_TEMPLATE, autoReplyParams);
-      if (resp && resp.status === 200) autoReplySuccess = true;
-      else autoReplyError = 'Patient email failed with status ' + resp?.status;
-    } catch (err) {
-      console.error('Patient email error:', err);
-      autoReplyError = err.text || err.message || 'Unknown auto-reply error';
-    }
-
-    try {
-      const resp = await emailjs.send(EMAILJS_SERVICE, DOCTOR_TEMPLATE, doctorParams);
-      if (resp && resp.status === 200) doctorSuccess = true;
-      else doctorError = 'Doctor notification failed with status ' + resp?.status;
-    } catch (err) {
-      console.error('Doctor notification error:', err);
-      doctorError = err.text || err.message || 'Unknown doctor notification error';
-    }
-
-    // ====== Record submission for rate limiting ======
-    submissionTimestamps.push(Date.now());
-
-    // ====== Result handling ======
-    if (autoReplySuccess && doctorSuccess) {
-      // Show modal instead of inline status
-      modalMsg.textContent =
-        `✅ Your request has been submitted! An auto‑reply confirmation has been sent to ${email}. Dr. Deepa's team will contact you within 24 hours.`;
-      modal.classList.add('active');
-      form.reset();
-      document.getElementById('consent').checked = false;
-      document.getElementById('preferredDate').min = new Date().toISOString().split('T')[0];
-      updateTimeSlots();
-      // Clear draft
-      localStorage.removeItem('appointmentDraft');
-      // Update progress
-      updateProgress(1);
-      // Track conversion (if GA is set up)
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'conversion', { send_to: 'G-XXXXXXXXXX', value: 1.0, currency: 'NPR' });
+      // Clear existing options (keep first default option)
+      while (timeSelect.options.length > 1) {
+        timeSelect.remove(1);
       }
-    } else if (autoReplySuccess && !doctorSuccess) {
-      showStatus(
-        `⚠️ Auto‑reply sent to ${email}, but doctor notification encountered an issue (${doctorError}). Your request is saved. For urgent help, call ${FALLBACK_PHONE}.`,
-        'warning');
-    } else if (!autoReplySuccess && doctorSuccess) {
-      showStatus(
-        `⚠️ Your request was delivered to Dr. Deepa's team, but auto‑reply could not reach your inbox (${autoReplyError}). Please check your email or call ${FALLBACK_PHONE}.`,
-        'warning');
-    } else {
-      showStatus(
-        `❌ Submission failed. Auto-reply error: ${autoReplyError}. Doctor notification error: ${doctorError}. Please call ${FALLBACK_PHONE} to book directly.`,
-        'error');
+
+      if (clinic === 'Elite Health Clinic, Lagankhel') {
+        addOption(timeSelect, 'Evening (4:00 PM - 7:00 PM)');
+      } else if (clinic === 'Deepa Fertility & Gynecology Clinic, Shankhamul Health Care') {
+        addOption(timeSelect, 'Morning (10:00 AM - 2:00 PM)');
+        addOption(timeSelect, 'Evening (5:00 PM - 8:00 PM)');
+      } else if (clinic === 'Maya IVF Clinic, Kupandole') {
+        addOption(timeSelect, 'Evening (4:00 PM - 7:00 PM)');
+      } else if (clinic === 'Tele-Gynecology Consultation') {
+        addOption(timeSelect, 'Tele-Gynecology (Flexible Hours)');
+      } else {
+        // Default fallback
+        addOption(timeSelect, 'Evening (4:00 PM - 7:00 PM)');
+        addOption(timeSelect, 'Morning (10:00 AM - 2:00 PM)');
+        addOption(timeSelect, 'Tele-Gynecology (Flexible Hours)');
+      }
     }
 
-    setLoading(false);
-  });
-
-  // ============================================================
-  //  MODAL CONTROLS
-  // ============================================================
-  modalClose.addEventListener('click', () => modal.classList.remove('active'));
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.remove('active');
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') modal.classList.remove('active');
-  });
-
-  // ============================================================
-  //  CHAT WIDGET
-  // ============================================================
-  const chatBtn = document.getElementById('chatButton');
-  const chatCont = document.getElementById('chatContainer');
-  const closeChat = document.getElementById('closeChat');
-  const chatMessages = document.getElementById('chatMessagesBox');
-  const chatInput = document.getElementById('chatInput');
-  const sendMsg = document.getElementById('sendMessage');
-
-  chatBtn.onclick = () => chatCont.classList.toggle('active');
-  closeChat.onclick = () => chatCont.classList.remove('active');
-
-  const sendChatMessage = () => {
-    const msg = chatInput.value.trim();
-    if (msg) {
-      const userDiv = document.createElement('div');
-      userDiv.className = 'message user';
-      userDiv.textContent = msg;
-      chatMessages.appendChild(userDiv);
-      chatInput.value = '';
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-      setTimeout(() => {
-        const botDiv = document.createElement('div');
-        botDiv.className = 'message bot';
-        botDiv.innerHTML =
-          `Thank you! Please use the appointment form for booking – auto‑reply email will be sent instantly. For urgent help, call ${FALLBACK_PHONE}.`;
-        chatMessages.appendChild(botDiv);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }, 600);
+    function addOption(select, text) {
+      const option = document.createElement('option');
+      option.value = text;
+      option.textContent = text;
+      select.appendChild(option);
     }
-  };
-  sendMsg.onclick = sendChatMessage;
-  chatInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') sendChatMessage();
-  });
 
-  // ============================================================
-  //  EXPOSE FUNCTIONS TO GLOBAL (for inline onchange)
-  // ============================================================
-  window.updateTimeSlots = updateTimeSlots;
-</script>
+    // ============================================================
+    //  DATE VALIDATION (matching Dr. Vikash implementation)
+    // ============================================================
+    function validateDate() {
+      const dateInput = document.getElementById('preferredDate');
+      const selectedDate = new Date(dateInput.value);
+      const dayOfWeek = selectedDate.getDay();
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      if (selectedDate < today) {
+        alert('Please select a future date for your appointment.');
+        dateInput.value = '';
+        return;
+      }
+
+      // Saturday check - some clinics might not be open on Saturdays
+      if (dayOfWeek === 6) {
+        const clinic = document.getElementById('clinicLocation').value;
+        if (clinic !== 'Deepa Fertility & Gynecology Clinic, Shankhamul Health Care') {
+          alert('Some clinics may not be open on Saturdays. Please select a different date or check with the clinic.');
+          // Don't clear the date, just warn
+        }
+      }
+    }
+
+    // ============================================================
+    //  SET MIN DATE
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function() {
+      const dateInput = document.getElementById('preferredDate');
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.min = today;
+      updateTimeSlots();
+    });
+
+    // ============================================================
+    //  STATUS HELPER (matching Dr. Vikash implementation)
+    // ============================================================
+    function showStatus(message, type) {
+      statusDiv.innerHTML = `<div class="status-message status-${type}"><i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>${message}</div>`;
+      statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => statusDiv.innerHTML = '', 8000);
+    }
+
+    function setLoading(isLoading) {
+      if (isLoading) {
+        submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
+        submitBtn.disabled = true;
+      } else {
+        submitBtn.innerHTML = '<i class="fas fa-calendar-check"></i> Confirm Appointment';
+        submitBtn.disabled = false;
+      }
+    }
+
+    // ============================================================
+    //  FORM SUBMISSION (matching Dr. Vikash implementation)
+    // ============================================================
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // ====== Gather fields ======
+        const fullName = document.getElementById('fullName').value.trim();
+        const age = document.getElementById('age').value.trim();
+        const phoneNumber = document.getElementById('phoneNumber').value.trim();
+        const emailAddress = document.getElementById('emailAddress').value.trim();
+        const clinicLocation = document.getElementById('clinicLocation').value;
+        const preferredDate = document.getElementById('preferredDate').value;
+        const preferredTime = document.getElementById('preferredTime').value;
+        const reasonForVisit = document.getElementById('reasonForVisit').value;
+        const additionalInfo = document.getElementById('additionalInfo').value.trim() || 'No additional information provided';
+        const consent = document.getElementById('consent').checked;
+
+        // ====== Validation ======
+        if (!fullName || !age || !phoneNumber || !emailAddress || !clinicLocation || !preferredDate || !preferredTime || !reasonForVisit || !consent) {
+          showStatus('Please fill in all required fields and provide consent.', 'error');
+          return;
+        }
+
+        if (parseInt(age) < 1 || parseInt(age) > 120) {
+          showStatus('Please enter a valid age (1-120).', 'error');
+          return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailAddress)) {
+          showStatus('Please enter a valid email address.', 'error');
+          return;
+        }
+
+        const selectedDate = new Date(preferredDate);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        if (selectedDate < today) {
+          showStatus('Please select a future date for your appointment.', 'error');
+          return;
+        }
+
+        // ====== Submit ======
+        setLoading(true);
+
+        const templateParams = {
+          from_name: fullName,
+          age: age,
+          phone_number: phoneNumber,
+          reply_to: emailAddress,
+          clinic_location: clinicLocation,
+          preferred_date: preferredDate,
+          preferred_time: preferredTime,
+          reason_for_visit: reasonForVisit,
+          additional_info: additionalInfo,
+          submitted_at: new Date().toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+        };
+
+        // Using the same EmailJS configuration as Dr. Vikash
+        emailjs.send('service_z7z2n3h', 'template_hqr000g', templateParams)
+          .then(function(response) {
+            // Show success modal (matching Dr. Vikash)
+            modalMsg.textContent = `✅ Your request has been submitted! An auto‑reply confirmation has been sent to ${emailAddress}. Dr. Deepa's team will contact you within 24 hours.`;
+            modal.classList.add('active');
+
+            // Reset form
+            form.reset();
+            document.getElementById('consent').checked = false;
+            const dateInput = document.getElementById('preferredDate');
+            dateInput.min = new Date().toISOString().split('T')[0];
+            updateTimeSlots();
+
+            // Clear any status messages
+            statusDiv.innerHTML = '';
+          }, function(error) {
+            showStatus('There was an error submitting your request. Please try again or call us directly.', 'error');
+            console.error('EmailJS error:', error);
+          })
+          .finally(function() {
+            setLoading(false);
+          });
+      });
+    }
+
+    // ============================================================
+    //  MODAL CONTROLS (matching Dr. Vikash implementation)
+    // ============================================================
+    if (modalClose) {
+      modalClose.addEventListener('click', function() {
+        modal.classList.remove('active');
+      });
+    }
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        modal.classList.remove('active');
+      }
+    });
+
+    // ============================================================
+    //  EXPOSE FUNCTIONS TO GLOBAL (for inline onchange)
+    // ============================================================
+    window.updateTimeSlots = updateTimeSlots;
+    window.validateDate = validateDate;
+  </script>
 
 </body>
 </html>
