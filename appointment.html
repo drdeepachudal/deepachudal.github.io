@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Dr. Deepa Chudal – Gynecologist & Infertility Expert | Book Appointment</title>
 
-  <!-- ====== SEO & META ====== -->F
+  <!-- ====== SEO & META ====== -->
   <meta name="description" content="Request an appointment with Dr. Deepa Chudal, Associate Professor. Instant email confirmation sent to your inbox." />
   <meta name="keywords" content="gynecologist Kathmandu, infertility specialist, appointment" />
   <meta name="author" content="Dr. Deepa Chudal" />
@@ -686,90 +686,6 @@
       background: #4A3F8A;
     }
 
-    /* ====== CHAT WIDGET ====== */
-    .chat-container {
-      position: fixed;
-      bottom: 6rem;
-      right: 2rem;
-      width: 300px;
-      background: white;
-      border-radius: var(--border-radius-lg);
-      box-shadow: var(--shadow-lg);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 100;
-      border: 1px solid var(--border);
-    }
-    .chat-container.active {
-      display: flex;
-    }
-    .chat-header {
-      background: var(--primary);
-      color: white;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .chat-header button {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-    .chat-messages {
-      flex: 1;
-      padding: 1rem;
-      overflow-y: auto;
-      background: #F9FAFB;
-      max-height: 300px;
-      min-height: 200px;
-      display: flex;
-      flex-direction: column;
-    }
-    .message {
-      margin-bottom: 0.75rem;
-      padding: 0.75rem;
-      border-radius: 1rem;
-      max-width: 85%;
-      word-wrap: break-word;
-    }
-    .message.bot {
-      background: white;
-      align-self: flex-start;
-      border: 1px solid var(--border);
-    }
-    .message.user {
-      background: var(--primary);
-      color: white;
-      align-self: flex-end;
-      margin-left: auto;
-    }
-    .chat-input-area {
-      display: flex;
-      padding: 1rem;
-      gap: 0.5rem;
-      background: white;
-      border-top: 1px solid var(--border);
-    }
-    .chat-input-area input {
-      flex: 1;
-      padding: 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-    }
-    .chat-input-area button {
-      background: var(--primary);
-      border: none;
-      color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
     /* ====== FOOTER ====== */
     .main-footer {
       background: var(--foreground);
@@ -887,11 +803,6 @@
       .doctor-photo {
         width: 140px;
         height: 140px;
-      }
-      .chat-container {
-        width: 90%;
-        right: 5%;
-        bottom: 5rem;
       }
       .emergency-banner {
         flex-direction: column;
@@ -1233,10 +1144,10 @@
   <!-- ====== JAVASCRIPT ====== -->
   <script>
     // ============================================================
-    //  EMAILJS INITIALIZATION (using the same key pattern as Dr. Vikash)
+    //  EMAILJS INITIALIZATION (UPDATED API KEY)
     // ============================================================
     (function() {
-      emailjs.init("nPsKsuZlR3ghah6k-");
+      emailjs.init("NpPYGnVdsqxvzVuyg");  // Updated public key
     })();
 
     // ============================================================
@@ -1250,20 +1161,15 @@
     const modalClose = document.getElementById('modalCloseBtn');
 
     // ============================================================
-    //  TIME SLOTS (matching Dr. Vikash implementation)
+    //  TIME SLOTS (updated to match Dr. Deepa clinics)
     // ============================================================
     function updateTimeSlots() {
       const clinic = document.getElementById('clinicLocation').value;
       const timeSelect = document.getElementById('preferredTime');
 
-      // Clear existing options (keep first default option)
-      while (timeSelect.options.length > 1) {
-        timeSelect.remove(1);
-      }
+      while (timeSelect.options.length > 1) timeSelect.remove(1);
 
-      if (clinic === 'Elite Health Clinic, Lagankhel') {
-        addOption(timeSelect, 'Evening (4:00 PM - 7:00 PM)');
-      } else if (clinic === 'Deepa Fertility & Gynecology Clinic, Shankhamul Health Care') {
+      if (clinic === 'Deepa Fertility & Gynecology Clinic, Shankhamul Health Care') {
         addOption(timeSelect, 'Morning (10:00 AM - 2:00 PM)');
         addOption(timeSelect, 'Evening (5:00 PM - 8:00 PM)');
       } else if (clinic === 'Maya IVF Clinic, Kupandole') {
@@ -1271,9 +1177,8 @@
       } else if (clinic === 'Tele-Gynecology Consultation') {
         addOption(timeSelect, 'Tele-Gynecology (Flexible Hours)');
       } else {
-        // Default fallback
-        addOption(timeSelect, 'Evening (4:00 PM - 7:00 PM)');
         addOption(timeSelect, 'Morning (10:00 AM - 2:00 PM)');
+        addOption(timeSelect, 'Evening (5:00 PM - 8:00 PM)');
         addOption(timeSelect, 'Tele-Gynecology (Flexible Hours)');
       }
     }
@@ -1286,7 +1191,7 @@
     }
 
     // ============================================================
-    //  DATE VALIDATION (matching Dr. Vikash implementation)
+    //  DATE VALIDATION
     // ============================================================
     function validateDate() {
       const dateInput = document.getElementById('preferredDate');
@@ -1301,12 +1206,10 @@
         return;
       }
 
-      // Saturday check - some clinics might not be open on Saturdays
       if (dayOfWeek === 6) {
         const clinic = document.getElementById('clinicLocation').value;
         if (clinic !== 'Deepa Fertility & Gynecology Clinic, Shankhamul Health Care') {
           alert('Some clinics may not be open on Saturdays. Please select a different date or check with the clinic.');
-          // Don't clear the date, just warn
         }
       }
     }
@@ -1322,7 +1225,7 @@
     });
 
     // ============================================================
-    //  STATUS HELPER (matching Dr. Vikash implementation)
+    //  STATUS HELPER
     // ============================================================
     function showStatus(message, type) {
       statusDiv.innerHTML = `<div class="status-message status-${type}"><i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>${message}</div>`;
@@ -1341,13 +1244,12 @@
     }
 
     // ============================================================
-    //  FORM SUBMISSION (matching Dr. Vikash implementation)
+    //  FORM SUBMISSION (UPDATED SERVICE & TEMPLATE)
     // ============================================================
     if (form) {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // ====== Gather fields ======
         const fullName = document.getElementById('fullName').value.trim();
         const age = document.getElementById('age').value.trim();
         const phoneNumber = document.getElementById('phoneNumber').value.trim();
@@ -1359,7 +1261,6 @@
         const additionalInfo = document.getElementById('additionalInfo').value.trim() || 'No additional information provided';
         const consent = document.getElementById('consent').checked;
 
-        // ====== Validation ======
         if (!fullName || !age || !phoneNumber || !emailAddress || !clinicLocation || !preferredDate || !preferredTime || !reasonForVisit || !consent) {
           showStatus('Please fill in all required fields and provide consent.', 'error');
           return;
@@ -1383,7 +1284,6 @@
           return;
         }
 
-        // ====== Submit ======
         setLoading(true);
 
         const templateParams = {
@@ -1399,23 +1299,20 @@
           submitted_at: new Date().toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })
         };
 
-        // Using the same EmailJS configuration as Dr. Vikash
+        // Updated Service ID & Template ID
         emailjs.send('service_vwesyh4', 'template_hqr000g', templateParams)
           .then(function(response) {
-            // Show success modal (matching Dr. Vikash)
             modalMsg.textContent = `✅ Your request has been submitted! An auto‑reply confirmation has been sent to ${emailAddress}. Dr. Deepa's team will contact you within 24 hours.`;
             modal.classList.add('active');
 
-            // Reset form
             form.reset();
             document.getElementById('consent').checked = false;
             const dateInput = document.getElementById('preferredDate');
             dateInput.min = new Date().toISOString().split('T')[0];
             updateTimeSlots();
-
-            // Clear any status messages
             statusDiv.innerHTML = '';
-          }, function(error) {
+          })
+          .catch(function(error) {
             showStatus('There was an error submitting your request. Please try again or call us directly.', 'error');
             console.error('EmailJS error:', error);
           })
@@ -1426,7 +1323,7 @@
     }
 
     // ============================================================
-    //  MODAL CONTROLS (matching Dr. Vikash implementation)
+    //  MODAL CONTROLS
     // ============================================================
     if (modalClose) {
       modalClose.addEventListener('click', function() {
@@ -1447,7 +1344,7 @@
     });
 
     // ============================================================
-    //  EXPOSE FUNCTIONS TO GLOBAL (for inline onchange)
+    //  EXPOSE FUNCTIONS TO GLOBAL
     // ============================================================
     window.updateTimeSlots = updateTimeSlots;
     window.validateDate = validateDate;
